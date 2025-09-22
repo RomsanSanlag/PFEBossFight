@@ -49,6 +49,10 @@ SourceArt/**/*.tga
 # Binary Files
 Binaries/*
 Plugins/**/Binaries/*
+!Binaries/Win64
+Binaries/Win64/*
+!Binaries/Win64/PFEBossFight.target
+!Binaries/Win64/UnrealEditor.modules
 
 # Builds
 Build/*
