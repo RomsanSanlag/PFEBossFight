@@ -14,7 +14,7 @@ class UPlayerCharacterState;
 class APlayerCharacter;
 
 UCLASS()
-class THIRDPERSONTESTCPP_API UPlayerStateMachine : public UObject
+class BOSSFIGHT_API UPlayerStateMachine : public UObject
 {
 	GENERATED_BODY()
 

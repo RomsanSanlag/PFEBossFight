@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "ThirdPersonTestCPP/Public/StateMachine/PlayerStateMachine.h"
+#include "BossFight/Public/StateMachine/PlayerStateMachine.h"
 
-#include "ThirdPersonTestCPP/private/Character/PlayerCharacterState.h"
-#include "ThirdPersonTestCPP/public/Character/PlayerCharacter.h"
+#include "BossFight/private/Character/PlayerCharacterState.h"
+#include "BossFight/public/Character/PlayerCharacter.h"
 
 void UPlayerStateMachine::Init(APlayerCharacter* inCharacter)
 {

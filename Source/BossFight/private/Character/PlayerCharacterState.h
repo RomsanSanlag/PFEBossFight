@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "ThirdPersonTestCPP/public/Character/PlayerCharacterStateID.h"
-#include "ThirdPersonTestCPP/public/StateMachine/PlayerStateMachine.h"
+#include "BossFight/public/Character/PlayerCharacterStateID.h"
+#include "BossFight/public/StateMachine/PlayerStateMachine.h"
 #include "PlayerCharacterState.generated.h"
 
 
 UCLASS(Abstract)
-class THIRDPERSONTESTCPP_API UPlayerCharacterState : public UActorComponent
+class BOSSFIGHT_API UPlayerCharacterState : public UActorComponent
 {
 	GENERATED_BODY()
 

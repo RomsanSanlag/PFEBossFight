@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "ThirdPersonTestCPP/public/StateMachine/PlayerStateMachine.h"
+#include "BossFight/public/StateMachine/PlayerStateMachine.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
 
 UCLASS()
-class THIRDPERSONTESTCPP_API APlayerCharacter : public ACharacter
+class BOSSFIGHT_API APlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 

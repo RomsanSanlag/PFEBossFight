@@ -3,5 +3,5 @@
 #include "BossFight.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, ThirdPersonTestCPP, "ThirdPersonTestCPP" );
+IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, BossFight, "BossFight" );
  

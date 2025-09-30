@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ThirdPersonTestCPP/private/Character/PlayerCharacterState.h"
+#include "BossFight/private/Character/PlayerCharacterState.h"
 #include "PlayerCharacterStateWalk.generated.h"
 
 
 UCLASS(ClassGroup=(PlayerCharacterState), meta=(BlueprintSpawnableComponent))
-class THIRDPERSONTESTCPP_API UPlayerCharacterStateWalk : public UPlayerCharacterState
+class BOSSFIGHT_API UPlayerCharacterStateWalk : public UPlayerCharacterState
 {
 	GENERATED_BODY()
 
