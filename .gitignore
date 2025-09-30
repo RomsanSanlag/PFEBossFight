@@ -47,13 +47,13 @@ SourceArt/**/*.png
 SourceArt/**/*.tga
 
 # Binary Files
+!Binaries
 Binaries/*
-Plugins/**/Binaries/*
 !Binaries/Win64
 Binaries/Win64/*
-!Binaries/Win64/PFEBossFight.target
+!Binaries/Win64/BossFightEditor.target
 !Binaries/Win64/UnrealEditor.modules
-!Binaries/Win64/UnrealEditor-PFEBossFight.dll
+!Binaries/Win64/UnrealEditor-BossFight.dll
 
 # Builds
 Build/*
