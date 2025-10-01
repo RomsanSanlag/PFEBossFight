@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class PlayerCharacterStateID : uint8
 {
 	None = 0,

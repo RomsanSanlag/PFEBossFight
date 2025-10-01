@@ -40,7 +40,7 @@ public:
 	void InitStateMachine();
 
 protected:
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
 
 #pragma endregion

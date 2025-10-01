@@ -22,6 +22,10 @@ public:
 
 	virtual void StateInit(UPlayerStateMachine *InitStateMachine);
 
+	virtual void StateEnter(PlayerCharacterStateID PlayerStateID);
+
+	virtual void StateExit(PlayerCharacterStateID PlayerStateID);
+
 protected:
 	UPROPERTY()
 	TObjectPtr<APlayerCharacter> Character;

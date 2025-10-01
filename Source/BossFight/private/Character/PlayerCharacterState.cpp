@@ -27,4 +27,12 @@ void UPlayerCharacterState::StateInit(UPlayerStateMachine* InitStateMachine)
 	);
 }
 
+void UPlayerCharacterState::StateEnter(PlayerCharacterStateID PlayerStateID)
+{
+}
+
+void UPlayerCharacterState::StateExit(PlayerCharacterStateID PlayerStateID)
+{
+}
+
 
