@@ -3,6 +3,8 @@
 
 #include "BossFight/Public/Character/States/PlayerCharacterStateWalk.h"
 
+#include "Character/PlayerCharacter.h"
+
 
 PlayerCharacterStateID UPlayerCharacterStateWalk::GetStateID()
 {
@@ -35,5 +37,21 @@ void UPlayerCharacterStateWalk::StateExit(PlayerCharacterStateID PlayerStateID)
 void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
+
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		3.f,
+		FColor::Red,
+		FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
+	);
+	if (FMath::Abs(Character->GetInputMoveX()) < 0.1f)
+	{
+		StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+	}
+	else
+	{
+		FVector MovementDirection = FVector(Character->GetInputMoveX(), Character->GetInputMoveY(), 0);
+		Character->AddMovementInput(MovementDirection);
+	}
 }
 

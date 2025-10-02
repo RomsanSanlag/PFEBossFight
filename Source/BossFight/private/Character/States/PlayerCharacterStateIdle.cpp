@@ -3,6 +3,8 @@
 
 #include "BossFight/Public/Character/States/PlayerCharacterStateIdle.h"
 
+#include "Character/PlayerCharacter.h"
+
 
 PlayerCharacterStateID UPlayerCharacterStateIdle::GetStateID()
 {
@@ -35,5 +37,17 @@ void UPlayerCharacterStateIdle::StateExit(PlayerCharacterStateID PlayerStateID)
 void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
+
+	if (FMath::Abs(Character->GetInputMoveX()) > 0.1f)
+	{
+		StateMachine->ChangeState(PlayerCharacterStateID::Walk);
+	}
+
+	GEngine->AddOnScreenDebugMessage(
+	-1,
+	3.f,
+	FColor::Red,
+	FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
+	);
 }
 

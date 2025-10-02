@@ -3,9 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BossFight/BossFightCharacter.h"
 #include "GameFramework/Character.h"
 #include "BossFight/public/StateMachine/PlayerStateMachine.h"
-#include "Parameters/UPlayerMovementConfig.h"
+#include "Inputs/PlayerCharacterInputData.h"
+#include "MovementParameters/PlayerMovementParameters.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
@@ -43,11 +45,45 @@ public:
 	void TickStateMachine(float DeltaTime) const;
 
 	UPROPERTY(EditAnywhere)
-	UPlayerMovementConfig* PlayerMovementConfig;
+	UPlayerMovementParameters* PlayerMovementParameters;
 
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
+
+#pragma endregion
+#pragma region Input Data / Mapping Context
+public:
+	UPROPERTY()
+	TObjectPtr<UInputMappingContext> InputMappingContext;
+
+	UPROPERTY()
+	TObjectPtr<UPlayerCharacterInputData> InputData;
+
+protected:
+	void SetupMappingContextIntoController() const;
+	void SetupInputs();
+
+#pragma region InputMove
+public:
+	float GetInputMoveX() const;
+	float GetInputMoveY() const;
+
+protected:
+	UPROPERTY()
+	float InputMoveX = 0.f;
+
+	UPROPERTY()
+	float InputMoveY = 0.f;
+
+private:
+	void OnInputMoveX(const FInputActionValue& InputActionValue);
+	void BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent);
+
+	void OnInputMoveY(const FInputActionValue& InputActionValue);
+	void BindInputMoveYAxisActions(UEnhancedInputComponent* EnhancedInputComponent);
+
+#pragma endregion
 
 #pragma endregion
 };
