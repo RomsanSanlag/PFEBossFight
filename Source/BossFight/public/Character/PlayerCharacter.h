@@ -78,9 +78,11 @@ protected:
 
 private:
 	void OnInputMoveX(const FInputActionValue& InputActionValue);
+	void OnInputMoveXCompleted(const FInputActionValue& InputActionValue);
 	void BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent);
 
 	void OnInputMoveY(const FInputActionValue& InputActionValue);
+	void OnInputMoveYCompleted(const FInputActionValue& InputActionValue);
 	void BindInputMoveYAxisActions(UEnhancedInputComponent* EnhancedInputComponent);
 
 #pragma endregion

@@ -18,22 +18,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/Inputs/PlayerCharacterInputData.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/Settings/PlayerCharacterSettings.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/Inputs/PlayerCharacterInputData.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/MovementParameters/PlayerMovementParameters.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/Settings/PlayerCharacterSettings.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Leandro.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Leandro.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/TestGM.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/TestGM.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/Leandro.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/Leandro.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/Leandro/8/3J/UMRBAVUGRQHHGU5ERDQV7V.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/BossFight.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/BossFight.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
@@ -231,7 +218,7 @@
       <workItem from="1759310934946" duration="121000" />
       <workItem from="1759311082893" duration="1597000" />
       <workItem from="1759391382431" duration="22000" />
-      <workItem from="1759391466197" duration="8524000" />
+      <workItem from="1759391466197" duration="10823000" />
     </task>
     <servers />
   </component>

@@ -44,7 +44,7 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 		FColor::Red,
 		FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
 	);
-	if (FMath::Abs(Character->GetInputMoveX()) < 0.1f)
+	if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) < 0.1f)
 	{
 		StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 	}

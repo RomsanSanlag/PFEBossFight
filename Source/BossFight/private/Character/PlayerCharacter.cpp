@@ -115,6 +115,12 @@ void APlayerCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* Enh
 			this,
 			&APlayerCharacter::OnInputMoveX
 		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionMoveX,
+			ETriggerEvent::Completed,
+			this,
+			&APlayerCharacter::OnInputMoveXCompleted
+		);
 	}
 }
 
@@ -136,6 +142,12 @@ void APlayerCharacter::BindInputMoveYAxisActions(UEnhancedInputComponent* Enhanc
 			this,
 			&APlayerCharacter::OnInputMoveY
 		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionMoveY,
+			ETriggerEvent::Completed,
+			this,
+			&APlayerCharacter::OnInputMoveYCompleted
+		);
 	}
 }
 
@@ -145,6 +157,16 @@ void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 }
 
 void APlayerCharacter::OnInputMoveY(const FInputActionValue& InputActionValue)
+{
+	InputMoveY = InputActionValue.Get<float>();
+}
+
+void APlayerCharacter::OnInputMoveXCompleted(const FInputActionValue& InputActionValue)
+{
+	InputMoveX = InputActionValue.Get<float>();
+}
+
+void APlayerCharacter::OnInputMoveYCompleted(const FInputActionValue& InputActionValue)
 {
 	InputMoveY = InputActionValue.Get<float>();
 }
