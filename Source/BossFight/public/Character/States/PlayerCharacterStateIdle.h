@@ -18,4 +18,6 @@ public:
 	virtual void StateEnter(PlayerCharacterStateID PlayerStateID) override;
 
 	virtual void StateExit(PlayerCharacterStateID PlayerStateID) override;
+
+	virtual void StateTick(float DeltaTime) override;
 };

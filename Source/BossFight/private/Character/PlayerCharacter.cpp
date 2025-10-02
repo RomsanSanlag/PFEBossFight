@@ -24,6 +24,7 @@ void APlayerCharacter::BeginPlay()
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	TickStateMachine(DeltaTime);
 }
 
 // Called to bind functionality to input
@@ -41,6 +42,12 @@ void APlayerCharacter::InitStateMachine()
 {
 	if (StateMachine == nullptr) return;
 	StateMachine->Init(this);
+}
+
+void APlayerCharacter::TickStateMachine(float DeltaTime) const
+{
+	if (StateMachine == nullptr) return;
+	StateMachine->Tick(DeltaTime);
 }
 
 

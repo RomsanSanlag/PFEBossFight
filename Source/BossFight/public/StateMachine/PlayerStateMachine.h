@@ -23,6 +23,8 @@ class BOSSFIGHT_API UPlayerStateMachine : public UObject
 public:
 	void Init(APlayerCharacter* inCharacter);
 
+	void Tick(float DeltaTime);
+
 	APlayerCharacter* GetCharacter() const;
 
 	UFUNCTION(BlueprintCallable)

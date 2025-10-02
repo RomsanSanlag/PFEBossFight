@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "BossFight/public/StateMachine/PlayerStateMachine.h"
+#include "Parameters/UPlayerMovementConfig.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
@@ -38,6 +39,11 @@ public:
 	void CreateStateMachine();
 
 	void InitStateMachine();
+
+	void TickStateMachine(float DeltaTime) const;
+
+	UPROPERTY(EditAnywhere)
+	UPlayerMovementConfig* PlayerMovementConfig;
 
 protected:
 	UPROPERTY(BlueprintReadOnly)

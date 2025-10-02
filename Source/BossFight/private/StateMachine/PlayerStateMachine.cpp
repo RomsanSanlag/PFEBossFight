@@ -15,6 +15,12 @@ void UPlayerStateMachine::Init(APlayerCharacter* inCharacter)
 	ChangeState(PlayerCharacterStateID::Idle);
 }
 
+void UPlayerStateMachine::Tick(float DeltaTime)
+{
+	if (CurrentState == nullptr) return;
+	CurrentState->StateTick(DeltaTime);
+}
+
 APlayerCharacter* UPlayerStateMachine::GetCharacter() const
 {
 	return Character;

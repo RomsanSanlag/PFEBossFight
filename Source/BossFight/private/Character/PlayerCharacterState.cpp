@@ -35,4 +35,8 @@ void UPlayerCharacterState::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 }
 
+void UPlayerCharacterState::StateTick(float DeltaTime)
+{
+}
+
 

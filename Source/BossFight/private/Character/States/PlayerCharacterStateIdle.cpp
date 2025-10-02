@@ -32,3 +32,8 @@ void UPlayerCharacterStateIdle::StateExit(PlayerCharacterStateID PlayerStateID)
 	);
 }
 
+void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
+{
+	Super::StateTick(DeltaTime);
+}
+
