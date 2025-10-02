@@ -14,163 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_ChoseAttaqueWeighted.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_ChoseAttaqueWeighted.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack60.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack60.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack80.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack80.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_0.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_0.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_1_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_1_1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack_1_2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/ClementMap.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/2N/85UXDX1TWEMGEY0T50TYD5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/9U/6LI4LJXE3FB6GRD25LQ3TV.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/BK/QMJR3DF39VCPCP7B13SZSH.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/GK/X3HLGR2LJPY1EQ4KQSRVDW.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/M2/ONX7CUO5NYHERSTQWEZJ38.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/UT/OJHEGCX7807XI87H81CEQ3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/0/WQ/048FIGMRU3HZ63W8VSBGX4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/06/YN7NAFQXC9EA5WFVG5UJRA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/1N/GDE6CL546UAPDY8P0NIGNL.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/3Z/SGI5SOK9BMCP4K4ZKO464Z.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/44/X8YAS829Y31QLMATNGVGBE.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/4E/TGG8SC8IGWIYFSQ5JRKRHR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/4J/TE8AVE4QZMJCJ5ZG311KR9.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/5J/POY56AVLUVJNSI70OOKQEP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/8F/6I58EQ9QWEGFI5NRK68WW5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/B1/L5SVQ6F1YGT31J3PCZGALL.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/HO/LD16WBG6RJQF7257ECFOHW.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/1/K6/BIF366CALNOD8D7MIESEY8.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/0T/QMISENWN41B5SJTQG0CW4G.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/1Y/L6WM4K20MSA4Y70XR7A39R.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/42/X3KSHJLAFLE62CGDW50CXP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/89/3N22GGJ2FVLH0CBNBOY11U.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/8G/G8PYE0MKESVFQ6UEU92EWA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/D1/ZG3LA5IO1XNW96FS5X9TRZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/EV/6N278AL663UF5XRZA63TAX.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/MK/2UJYRR08N3NL1CZBUU5D39.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/NK/6ZISVSQT6TWLOMOIOE6Z6E.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/QG/NI4FPK7O02DFFRMVN9B1P7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/2/TJ/B737OVTG5WRYGLO8KOXFZN.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/B6/J3T7EC1OOL1ZXOX65ELQGZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/BH/B2QQS4QT3VM0WEV3L2YT7S.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/CK/9W2M10HYJJ79ZVSKVHJXW6.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/E2/B2MNE7DRLOLTSSFNH4ABQB.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/FZ/GCMK455USLXIMMCJSQ8AG1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/H8/15C6M8Z57WK463GYCPECSR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/IN/230YAVLYA78Z44EH3X7ON2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/MR/PP96VAK79M371QN6WVSDPN.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/U7/NGY3AS80XVMNVKVA0CG6CX.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/UG/36VFDUR1SFTVQ6W1QYR2ID.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/3/WA/IPTZ0IM57YXQ5VWT71BTZ6.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/0Q/QAZZKXSMJAOPPN2F67N5FK.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/2S/6570RFA6NUPWKX1YFEB3I3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/8I/HDCBKY123I2OQG5CC4BCT5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/E7/KW7SCSAJSE5HMM4AAYEW7I.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/Q4/Q7DOGZ31O7Y622YEJOGP26.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/TB/GE5XI11GFJI8Z0SY8ADM98.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/XV/9GJDJKJXHAGNJ7BWA5SIUR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/4/Z6/0MH1M9OKJ2SAUS0SFWJ53C.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/91/25HQ5AW85KKKGR63B8YL1S.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/A1/ENIYG22X85DPTWW6TZ9ILP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/B2/U0E4QPAGLOKZ5KJH9BIIK7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/EP/AM9NTXAPGFHO8QD1EY24IF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/M8/LU9ZE4P1PBLNOAOVCITMXQ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/P3/PLIB8KVBDO2NF0AGGMJFW9.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/QX/91JOTQO5I8BFFDVYAFUTTZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/5/SY/Q6S9F4RP3R59JF026FX5BL.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/0R/V4WLOY1MWFI7XTUNTZGBAA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/43/KY8B7CFQ0M501JIR669QN1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/7D/F8MBXOQWQCF7I6P1V4ZZ8R.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/93/L3V7WRV4A8D2SCQQMYV7Q4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/98/CTDO09Y47BF0HYL4WFKQXY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/LQ/UYZDOGEXJUMRWWXY0TD749.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/O5/4KCKK8CV2PV33O9UPAEP82.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/QB/27GSUAU7VE9AUF7YLUW6OP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/TV/J9V717U5LU7MB1C7BS682I.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/VA/4FFYP1S33TRD0Z9XP8B3VD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/6/YE/C40TDLYFV4IGPZTQ5132FK.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/0Z/XCBCSHKCO6RM7Z5VU4YPRI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/1G/VSFMER0MA99IACCUVTFDSF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/4U/QVFKT5ZIRIIJ3DAK7M4BHL.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/85/FQ5WSVNLRQRCWTM1IXYEV2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/FN/80FO0I6E4EF7AGXQQFKT8B.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/FW/Y26LV946L5V4I6SHB7Z3D9.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/NS/YTKVPGFCW2O4A76F8NB0X5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/T9/BAIJJIKDADWRE770EAADR1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/U7/NWOOPN3JXOLRV2OFCKSS9Y.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/7/VD/2E2KERWZQYEIG2Q31YIXBY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/0C/PQVAIFJEK247JE6EZO6GTZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/4W/D744FDAM2NUZW7VTRTDAXF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/7U/WQ3ZMMI5FHNLZDFJSRRDLT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/AB/Q49I2ETNQF7D21XVLD5IIN.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/N8/9B1VPOO2VTYE93COOAJIRD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/NE/C6EZF503SVWIA6P047MVVQ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/QA/A6MC29BC6FK4F7J8D2KZ02.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/QQ/TIPK6GXMV6AAP29OSTVXTF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/TT/3JD7RTJLFO2V7G5T36F697.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/8/VC/2G9IQTWJE4UNXNKVCKSK5Z.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/4O/59D5GJ0EV7B981NS6OB747.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/94/C7QYVIDZ51EMVPEH83BBTQ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/CU/G8MVCJWP8C7G1VIVGASAUG.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/F9/7N6F47O9L36SWM4ZJXL4H4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/FW/AS9ZJ13E6ZCBGQNGP6WK2T.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/KA/MI7YRHT5IG8DCAWGBQ1GOA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/N5/B13XH3Y543H27T4J5PHHJM.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/RO/9EU9Z9SL0SXE26D1PUE55J.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/T9/B29OOC813CT3AMMVH403TT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/9/Z6/O0UZ1PE0SOXKO9GFAIJUGU.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/A/4G/JJDQUHD8Z9XAIRR8SDOIEK.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/A/7M/9OZT7BIMZKG19NRWTUIHCI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/A/P4/6Z4DHU8B901M9X445BP4IL.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/A/T7/QS3BRA86BXBNS8RSX3S4KC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/1A/2ZWDH28TMHDB94B9CSWI7Y.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/2H/Q1IVWC3KZ705WVVLZ1E68Y.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/41/TPX2F0XRSQ65CB1Q7GVKBG.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/7V/ALH4MBBH9M0X2YNI1ALV90.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/90/9USV949ZYBXJSPFQCYC33G.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/CR/OQFD9XU0SZN4UBKB99UQLP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/EL/6XTHL811O5RBFGXGTKBXLF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/JC/SKWSXJUOJ5UTP5KTU5Q6S1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/OJ/FYO2UZSNZN2AZS7SP4KOTY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/OM/16KQL0LJQK9C4QD3DGLVOC.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/B/U1/PRYROF98JE7FQRSV2YIRGY.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/6M/SXCHGJ39V2X05OHH8TLVX9.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/C4/8V99Y8N8BVPF3YE199AJYD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/ES/GO62SL87GU42CLV4WAT57R.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/FB/0PSB1TL7AQ3Q5SNKEXJE96.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/G7/B8B8LXN9KP8MNU1VA69Y0O.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/HL/7Y60Z5NJ9MLEMKNP7VZM0S.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/NN/XOW40ZTYZ6H4TFQYPOIX79.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/PU/UU9XCAJCFYY709K9V72G3O.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/SH/EN4Z2KCQAP17XTQFG8IABE.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/SM/CJQDVO6FLWIAZGCK6Z0N2W.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/C/XU/2WQPI3XJ11BLDTM5FJCUXQ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/0G/XSOB6UI21HFZB7H53OP2L8.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/2N/8C1WUV95J0A4P8FGMDXAFF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/6Z/KFTMH8M280CUOCLZGH6H0B.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/86/0B7WWYRPTAYCXD3IQBRPYH.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/8N/JETP98GIJ9N8AB2X1NF1VS.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/AY/42FD4EOR4N22W1CNABZ027.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/G1/P3ZC9FIG3BSN5JT0H65J8L.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/JI/LETIVYT2AQBZ4DCGVBRQIH.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/KQ/I21V3LZE2ZLGIPCFBJEC5J.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/L0/VCUMK20NXX33RWRFVQCWL3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/O2/0J5U2PBOA8MUMZVK1FG95N.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/D/X8/5YNGU32WARMDV2LIZCMF4C.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/E/A6/Y4LANX73970J2UQS1V3J04.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/E/D1/OX82V5PZ0NY9C0BDBJ5236.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/E/O0/YLAUTW9V9ZGPMNF2KHS9U1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/E/TI/6N8OBKOURL03Y99RC9PLWF.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/E/TQ/924IMS2OGRYM9G3ZTQCAM0.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMap/F/33/VZL85FH2JG0S3VG228NU0F.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/0/1U/2T9IW32EPMBWZOB06K5QG2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/2/7W/CGR21QBJ4DGNOSNJ8PAMAI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/3/QK/7HGR0UGV3Q731MAG8B9WR3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/4/96/CEIE9RP217ED222ZQ5BJ3V.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/6/ZA/1EC42MOY7GV4VJTW553Z49.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalObjects__/StarterContent/Maps/ClementMap/9/MG/7GOWXFEG6ARRTFR54X3TYF.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
     &quot;C/C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -208,11 +54,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="C/C++ Project.BossFight">
+  <component name="RunManager" selected="C++ Project.BossFight">
     <configuration name="BossFight" type="CppProject" factoryName="C++ Project">
-      <configuration_1 setup="1">
+      <configuration_1>
         <option name="CONFIGURATION" value="Development_Editor" />
         <option name="PLATFORM" value="x64" />
+        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
@@ -220,10 +67,20 @@
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="AUTO_DETECT" />
-        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
       </configuration_1>
+      <configuration_2>
+        <option name="CONFIGURATION" value="Development Editor" />
+        <option name="PLATFORM" value="Win64" />
+        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
+        <option name="EXE_PATH" value="$(TargetPath)" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+        <option name="WORKING_DIRECTORY" value="$(ProjectDir)" />
+        <option name="PASS_PARENT_ENVS" value="1" />
+        <option name="USE_EXTERNAL_CONSOLE" value="0" />
+        <option name="TERMINAL_INTERACTION_BEHAVIOR" value="AUTO_DETECT" />
+      </configuration_2>
       <option name="DEFAULT_PROJECT_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
-      <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
       <option name="AUTO_SELECT_PRIORITY" value="10010" />
       <method v="2">
         <option name="Build" />
@@ -231,7 +88,6 @@
     </configuration>
     <configuration name="UE5" type="CppProject" factoryName="C++ Project">
       <option name="DEFAULT_PROJECT_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/UE5.vcxproj" />
-      <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/UE5.vcxproj" />
       <option name="AUTO_SELECT_PRIORITY" value="10000" />
       <method v="2">
         <option name="Build" />
@@ -243,13 +99,8 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="ENV_FILE_PATHS" value="" />
-      <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/AutomationTool/AutomationTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -266,13 +117,8 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="ENV_FILE_PATHS" value="" />
-      <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -294,7 +140,6 @@
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -318,6 +163,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="" />
@@ -329,6 +175,9 @@
       <workItem from="1759152927595" duration="74000" />
       <workItem from="1759239730006" duration="887000" />
       <workItem from="1759301200560" duration="1989000" />
+      <workItem from="1759387199476" duration="486000" />
+      <workItem from="1759387728163" duration="518000" />
+      <workItem from="1759388307603" duration="754000" />
     </task>
     <servers />
   </component>
@@ -338,24 +187,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
