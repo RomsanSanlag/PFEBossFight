@@ -20,11 +20,12 @@
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Inputs/DA_PlayerCharacterInputData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Inputs/DA_PlayerCharacterInputData.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MovementParameters/DA_PlayerMovementParameters.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MovementParameters/DA_PlayerMovementParameters.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/MovementParameters/PlayerMovementParameters.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/MovementParameters/PlayerMovementParameters.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateWalk.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateWalk.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/Settings/PlayerCharacterSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateIdle.h" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -219,12 +221,14 @@
       <workItem from="1759311082893" duration="1597000" />
       <workItem from="1759391382431" duration="22000" />
       <workItem from="1759391466197" duration="10823000" />
+      <workItem from="1759473268884" duration="10213000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
