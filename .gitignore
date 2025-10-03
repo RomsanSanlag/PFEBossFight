@@ -51,7 +51,7 @@ SourceArt/**/*.tga
 Binaries/*
 !Binaries/Win64
 Binaries/Win64/*
-!Binaries/Win64/BossFightEditor.target
+Binaries/Win64/BossFightEditor.target
 !Binaries/Win64/UnrealEditor.modules
 !Binaries/Win64/UnrealEditor-BossFight.dll
 
