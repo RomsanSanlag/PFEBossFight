@@ -60,8 +60,14 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
     
     
     // Permet de tourner en marchant (plus naturel)
-    Movement->bOrientRotationToMovement = true;
-    Movement->bUseControllerDesiredRotation = false;
+    Movement = Character->GetCharacterMovement();
+    if (Movement)
+    {
+        Movement->bOrientRotationToMovement = true;
+        Movement->bUseControllerDesiredRotation = false;
+    }
+
+    Character->bUseControllerRotationYaw = false;
 
     // Reset des timers pour une entrée propre
     AccelerationTime = 0.f;
@@ -84,6 +90,7 @@ void UPlayerCharacterStateWalk::StateExit(PlayerCharacterStateID NextStateID)
 void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 {
     Super::StateTick(DeltaTime);
+    
 
     UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
     if (!Movement) return;
