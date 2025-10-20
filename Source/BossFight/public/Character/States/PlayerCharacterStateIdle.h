@@ -14,4 +14,10 @@ class BOSSFIGHT_API UPlayerCharacterStateIdle : public UPlayerCharacterState
 
 public:
 	virtual PlayerCharacterStateID GetStateID() override;
+
+	virtual void StateEnter(PlayerCharacterStateID PlayerStateID) override;
+
+	virtual void StateExit(PlayerCharacterStateID PlayerStateID) override;
+
+	virtual void StateTick(float DeltaTime) override;
 };
