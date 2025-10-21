@@ -27,4 +27,16 @@ void UPlayerCharacterState::StateInit(UPlayerStateMachine* InitStateMachine)
 	);
 }
 
+void UPlayerCharacterState::StateEnter(PlayerCharacterStateID PlayerStateID)
+{
+}
+
+void UPlayerCharacterState::StateExit(PlayerCharacterStateID PlayerStateID)
+{
+}
+
+void UPlayerCharacterState::StateTick(float DeltaTime)
+{
+}
+
 
