@@ -37,17 +37,16 @@ void UPlayerCharacterStateIdle::StateExit(PlayerCharacterStateID PlayerStateID)
 void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
-
+	
+	if (Character->GetInputDodgeBuffer())
+	{
+		StateMachine->ChangeState(PlayerCharacterStateID::Dodge);
+		return;
+	}
 	if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
 	{
 		StateMachine->ChangeState(PlayerCharacterStateID::Walk);
+		return;
 	}
-
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
-	);
 }
 

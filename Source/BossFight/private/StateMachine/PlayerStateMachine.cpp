@@ -56,13 +56,14 @@ UPlayerCharacterState* UPlayerStateMachine::GetState(PlayerCharacterStateID Stat
 			return CharacterState;
 		}
 	}
-
 	return nullptr;
 }
 
 void UPlayerStateMachine::ChangeState(PlayerCharacterStateID NextStateID)
 {
 	UPlayerCharacterState* NextState = GetState(NextStateID);
+
+
 
 	if (NextState == nullptr) return;
 

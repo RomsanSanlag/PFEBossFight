@@ -47,6 +47,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	BindInputMoveXAxisAndActions(EnhancedInputComponent);
 	BindInputMoveYAxisActions(EnhancedInputComponent);
 	BindInputLookActions(EnhancedInputComponent);
+	BindInputDodge(EnhancedInputComponent);
 }
 
 void APlayerCharacter::CreateStateMachine()
@@ -96,6 +97,11 @@ float APlayerCharacter::GetInputMoveX() const
 float APlayerCharacter::GetInputMoveY() const
 {
 	return InputMoveY;
+}
+
+float APlayerCharacter::GetInputDodgeBuffer() const
+{
+	return InputDodgeBuffer;
 }
 
 void APlayerCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent)
@@ -152,9 +158,41 @@ void APlayerCharacter::BindInputMoveYAxisActions(UEnhancedInputComponent* Enhanc
 	}
 }
 
+void APlayerCharacter::BindInputDodge(UEnhancedInputComponent* EnhancedInputComponent)
+{
+	if (InputData == nullptr) return;
+
+	if (InputData->InputActionDodgeBuffer)
+	{
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionDodgeBuffer,
+			ETriggerEvent::Started,
+			this,
+			&APlayerCharacter::OnInputDodge
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionDodgeBuffer,
+			ETriggerEvent::Triggered,
+			this,
+			&APlayerCharacter::OnInputDodge
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionDodgeBuffer,
+			ETriggerEvent::Completed,
+			this,
+			&APlayerCharacter::OnInputDodge
+		);
+	}
+}
+
 void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent)
 {
 	EnhancedInputComponent->BindAction(InputData->InputActionLook, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
+}
+
+void APlayerCharacter::OnInputDodge(const FInputActionValue& InputActionValue)
+{
+	InputDodgeBuffer = InputActionValue.Get<bool>();
 }
 
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
