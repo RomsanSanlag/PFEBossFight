@@ -83,7 +83,9 @@ private:
 
 	void OnInputMoveY(const FInputActionValue& InputActionValue);
 	void OnInputMoveYCompleted(const FInputActionValue& InputActionValue);
+	void Look(const FInputActionValue& Value);
 	void BindInputMoveYAxisActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent);
 
 #pragma endregion
 
