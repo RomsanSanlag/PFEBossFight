@@ -28,12 +28,23 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
     AccelerationDuration = PlayerMovementParameters->AccelerationDuration;
     AccelerationForce = PlayerMovementParameters->AccelerationForce;
     DeccelerationForce = PlayerMovementParameters->DeccelerationForce;
+    
+    DirectionChangeThreshold = PlayerMovementParameters->DirectionChangeThreshold;
+
+    TurnDeccelerationForce = PlayerMovementParameters->TurnDeccelerationForce;
+    TurnDeccelerationTime = PlayerMovementParameters->TurnDeccelerationTime;
+
+    TurnReaccelerationForce = PlayerMovementParameters->TurnReaccelerationForce;
+    TurnReaccelerationTime = PlayerMovementParameters->TurnReaccelerationTime;
+
+    TurnAccelerationRetention = PlayerMovementParameters->TurnAccelerationRetention;
 
     Character->bUseControllerRotationYaw = false;
 
     // Reset des timers pour une entrée propre
-    AccelerationTime = 0.f;
     CurrentSpeed = Movement->Velocity.Size();
+    CurrentTurnDeccelerationTime = TurnDeccelerationTime;
+    CurrentTurnReaccelerationTime = TurnReaccelerationTime;
 
     GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Cyan, 
         FString::Printf(TEXT("Enter StateWalk")));
@@ -65,24 +76,58 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     FRotator YawRotation(0.f, ControlRot.Yaw, 0.f);
     InputDirection = YawRotation.RotateVector(InputDirection);
 
+
+    if (!InputDirection.IsNearlyZero() && !LastMoveDirection.IsNearlyZero())
+    {
+        float Angle = FMath::RadiansToDegrees(acosf(FVector::DotProduct(RawInputDirection.GetSafeNormal(), LastMoveDirection)));
+        
+        if (Angle > DirectionChangeThreshold)
+        {
+            CurrentTurnDeccelerationTime = 0.f;
+            CurrentTurnReaccelerationTime = 0.f;
+            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Yellow, 
+                FString::Printf(TEXT("Changed direction")));
+        }
+    }
+    
+
     if (InputMagnitude > 0.1)
     {
-        AccelerationTime += DeltaTime;
-        CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed, DeltaTime, AccelerationForce);
+        if (CurrentTurnDeccelerationTime < TurnDeccelerationTime)
+        {
+            CurrentTurnDeccelerationTime += DeltaTime;
+            CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed*TurnAccelerationRetention, DeltaTime, TurnDeccelerationForce);
+            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, 
+                FString::Printf(TEXT("Decceleration")));
+        }
+        else if (CurrentTurnReaccelerationTime < TurnReaccelerationTime)
+        {
+            CurrentTurnReaccelerationTime += DeltaTime;
+            CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed, DeltaTime, TurnReaccelerationForce);
+                        GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Blue, 
+                            FString::Printf(TEXT("acceleration")));
+        }
+        else
+        {
+            CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed, DeltaTime, AccelerationForce);
+            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, 
+        FString::Printf(TEXT("Normal")));
+        }
         Movement->MaxWalkSpeed = CurrentSpeed;
-
         float ClampedMagnitude = FMath::Min(InputMagnitude, 1.f);
         Character->AddMovementInput(InputDirection, ClampedMagnitude);
     }
     else
     {
-        AccelerationTime -= DeltaTime;
+        // Decceleration on no input
         CurrentSpeed = FMath::FInterpTo(CurrentSpeed, 0, DeltaTime, DeccelerationForce);
         Movement->MaxWalkSpeed = CurrentSpeed;
 
         float ClampedMagnitude = FMath::Min(InputMagnitude, 1.f);
         Character->AddMovementInput(InputDirection, ClampedMagnitude);
     }
+
+    LastMoveDirection = RawInputDirection.GetSafeNormal();
     
     if (CurrentSpeed < MaxWalkSpeed * 0.1f && InputMagnitude < 0.1f)
     {

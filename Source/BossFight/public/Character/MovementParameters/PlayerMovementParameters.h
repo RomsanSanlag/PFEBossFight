@@ -23,6 +23,15 @@ public:
         AccelerationDuration = 1.0f;
         AccelerationForce = 5.0f;
         DeccelerationForce = 5.0f;
+        DirectionChangeThreshold = 5.0f;
+        
+        TurnDeccelerationForce = 5.0f;
+        TurnDeccelerationTime = 5.0f;
+
+        TurnReaccelerationForce = 5.0f;
+        TurnReaccelerationTime = 5.0f;
+
+        TurnAccelerationRetention = 50.0f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -37,5 +46,16 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
     float AccelerationForce;
 
-    
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn")
+    float DirectionChangeThreshold;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn")
+    float TurnDeccelerationForce;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn")
+    float TurnDeccelerationTime;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn")
+    float TurnReaccelerationForce;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn")
+    float TurnReaccelerationTime;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn", meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
+    float TurnAccelerationRetention = 1.0f;
 };
