@@ -46,6 +46,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 	BindInputMoveXAxisAndActions(EnhancedInputComponent);
 	BindInputMoveYAxisActions(EnhancedInputComponent);
+	BindInputLookActions(EnhancedInputComponent);
 }
 
 void APlayerCharacter::CreateStateMachine()
@@ -151,6 +152,11 @@ void APlayerCharacter::BindInputMoveYAxisActions(UEnhancedInputComponent* Enhanc
 	}
 }
 
+void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent)
+{
+	EnhancedInputComponent->BindAction(InputData->InputActionLook, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
+}
+
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 {
 	InputMoveX = InputActionValue.Get<float>();
@@ -169,6 +175,24 @@ void APlayerCharacter::OnInputMoveXCompleted(const FInputActionValue& InputActio
 void APlayerCharacter::OnInputMoveYCompleted(const FInputActionValue& InputActionValue)
 {
 	InputMoveY = InputActionValue.Get<float>();
+}
+
+void APlayerCharacter::Look(const FInputActionValue& Value)
+{
+	// input is a Vector2D
+	FVector2D LookAxisVector = Value.Get<FVector2D>();
+	GEngine->AddOnScreenDebugMessage(
+	-1,
+	3.f,
+	FColor::Purple,
+	FString::Printf(TEXT("X: %f, Y: %f"), LookAxisVector.X,LookAxisVector.Y)
+	);
+	AddControllerYawInput(LookAxisVector.X);
+	AddControllerPitchInput(LookAxisVector.Y);
+	
+	FRotator ControlRotation = GetControlRotation();
+	FRotator TargetRotation(0.f, ControlRotation.Yaw, 0.f);
+	SetActorRotation(TargetRotation);
 }
 
 
