@@ -27,10 +27,25 @@ protected:
     float DeccelerationForce;
     float AccelerationForce;
 
+    // === PARAMÈTRES DE CHANGEMENT DE DIRECTION ===
+
+    float DirectionChangeThreshold;
+    float TurnAccelerationRetention;
+    
+    float TurnDeccelerationForce;
+    float TurnDeccelerationTime;
+
+    float TurnReaccelerationForce;
+    float TurnReaccelerationTime;
+
+
 private:
     // === VARIABLES INTERNES ===
     
     float CurrentSpeed;
-    float AccelerationTime;
+
+    float CurrentTurnDeccelerationTime;
+    float CurrentTurnReaccelerationTime;
+    
     FVector LastMoveDirection;
 };

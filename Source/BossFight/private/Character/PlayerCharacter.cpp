@@ -181,12 +181,6 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Purple,
-	FString::Printf(TEXT("X: %f, Y: %f"), LookAxisVector.X,LookAxisVector.Y)
-	);
 	AddControllerYawInput(LookAxisVector.X);
 	AddControllerPitchInput(LookAxisVector.Y);
 	
