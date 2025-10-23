@@ -59,6 +59,12 @@ UPlayerCharacterState* UPlayerStateMachine::GetState(PlayerCharacterStateID Stat
 	return nullptr;
 }
 
+void UPlayerStateMachine::TickDodgeCoolDown(float DeltaTime)
+{
+	DodgeCooldown -= DeltaTime;
+	if (DodgeCooldown <= 0) DodgeCooldown = 0.0f;
+}
+
 void UPlayerStateMachine::ChangeState(PlayerCharacterStateID NextStateID)
 {
 	UPlayerCharacterState* NextState = GetState(NextStateID);

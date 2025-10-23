@@ -12,6 +12,12 @@ PlayerCharacterStateID UPlayerCharacterStateDodge::GetStateID()
 	return PlayerCharacterStateID::Dodge;
 }
 
+void UPlayerCharacterStateDodge::StateInit(UPlayerStateMachine* InStateMachine)
+{
+	Super::StateInit(InStateMachine);
+	PlayerMovementParameters = Character->PlayerMovementParameters;
+}
+
 void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateEnter(PlayerStateID);
@@ -22,8 +28,26 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	FColor::Cyan,
 	FString::Printf(TEXT("Enter StateDodge"))
 	);
+	DashTime = 0.0f;
+	DashStartLocation = Character->GetActorLocation();
+	
+	float InputX = Character->GetInputMoveX();
+	float InputY = Character->GetInputMoveY();
+	FVector RawInputDirection = FVector(InputX, InputY, 0.f);
+	FRotator ControlRot = Character->GetControlRotation();
+	FRotator YawRotation(0.f, ControlRot.Yaw, 0.f);
+	DashDirection = YawRotation.RotateVector(RawInputDirection.GetSafeNormal());
 
-	Character->LaunchCharacter(Character->GetActorForwardVector() * 2500, true, true);
+	if (DashDirection == FVector(0.f, 0.f, 0.f))
+	{
+		DashDirection = Character->GetActorForwardVector();
+	}
+	
+	DashDuration = PlayerMovementParameters->DashDuration;
+	DashDistance = PlayerMovementParameters->DashDistance;
+
+	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
+
 }
 
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
@@ -47,4 +71,23 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	FColor::Red,
 	FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
 	);
+
+	DashTime += DeltaTime;
+	float Alpha = FMath::Clamp(DashTime / DashDuration, 0.f, 1.f);
+	FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
+	Character->SetActorLocation(NewLocation, true);
+
+	if (DashTime >= DashDuration)
+	{
+		if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
+		{
+			StateMachine->ChangeState(PlayerCharacterStateID::Walk);
+			return;
+		}
+		else
+		{
+			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+			return;
+		}
+	}
 }

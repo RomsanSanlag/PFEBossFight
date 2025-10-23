@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include <Character/MovementParameters/PlayerMovementParameters.h>
+
 #include "CoreMinimal.h"
 #include "BossFight/private/Character/PlayerCharacterState.h"
 #include "PlayerCharacterStateDodge.generated.h"
@@ -19,6 +21,20 @@ public:
 
 	virtual void StateExit(PlayerCharacterStateID PlayerStateID) override;
 
+	virtual void StateInit(UPlayerStateMachine* InStateMachine) override;
+
 	virtual void StateTick(float DeltaTime) override;
+
+protected:
+	UPlayerMovementParameters* PlayerMovementParameters;
+	// === PARAMÈTRES DE DODGE ===
+	float DashDuration;
+	float DashDistance;
+
+private:
+	// === VARIABLES INTERNES ===
+	float DashTime;
+	FVector DashStartLocation;
+	FVector DashDirection;
 };
 

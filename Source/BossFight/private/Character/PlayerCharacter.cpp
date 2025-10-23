@@ -64,6 +64,7 @@ void APlayerCharacter::InitStateMachine()
 void APlayerCharacter::TickStateMachine(float DeltaTime) const
 {
 	if (StateMachine == nullptr) return;
+	StateMachine->TickDodgeCoolDown(DeltaTime);
 	StateMachine->Tick(DeltaTime);
 }
 
