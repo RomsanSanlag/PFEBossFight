@@ -9,7 +9,7 @@
     <projectFile profileName="EpicGames.AspNet">../../UE5.3/UE_5.5/Engine/Source/Programs/Shared/EpicGames.AspNet/EpicGames.AspNet.csproj</projectFile>
     <projectFile kind="Docker">../../UE5.3/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>../../UE5.3/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj</projectFile>
-    <projectFile kind="Docker">C:/Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
+    <projectFile kind="Docker">$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/BossFight.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
@@ -18,19 +18,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateDodge.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateDodge.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Inputs/DA_PlayerCharacterInputData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Inputs/DA_PlayerCharacterInputData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Inputs/IMC_PlayerInputMap.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/L_Leandro.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/L_Leandro.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/StateMachine/PlayerStateMachine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/StateMachine/PlayerStateMachine.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/Inputs/PlayerCharacterInputData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/Inputs/PlayerCharacterInputData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacterStateID.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacterStateID.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/TestGM.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/TestGM.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,24 +69,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EpicGames.AspNet.executor": "Run",
-    "C++ Project.BossFight.executor": "Run",
-    "C/C++ Project.BossFight.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "DEV",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "UnrealLinkOptionsId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EpicGames.AspNet.executor&quot;: &quot;Run&quot;,
+    &quot;C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
+    &quot;C/C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Clément&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ Project.BossFight">
     <configuration name="BossFight" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -141,8 +134,13 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/AutomationTool/AutomationTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -159,8 +157,13 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -182,6 +185,7 @@
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -191,7 +195,7 @@
         <settings>
           <option name="containerName" value="epicgames.perforce.fixture" />
           <option name="contextFolderPath" value="E:\Repos\PFEBossFight" />
-          <option name="sourceFilePath" value="C:/Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/Dockerfile" />
+          <option name="sourceFilePath" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/Dockerfile" />
         </settings>
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
@@ -236,6 +240,7 @@
       <workItem from="1761033464843" duration="7083000" />
       <workItem from="1761115156285" duration="3598000" />
       <workItem from="1761118849541" duration="8211000" />
+      <workItem from="1761210646679" duration="905000" />
     </task>
     <servers />
   </component>
