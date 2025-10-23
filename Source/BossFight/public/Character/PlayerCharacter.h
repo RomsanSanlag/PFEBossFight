@@ -68,13 +68,17 @@ protected:
 public:
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
+	float GetInputDodgeBuffer() const;
 
 protected:
 	UPROPERTY()
 	float InputMoveX = 0.f;
-
+	
 	UPROPERTY()
 	float InputMoveY = 0.f;
+
+	UPROPERTY()
+	float InputDodgeBuffer = 0.f;
 
 private:
 	void OnInputMoveX(const FInputActionValue& InputActionValue);
@@ -85,7 +89,9 @@ private:
 	void OnInputMoveYCompleted(const FInputActionValue& InputActionValue);
 	void Look(const FInputActionValue& Value);
 	void BindInputMoveYAxisActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void BindInputDodge(UEnhancedInputComponent* EnhancedInputComponent);
 	void BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void OnInputDodge(const FInputActionValue& InputActionValue);
 
 #pragma endregion
 

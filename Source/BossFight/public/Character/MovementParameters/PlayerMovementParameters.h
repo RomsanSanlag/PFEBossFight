@@ -27,11 +27,14 @@ public:
         
         TurnDeccelerationForce = 5.0f;
         TurnDeccelerationTime = 5.0f;
-
         TurnReaccelerationForce = 5.0f;
         TurnReaccelerationTime = 5.0f;
-
         TurnAccelerationRetention = 50.0f;
+        
+        DashDuration = 1.0f;
+        DashDistance = 600.0f;
+
+        DodgeCooldown = 5.0f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -58,4 +61,12 @@ public:
     float TurnReaccelerationTime;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Turn", meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
     float TurnAccelerationRetention = 1.0f;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Dodge")
+    float DashDuration;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Dodge")
+    float DashDistance;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Dodge")
+    float DodgeCooldown;
+
 };

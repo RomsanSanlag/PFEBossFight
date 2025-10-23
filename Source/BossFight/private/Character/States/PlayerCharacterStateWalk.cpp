@@ -62,7 +62,8 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 {
     Super::StateTick(DeltaTime);
     
-
+    GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, 
+FString::Printf(TEXT("Dodge Cooldown : %f"), StateMachine->DodgeCooldown));
     UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
     if (!Movement) return;
     
@@ -97,21 +98,15 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
         {
             CurrentTurnDeccelerationTime += DeltaTime;
             CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed*TurnAccelerationRetention, DeltaTime, TurnDeccelerationForce);
-            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, 
-                FString::Printf(TEXT("Decceleration")));
         }
         else if (CurrentTurnReaccelerationTime < TurnReaccelerationTime)
         {
             CurrentTurnReaccelerationTime += DeltaTime;
             CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed, DeltaTime, TurnReaccelerationForce);
-                        GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Blue, 
-                            FString::Printf(TEXT("acceleration")));
         }
         else
         {
             CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed, DeltaTime, AccelerationForce);
-            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, 
-        FString::Printf(TEXT("Normal")));
         }
         Movement->MaxWalkSpeed = CurrentSpeed;
         float ClampedMagnitude = FMath::Min(InputMagnitude, 1.f);
@@ -128,12 +123,15 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     }
 
     LastMoveDirection = RawInputDirection.GetSafeNormal();
-    
+
+    if (Character->GetInputDodgeBuffer() and StateMachine->DodgeCooldown <= 0.0f)
+    {
+        StateMachine->ChangeState(PlayerCharacterStateID::Dodge);
+        return;
+    }
     if (CurrentSpeed < MaxWalkSpeed * 0.1f && InputMagnitude < 0.1f)
     {
         StateMachine->ChangeState(PlayerCharacterStateID::Idle);
         return;
     }
-
-
 }
