@@ -19,16 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack60.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack60.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Lazer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Lazer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyesFocus.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyesFocus.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Prevwiew.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Prevwiew.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Maps/L_Marion_Map_GoldenHour.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Maps/L_Marion_Map_GoldenHour.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Bullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Bullet.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/A/DR/QXX98OPJ4AJ7TVJAKXO0VX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/A/DR/QXX98OPJ4AJ7TVJAKXO0VX.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/C/6Y/QDYTQD8SFSRZS61M3UTU8Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/C/6Y/QDYTQD8SFSRZS61M3UTU8Y.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/E/S6/C0CH33EINH9IA7V4YMR29Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/StarterContent/Maps/ClementMapTest/E/S6/C0CH33EINH9IA7V4YMR29Y.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +232,7 @@
       <workItem from="1759487762055" duration="1031000" />
       <workItem from="1760945881324" duration="54000" />
       <workItem from="1760946192377" duration="977000" />
-      <workItem from="1761029139958" duration="6795000" />
+      <workItem from="1761029139958" duration="9714000" />
     </task>
     <servers />
   </component>
