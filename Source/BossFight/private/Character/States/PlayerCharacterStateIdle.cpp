@@ -38,8 +38,7 @@ void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 	
-	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, 
-FString::Printf(TEXT("Dodge Cooldown : %f"), StateMachine->DodgeCooldown));
+	
 	
 	if (Character->GetInputDodgeBuffer() and StateMachine->DodgeCooldown <= 0.0f)
 	{
