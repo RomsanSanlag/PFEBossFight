@@ -6,11 +6,14 @@
 #include "BossFight/BossFightCharacter.h"
 #include "GameFramework/Character.h"
 #include "BossFight/public/StateMachine/PlayerStateMachine.h"
+#include "Features/PersistingDodgeHitbox.h"
 #include "Inputs/PlayerCharacterInputData.h"
 #include "MovementParameters/PlayerMovementParameters.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnTakeDamageNative, float);
 
 UCLASS()
 class BOSSFIGHT_API APlayerCharacter : public ACharacter
@@ -47,6 +50,13 @@ public:
 	UPROPERTY(EditAnywhere)
 	UPlayerMovementParameters* PlayerMovementParameters;
 
+	UPROPERTY(EditAnywhere)
+	UClass* PersistingDodgeHitbox;
+
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnTakeDamage(float DamageAmount);
+	void TriggerTimeDilation(float time);
+
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
@@ -66,6 +76,9 @@ protected:
 
 #pragma region InputMove
 public:
+
+	FOnTakeDamageNative OnTakeDamageNative;
+	
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
 	float GetInputDodgeBuffer() const;

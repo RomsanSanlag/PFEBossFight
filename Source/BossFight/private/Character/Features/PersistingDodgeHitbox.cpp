@@ -15,10 +15,19 @@ APersistingDodgeHitbox::APersistingDodgeHitbox()
 void APersistingDodgeHitbox::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	FTimerHandle DelayHandle;
+	GetWorld()->GetTimerManager().SetTimer(
+		DelayHandle,
+		[this]()
+		{
+			Destroy();
+		},
+		2.0f,
+		false
+	);
 }
 
-// Called every frame
 void APersistingDodgeHitbox::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

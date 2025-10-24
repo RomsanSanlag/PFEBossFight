@@ -49,6 +49,17 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
 
+	if (Character->PersistingDodgeHitbox)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+		FVector SpawnLocation = Character->GetActorLocation();
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		APersistingDodgeHitbox* SpawnedActor = GetWorld()->SpawnActor<APersistingDodgeHitbox>(Character->PersistingDodgeHitbox, SpawnLocation, SpawnRotation, SpawnParams);
+	}
+
 }
 
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
