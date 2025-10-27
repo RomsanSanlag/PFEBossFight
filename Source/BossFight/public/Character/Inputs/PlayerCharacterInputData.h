@@ -21,4 +21,10 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UInputAction> InputActionMoveY;
+
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UInputAction> InputActionLook;
+
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UInputAction> InputActionDodgeBuffer;
 };
