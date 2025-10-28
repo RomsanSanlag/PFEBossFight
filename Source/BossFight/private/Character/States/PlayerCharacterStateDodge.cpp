@@ -45,8 +45,20 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	
 	DashDuration = PlayerMovementParameters->DashDuration;
 	DashDistance = PlayerMovementParameters->DashDistance;
+	DashEasing = PlayerMovementParameters->DashEasing;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
+
+	if (Character->PersistingDodgeHitbox)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+		FVector SpawnLocation = Character->GetActorLocation();
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		APersistingDodgeHitbox* SpawnedActor = GetWorld()->SpawnActor<APersistingDodgeHitbox>(Character->PersistingDodgeHitbox, SpawnLocation, SpawnRotation, SpawnParams);
+	}
 
 }
 
@@ -73,7 +85,10 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	);
 
 	DashTime += DeltaTime;
-	float Alpha = FMath::Clamp(DashTime / DashDuration, 0.f, 1.f);
+	float MinTime, MaxTime;
+	DashEasing->GetTimeRange(MinTime, MaxTime);
+	float NormalizedTime = FMath::Lerp(MinTime, MaxTime, DashTime / DashDuration);
+	float Alpha = FMath::Clamp(DashEasing->GetFloatValue(NormalizedTime), 0.f, 1.f);
 	FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
 	Character->SetActorLocation(NewLocation, true);
 

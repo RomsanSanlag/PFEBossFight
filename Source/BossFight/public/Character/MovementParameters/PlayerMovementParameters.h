@@ -10,6 +10,10 @@
  * Data Asset contenant tous les paramètres de mouvement du joueur.
  * Permet de créer différents presets (Normal, Fast, Heavy, etc.) et de les tweaker facilement.
  */
+
+
+// Enum pour les types de courbes d'accélération
+
 UCLASS(BlueprintType)
 class BOSSFIGHT_API UPlayerMovementParameters : public UDataAsset
 {
@@ -33,8 +37,9 @@ public:
         
         DashDuration = 1.0f;
         DashDistance = 600.0f;
-
         DodgeCooldown = 5.0f;
+        DashEasing;
+        
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -68,5 +73,7 @@ public:
     float DashDistance;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Dodge")
     float DodgeCooldown;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Dodge")
+    UCurveFloat* DashEasing;
 
 };
