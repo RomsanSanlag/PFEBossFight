@@ -56,6 +56,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnTakeDamage(float DamageAmount);
+	void TriggerOnPerfectDodge(float DamageAmount);
 	void TriggerTimeDilation(float time);
 
 protected:

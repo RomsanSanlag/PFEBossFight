@@ -77,21 +77,26 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
-	/*
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
-	);
-
 	DashTime += DeltaTime;
 	float MinTime, MaxTime;
-	DashEasing->GetTimeRange(MinTime, MaxTime);
-	float NormalizedTime = FMath::Lerp(MinTime, MaxTime, DashTime / DashDuration);
-	float Alpha = FMath::Clamp(DashEasing->GetFloatValue(NormalizedTime), 0.f, 1.f);
-	FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
-	Character->SetActorLocation(NewLocation, true);
+	if (DashEasing != nullptr)
+	{
+		DashEasing->GetTimeRange(MinTime, MaxTime);
+		float NormalizedTime = FMath::Lerp(MinTime, MaxTime, DashTime / DashDuration);
+		float Alpha = FMath::Clamp(DashEasing->GetFloatValue(NormalizedTime), 0.f, 1.f);
+		FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
+		Character->SetActorLocation(NewLocation, true);
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(
+		-1,
+		3.f,
+		FColor::Red,
+		FString::Printf(TEXT("TU AS OUBLIE D'AJOUTER UNE COURBE D'EASING DANS LES PARAMETRES DE MOUVEMENT"))
+		);
+	}
+
 
 	if (DashTime >= DashDuration)
 	{
@@ -105,5 +110,5 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 			return;
 		}
-	}*/
+	}
 }
