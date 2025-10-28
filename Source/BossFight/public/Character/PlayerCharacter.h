@@ -6,11 +6,15 @@
 #include "BossFight/BossFightCharacter.h"
 #include "GameFramework/Character.h"
 #include "BossFight/public/StateMachine/PlayerStateMachine.h"
+#include "Features/PersistingDodgeHitbox.h"
 #include "Inputs/PlayerCharacterInputData.h"
 #include "MovementParameters/PlayerMovementParameters.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnTakeDamageNative, float);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnPerfectDodge, float);
 
 UCLASS()
 class BOSSFIGHT_API APlayerCharacter : public ACharacter
@@ -47,6 +51,16 @@ public:
 	UPROPERTY(EditAnywhere)
 	UPlayerMovementParameters* PlayerMovementParameters;
 
+	UPROPERTY(EditAnywhere)
+	UClass* PersistingDodgeHitbox;
+
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnTakeDamage(float DamageAmount);
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnPerfectDodge(float DamageAmount);
+	
+	void TriggerTimeDilation();
+
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
@@ -66,15 +80,23 @@ protected:
 
 #pragma region InputMove
 public:
+
+	FOnTakeDamageNative OnTakeDamageNative;
+	FOnPerfectDodge OnPerfectDodge;
+	
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
+	float GetInputDodgeBuffer() const;
 
 protected:
 	UPROPERTY()
 	float InputMoveX = 0.f;
-
+	
 	UPROPERTY()
 	float InputMoveY = 0.f;
+
+	UPROPERTY()
+	float InputDodgeBuffer = 0.f;
 
 private:
 	void OnInputMoveX(const FInputActionValue& InputActionValue);
@@ -83,7 +105,11 @@ private:
 
 	void OnInputMoveY(const FInputActionValue& InputActionValue);
 	void OnInputMoveYCompleted(const FInputActionValue& InputActionValue);
+	void Look(const FInputActionValue& Value);
 	void BindInputMoveYAxisActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void BindInputDodge(UEnhancedInputComponent* EnhancedInputComponent);
+	void BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void OnInputDodge(const FInputActionValue& InputActionValue);
 
 #pragma endregion
 
