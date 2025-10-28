@@ -86,7 +86,7 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
-	OnTakeDamageNative.Broadcast(DamageAmount);
+	OnPerfectDodge.Broadcast(DamageAmount);
 	TriggerTimeDilation(1.f);
 }
 
