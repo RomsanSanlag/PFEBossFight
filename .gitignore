@@ -78,3 +78,27 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Binaries/Mac/UnrealEditor.modules
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Binaries/Win64/UnrealEditor-ElectronicNodes.pdb
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Binaries/Win64/UnrealEditor.modules
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Config/FilterPlugin.ini
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/ElectronicNodes.uplugin
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Resources/Icon128.png
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/ElectronicNodes.Build.cs
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ElectronicNodes.cpp
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ENCommands.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ENConnectionDrawingPolicy.cpp
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ENConnectionDrawingPolicy.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ENPathDrawer.cpp
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/ENPathDrawer.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Lib/HotPatch.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Patch/NodeFactoryPatch.cpp
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Patch/NodeFactoryPatch.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Policies/ENAnimGraphConnectionDrawingPolicy.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Policies/ENBehaviorTreeConnectionDrawingPolicy.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Policies/ENMaterialGraphConnectionDrawingPolicy.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Popup/ENUpdatePopup.cpp
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Popup/ENUpdatePopup.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Public/ElectronicNodes.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Public/ElectronicNodesSettings.h
+Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/UpdateConfig.ini
