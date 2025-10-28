@@ -14,6 +14,7 @@ class BOSSFIGHT_API APersistingDodgeHitbox : public AActor
 public:
 	// Sets default values for this actor's properties
 	APersistingDodgeHitbox();
+	void SetDestroyTime(float time);
 
 protected:
 	// Called when the game starts or when spawned

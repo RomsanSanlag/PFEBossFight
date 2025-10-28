@@ -46,20 +46,12 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	DashDuration = PlayerMovementParameters->DashDuration;
 	DashDistance = PlayerMovementParameters->DashDistance;
 	DashEasing = PlayerMovementParameters->DashEasing;
+	DodgeDelay = PlayerMovementParameters->DodgeDelay;
+	PerfectDodgeWindow = PlayerMovementParameters->PerfectDodgeWindow;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
 
-	if (Character->PersistingDodgeHitbox)
-	{
-		FActorSpawnParameters SpawnParams;
-		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-		FVector SpawnLocation = Character->GetActorLocation();
-		FRotator SpawnRotation = FRotator::ZeroRotator;
-
-		APersistingDodgeHitbox* SpawnedActor = GetWorld()->SpawnActor<APersistingDodgeHitbox>(Character->PersistingDodgeHitbox, SpawnLocation, SpawnRotation, SpawnParams);
-	}
-
+	IsPerfectDodgeHitboxSpawned = false;
 }
 
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
@@ -95,6 +87,18 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 		FColor::Red,
 		FString::Printf(TEXT("TU AS OUBLIE D'AJOUTER UNE COURBE D'EASING DANS LES PARAMETRES DE MOUVEMENT"))
 		);
+	}
+	if (Character->PersistingDodgeHitbox and !IsPerfectDodgeHitboxSpawned and DashTime>DodgeDelay)
+	{
+		IsPerfectDodgeHitboxSpawned = true;
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+		FVector SpawnLocation = Character->GetActorLocation();
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		DodgeHitbox = GetWorld()->SpawnActor<APersistingDodgeHitbox>(Character->PersistingDodgeHitbox, SpawnLocation, SpawnRotation, SpawnParams);
+		DodgeHitbox->SetDestroyTime(PerfectDodgeWindow);
 	}
 
 

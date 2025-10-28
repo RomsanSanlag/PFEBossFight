@@ -59,7 +59,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnPerfectDodge(float DamageAmount);
 	
-	void TriggerTimeDilation(float time);
+	void TriggerTimeDilation();
 
 protected:
 	UPROPERTY(BlueprintReadOnly)

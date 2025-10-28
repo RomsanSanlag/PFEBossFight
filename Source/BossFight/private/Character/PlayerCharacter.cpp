@@ -87,14 +87,14 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
 	OnPerfectDodge.Broadcast(DamageAmount);
-	TriggerTimeDilation(1.f);
+	TriggerTimeDilation();
 }
 
 
-void APlayerCharacter::TriggerTimeDilation(float time)
+void APlayerCharacter::TriggerTimeDilation()
 {
 	UCameraComponent* Camera = GetComponentByClass<UCameraComponent>();
-	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 0.2f);
+	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
 	Camera->PostProcessSettings.bOverride_ColorSaturation = true;
 	Camera->PostProcessSettings.ColorSaturation = FVector4(0.0f, 0.0f, 0.0f, 1.0f);
 	
@@ -105,7 +105,7 @@ void APlayerCharacter::TriggerTimeDilation(float time)
 			UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
 			Camera->PostProcessSettings.ColorSaturation = FVector4(1.0f, 1.0f, 1.0f, 1.0f);
 		},
-		time,
+		PlayerMovementParameters->TimeSlowDuration,
 		false
 	);
 }

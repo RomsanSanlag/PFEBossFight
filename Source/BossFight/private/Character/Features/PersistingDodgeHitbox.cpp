@@ -15,7 +15,10 @@ APersistingDodgeHitbox::APersistingDodgeHitbox()
 void APersistingDodgeHitbox::BeginPlay()
 {
 	Super::BeginPlay();
+}
 
+void APersistingDodgeHitbox::SetDestroyTime(float time)
+{
 	FTimerHandle DelayHandle;
 	GetWorld()->GetTimerManager().SetTimer(
 		DelayHandle,
@@ -23,7 +26,7 @@ void APersistingDodgeHitbox::BeginPlay()
 		{
 			Destroy();
 		},
-		2.0f,
+		time,
 		false
 	);
 }
