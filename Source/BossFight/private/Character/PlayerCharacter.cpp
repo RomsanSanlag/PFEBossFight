@@ -82,8 +82,14 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
 	OnTakeDamageNative.Broadcast(DamageAmount);
+}
+
+void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
+{
+	OnTakeDamageNative.Broadcast(DamageAmount);
 	TriggerTimeDilation(1.f);
 }
+
 
 void APlayerCharacter::TriggerTimeDilation(float time)
 {
