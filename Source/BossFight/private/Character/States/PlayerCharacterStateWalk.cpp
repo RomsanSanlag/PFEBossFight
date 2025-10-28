@@ -62,7 +62,6 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 {
     Super::StateTick(DeltaTime);
     
-    
     UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
     if (!Movement) return;
     
