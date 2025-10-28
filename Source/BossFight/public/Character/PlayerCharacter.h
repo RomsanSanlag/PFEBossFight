@@ -66,6 +66,15 @@ protected:
 	TObjectPtr<UPlayerStateMachine> StateMachine;
 
 #pragma endregion
+#pragma region HealthSystem
+public:
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	int GetLifePoint() const;
+protected:
+	int LifePoint;
+	UPROPERTY()
+	int LifePointMax = 100;
+	void ReduceLifePoint(int DamageAmount);
 #pragma region Input Data / Mapping Context
 public:
 	UPROPERTY()
@@ -77,7 +86,6 @@ public:
 protected:
 	void SetupMappingContextIntoController() const;
 	void SetupInputs();
-
 #pragma region InputMove
 public:
 
@@ -97,6 +105,8 @@ protected:
 
 	UPROPERTY()
 	float InputDodgeBuffer = 0.f;
+
+	
 
 private:
 	void OnInputMoveX(const FInputActionValue& InputActionValue);
