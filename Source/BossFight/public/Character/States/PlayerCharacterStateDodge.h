@@ -30,6 +30,7 @@ protected:
 	// === PARAMÈTRES DE DODGE ===
 	float DashDuration;
 	float DashDistance;
+	UCurveFloat* DashEasing;
 
 private:
 	// === VARIABLES INTERNES ===
