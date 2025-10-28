@@ -73,7 +73,7 @@ public:
 protected:
 	int LifePoint;
 	UPROPERTY()
-	int LifePointMax = 100;
+	int LifePointMax = 5;
 	void ReduceLifePoint(int DamageAmount);
 #pragma region Input Data / Mapping Context
 public:

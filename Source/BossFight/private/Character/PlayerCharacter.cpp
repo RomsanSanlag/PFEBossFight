@@ -89,7 +89,7 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 	ReduceLifePoint(DamageAmount);
 }
 
-void APlayerCharacter::ReduceLifePoint(int DamageAmount)
+void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 {
 	LifePoint -= DamageAmount;
 	if (LifePoint < 0) LifePoint = 0; // game over a mettre plus tard

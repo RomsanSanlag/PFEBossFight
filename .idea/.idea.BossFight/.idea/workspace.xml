@@ -19,8 +19,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Lazer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Lazer.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyes.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyes.uasset" afterDir="false" />
@@ -28,6 +28,7 @@
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Prevwiew.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Prevwiew.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_PrevwiewLazerSol.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_PrevwiewLazerSol.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_PrevwiewTsunami.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_PrevwiewTsunami.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WB_HUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WB_HUD.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" afterDir="false" />
     </list>
