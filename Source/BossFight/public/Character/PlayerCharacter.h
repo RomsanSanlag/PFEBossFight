@@ -14,6 +14,7 @@
 class UPlayerStateMachine;
 
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnTakeDamageNative, float);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnPerfectDodge, float);
 
 UCLASS()
 class BOSSFIGHT_API APlayerCharacter : public ACharacter
@@ -78,6 +79,7 @@ protected:
 public:
 
 	FOnTakeDamageNative OnTakeDamageNative;
+	FOnPerfectDodge OnPerfectDodge;
 	
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;

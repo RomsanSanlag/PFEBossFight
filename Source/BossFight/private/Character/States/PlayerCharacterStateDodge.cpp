@@ -77,6 +77,7 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
+	/*
 	GEngine->AddOnScreenDebugMessage(
 	-1,
 	3.f,
@@ -104,5 +105,5 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 			return;
 		}
-	}
+	}*/
 }

@@ -66,7 +66,10 @@ void APlayerCharacter::InitStateMachine()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, TEXT("Took damage!"));
 });
-	
+	OnPerfectDodge.AddLambda([](float Damage)
+{
+GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Purple, TEXT("Perfect Dodge!"));
+});
 }
 
 void APlayerCharacter::TickStateMachine(float DeltaTime) const
