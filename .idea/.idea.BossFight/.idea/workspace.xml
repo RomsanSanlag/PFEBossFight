@@ -19,8 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/L_Marion.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/L_Marion.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +242,7 @@
       <workItem from="1761118849541" duration="8211000" />
       <workItem from="1761210646679" duration="1207000" />
       <workItem from="1761637840621" duration="639000" />
+      <workItem from="1761728824425" duration="753000" />
     </task>
     <servers />
   </component>
