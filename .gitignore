@@ -78,3 +78,24 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# ---------------------------------------------
+# Wwise-specific rules
+# ---------------------------------------------
+
+# Keep the Wwise plugin and project
+!Plugins/Wwise/
+!Plugins/Wwise/**
+
+# Keep the Wwise project and soundbanks
+!WwiseProject/
+!WwiseProject/**
+!WwiseProject/GeneratedSoundBanks/**
+
+# But ignore local Wwise user caches and temp files
+WwiseProject/.cache/
+WwiseProject/.vs/
+WwiseProject/*.bak
+WwiseProject/Temp/
+WwiseProject/.userprefs
+WwiseProject/Backup/**
