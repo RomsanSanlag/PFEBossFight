@@ -57,6 +57,7 @@ Binaries/Win64/*
 
 # Builds
 Build/*
+.idea/*
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/
