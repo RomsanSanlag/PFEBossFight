@@ -24,8 +24,8 @@ void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	CreateStateMachine();
-
 	InitStateMachine();
+	LifePoint = LifePointMax;
 }
 
 // Called every frame
@@ -35,6 +35,10 @@ void APlayerCharacter::Tick(float DeltaTime)
 	TickStateMachine(DeltaTime);
 }
 
+int APlayerCharacter::GetLifePoint() const
+{
+	return LifePoint;
+}
 // Called to bind functionality to input
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -82,6 +86,13 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
 	OnTakeDamageNative.Broadcast(DamageAmount);
+	ReduceLifePoint(DamageAmount);
+}
+
+void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
+{
+	LifePoint -= DamageAmount;
+	if (LifePoint < 0) LifePoint = 0; // game over a mettre plus tard
 }
 
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
