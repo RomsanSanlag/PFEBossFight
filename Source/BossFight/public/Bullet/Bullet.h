@@ -22,20 +22,32 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	FVector GetHomingDirection(FVector CurrentPos, FVector BasePos, FVector TargetPos, float HomingStrength,
+	/*FVector GetHomingDirection(FVector CurrentPos, FVector BasePos, FVector TargetPos, float HomingStrength, float HomingProgress);
+	float ExpoOut(float t, float k);*/
+	FVector GetBaseTrajectory();
 
-	float HomingProgress);
-	float ExpoOut(float t, float k);
-	FVector GetBaseTrajectory(FVector Start, FVector End, float t, float ArcHeight);
-
+	UPROPERTY(EditAnywhere)
 	float t;
+	UPROPERTY(EditAnywhere)
 	float TravelTime;
+	UPROPERTY(EditAnywhere)
 	float ArcHeight;
-	float HomingRampUp;
-	float HomingStrength;
-
-	FVector CurrentPos;
+	UPROPERTY(EditAnywhere)
 	FVector StartPos;
+	UPROPERTY(EditAnywhere)
+	FVector EndPos;
 
-	ACharacter* BossCharacter;
+	UPROPERTY(EditAnywhere)
+	FVector2f XOffset;
+	UPROPERTY(EditAnywhere)
+	FVector2f YOffset;
+	UPROPERTY(EditAnywhere)
+	float SpawnRadius;
+
+	FVector OffSetVector;
+
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* OffsetEasing;
+
+	/*ACharacter* BossCharacter;*/
 };

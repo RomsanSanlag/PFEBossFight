@@ -3,6 +3,7 @@
 
 #include "Bullet/Bullet.h"
 
+#include "Character/PlayerCharacter.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 // Sets default values
@@ -17,18 +18,29 @@ void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.BP_BossCharacter'"));
-	if (BossBPClass)
-	{
-		TArray<AActor*> FoundBosses;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), BossBPClass, FoundBosses);
+	// Récupération du player
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (!PlayerCharacter || !PC) return;
 
-		if (FoundBosses.Num() > 0)
-		{
-			BossCharacter = Cast<ACharacter>(FoundBosses[0]);
-			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
-		}
-	}
+	FVector PlayerLoc = PlayerCharacter->GetActorLocation();
+	FRotator ControlRot = PC->GetControlRotation();
+	FVector LookDir = ControlRot.Vector();
+
+	// Génère un angle aléatoire dans le plan X-Y
+	float RandomAngle = FMath::RandRange(0.f, 2 * PI);
+
+	// Crée un vecteur de décalage dans un cercle autour du joueur
+	FVector2D CircleOffset = FVector2D(FMath::Cos(RandomAngle), FMath::Sin(RandomAngle)) * SpawnRadius;
+
+	// Définit la position de départ de la balle
+	StartPos = PlayerLoc + FVector(CircleOffset.X, CircleOffset.Y, 0.f);
+
+	// Calcule un vecteur d'offset pour créer une trajectoire arquée
+	OffSetVector = FVector(CircleOffset.X, CircleOffset.Y, 0.f).GetSafeNormal();
+
+	// Position finale (par exemple, tout droit devant la caméra)
+	EndPos = StartPos + LookDir * 1000.f;
 }
 
 // Called every frame
@@ -38,38 +50,21 @@ void ABullet::Tick(float DeltaTime)
 
 	t += DeltaTime / TravelTime;
 	
-	FVector BasePos = GetBaseTrajectory(StartPos, BossCharacter->GetActorLocation(), t, ArcHeight);
-	float HomingProgress = FMath::Clamp(t * HomingRampUp, 0.f, 1.f);
 
-	FVector Dir = GetHomingDirection(CurrentPos, BasePos, BossCharacter->GetActorLocation(),
-									 HomingStrength, HomingProgress);
-
-	float Speed = (End - Start).Size() / TravelTime;
-	CurrentPos += Dir * Speed * DeltaTime;
-
-	SetActorLocation(CurrentPos);
+	FVector NewLocation = GetBaseTrajectory();
+	SetActorLocation(NewLocation);
 
 }
 
-FVector ABullet::GetHomingDirection(FVector CurrentPos, FVector BasePos, FVector TargetPos, float HomingStrength, float HomingProgress)
-{
-	FVector BaseDir = (BasePos - CurrentPos).GetSafeNormal();
-	FVector ToTarget = (TargetPos - CurrentPos).GetSafeNormal();
-	FVector NewDir = FMath::Lerp(BaseDir, ToTarget, HomingStrength * HomingProgress);
-	return NewDir.GetSafeNormal();
-}
-
-float ABullet::ExpoOut(float t, float k = 8.f)
+float ExpoOut(float t, float k = 8.f)
 {
 	return 1.f - FMath::Pow(2.f, -k * t);
 }
 
-FVector ABullet::GetBaseTrajectory(FVector Start, FVector End, float t, float ArcHeight)
+FVector ABullet::GetBaseTrajectory()
 {
-	float expoT = ExpoOut(t);
-	FVector LerpPos = FMath::Lerp(Start, End, expoT);
-	float Arc = ArcHeight * (1 - FMath::Pow(2 * t - 1, 2));
-	LerpPos.Z += Arc;
-	return LerpPos;
+	FVector linearLerp = FMath::Lerp(StartPos, EndPos, t);
+	FVector Offset = OffsetEasing->GetFloatValue(t) * (OffSetVector * ArcHeight);
+	FVector finalPose = linearLerp + Offset;
+	return finalPose;
 }
-
