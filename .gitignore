@@ -47,16 +47,17 @@ SourceArt/**/*.png
 SourceArt/**/*.tga
 
 # Binary Files
-!Binaries
 Binaries/*
+Plugins/**/Binaries/*
 !Binaries/Win64
 Binaries/Win64/*
-Binaries/Win64/BossFightEditor.target
+!Binaries/Win64/PFEBossFight.target
 !Binaries/Win64/UnrealEditor.modules
-!Binaries/Win64/UnrealEditor-BossFight.dll
+!Binaries/Win64/UnrealEditor-PFEBossFight.dll
 
 # Builds
 Build/*
+.idea/*
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/
@@ -78,6 +79,29 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# ---------------------------------------------
+# Wwise-specific rules
+# ---------------------------------------------
+
+# Keep the Wwise plugin and project
+!Plugins/Wwise/
+!Plugins/Wwise/**
+
+# Keep the Wwise project and soundbanks
+!WwiseProject/
+!WwiseProject/**
+!WwiseProject/GeneratedSoundBanks/**
+
+# But ignore local Wwise user caches and temp files
+WwiseProject/.cache/
+WwiseProject/.vs/
+WwiseProject/*.bak
+WwiseProject/Temp/
+WwiseProject/.userprefs
+WwiseProject/Backup/**
+# ---------------------------------------------
+
 Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Public/ElectronicNodesSettings.h
 Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Public/ElectronicNodes.h
 Plugins/Electronic Nodes v3.15 (5.5)/Electronic Nodes v3.15 (5.5)/Electron913898e3acc7V14/Source/ElectronicNodes/Private/Popup/ENUpdatePopup.h
