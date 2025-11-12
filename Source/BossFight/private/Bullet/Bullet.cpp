@@ -4,6 +4,7 @@
 #include "Bullet/Bullet.h"
 
 #include "Character/PlayerCharacter.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 // Sets default values
@@ -17,54 +18,139 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UStaticMeshComponent* CollisionComponent = FindComponentByClass<UStaticMeshComponent>();
+	if (CollisionComponent)
+	{
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			3.f,
+			FColor::Yellow,
+			FString::Printf(TEXT("Found Collision Component"))
+		);
+		CollisionComponent->OnComponentHit.AddDynamic(this, &ABullet::OnHit);
+	}
 	
 	// Récupération du player
-	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	PlayerCharacter = Cast<APlayerCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	if (!PlayerCharacter || !PC) return;
 
 	FVector PlayerLoc = PlayerCharacter->GetActorLocation();
 	FRotator ControlRot = PC->GetControlRotation();
 	FVector LookDir = ControlRot.Vector();
 
-	// Génère un angle aléatoire dans le plan X-Y
-	float RandomAngle = FMath::RandRange(0.f, 2 * PI);
+	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossDev.BP_BossDev_C'"));
+	if (BossBPClass)
+	{
+		TArray<AActor*> FoundBosses;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), BossBPClass, FoundBosses);
 
-	// Crée un vecteur de décalage dans un cercle autour du joueur
-	FVector2D CircleOffset = FVector2D(FMath::Cos(RandomAngle), FMath::Sin(RandomAngle)) * SpawnRadius;
+		if (FoundBosses.Num() > 0)
+		{
+			BossCharacter = Cast<ACharacter>(FoundBosses[0]);
+			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
+		}
+	}
+	StartPos = PlayerCharacter->GetActorLocation();
+	EndPos = StartPos+PlayerCharacter->GetActorForwardVector()*5000;
 
-	// Définit la position de départ de la balle
-	StartPos = PlayerLoc + FVector(CircleOffset.X, CircleOffset.Y, 0.f);
+	PC->GetPlayerViewPoint(Origin, ViewRot);
 
-	// Calcule un vecteur d'offset pour créer une trajectoire arquée
-	OffSetVector = FVector(CircleOffset.X, CircleOffset.Y, 0.f).GetSafeNormal();
-
-	// Position finale (par exemple, tout droit devant la caméra)
-	EndPos = StartPos + LookDir * 1000.f;
+	BossLocation = BossCharacter->GetActorLocation();
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		3.f,
+		FColor::Magenta,
+		FString::Printf(TEXT("Aim distance from boss %f"), GetDistanceFromAim(BossLocation))
+	);
 }
 
 // Called every frame
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (!PlayerCharacter || !BossCharacter) return;
 
-	t += DeltaTime / TravelTime;
+	time += DeltaTime;
+	float T = FMath::Clamp(time / TravelTime, 0.f, 1.f);
+	FVector Up = FVector::UpVector;
+
+	// Distance de visée
+	float AimDist = GetDistanceFromAim(BossLocation);
+
+	// Paramètre de lissage (plus AimDist est petit, plus la balle va vers le boss)
+	float MaxAimDistance = 2000.f;
+	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistance), 0.f, 1.f);
+	float TimedHomingFactor = FMath::Clamp(HomingFactor * T, 0.f, HomingFactor);
+
+	// Interpolation de la destination
+	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
+
+	// Arc Bezier
+	FVector NewPos = ComputeArcBezier(StartPos, FinalTarget, Up, ArcHeight, T);
+	SetActorLocation(NewPos);
+}
+
+FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, const FVector& Up, float Height, float T)
+{
+	T = FMath::Clamp(T, 0.f, 1.f);
+
+	FVector Mid = (Start + End) * 0.5f;
+	FVector Control = Mid + Up * (2.f * Height);
+
+	float U = 1.f - T;
+	FVector Result = U * U * Start + 2.f * U * T * Control + T * T * End;
+
+	return Result;
+}
+
+float ABullet::GetDistanceFromAim(FVector& Target)
+{
+	FVector Direction = ViewRot.Vector();
 	
+	/*FVector BossLocation = BossCharacter->GetActorLocation();*/
+	FVector ToBoss = Target - Origin;
 
-	FVector NewLocation = GetBaseTrajectory();
-	SetActorLocation(NewLocation);
+	// Projection scalaire du vecteur vers le boss sur la direction de visée
+	float t = FVector::DotProduct(ToBoss, Direction);
 
+	// Si le boss est derrière le joueur, on clamp à 0
+	if (t < 0.0f)
+	{
+		t = 0.0f;
+	}
+
+	// Point le plus proche sur la ligne de visée
+	FVector ClosestPoint = Origin + Direction * t;
+
+	// Distance perpendiculaire (écart latéral)
+	float DistPerpendicular = FVector::Dist(Target, ClosestPoint);
+
+	// Distance le long du rayon (dans la direction de visée)
+	float DistAlong = t;
+
+	return DistPerpendicular;
 }
 
-float ExpoOut(float t, float k = 8.f)
+void ABullet::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	return 1.f - FMath::Pow(2.f, -k * t);
-}
+	GEngine->AddOnScreenDebugMessage(
+	-1,
+	3.f,
+	FColor::Yellow,
+	FString::Printf(TEXT("Triggering overlap %s"), *OtherActor->GetName())
+	);
+	if (!OtherActor || OtherActor == this || !BossCharacter) return;
+	if (OtherActor == BossCharacter)
+	{
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			3.f,
+			FColor::Red,
+			TEXT("Bullet hit the boss !")
+		);
 
-FVector ABullet::GetBaseTrajectory()
-{
-	FVector linearLerp = FMath::Lerp(StartPos, EndPos, t);
-	FVector Offset = OffsetEasing->GetFloatValue(t) * (OffSetVector * ArcHeight);
-	FVector finalPose = linearLerp + Offset;
-	return finalPose;
+		Destroy();
+	}
 }

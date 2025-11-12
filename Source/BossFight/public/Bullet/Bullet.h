@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Character/PlayerCharacter.h"
 #include "GameFramework/Actor.h"
 #include "Bullet.generated.h"
 
@@ -22,12 +23,13 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	/*FVector GetHomingDirection(FVector CurrentPos, FVector BasePos, FVector TargetPos, float HomingStrength, float HomingProgress);
-	float ExpoOut(float t, float k);*/
-	FVector GetBaseTrajectory();
-
+	FVector ComputeArcBezier(const FVector& Start, const FVector& End, const FVector& Up, float Height, float T);
+	float GetDistanceFromAim(FVector& Target);
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse,
+	           const FHitResult& Hit);
 	UPROPERTY(EditAnywhere)
-	float t;
+	float time;
 	UPROPERTY(EditAnywhere)
 	float TravelTime;
 	UPROPERTY(EditAnywhere)
@@ -36,6 +38,12 @@ public:
 	FVector StartPos;
 	UPROPERTY(EditAnywhere)
 	FVector EndPos;
+	UPROPERTY(EditAnywhere)
+	FVector BossLocation;
+	UPROPERTY(EditAnywhere)
+	FVector Origin;
+	UPROPERTY(EditAnywhere)
+	FRotator ViewRot;
 
 	UPROPERTY(EditAnywhere)
 	FVector2f XOffset;
@@ -46,8 +54,10 @@ public:
 
 	FVector OffSetVector;
 
+	ACharacter* BossCharacter;
+	APlayerCharacter* PlayerCharacter;
+	APlayerController* PC;
+
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* OffsetEasing;
-
-	/*ACharacter* BossCharacter;*/
 };
