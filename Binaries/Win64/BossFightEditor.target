@@ -6254,6 +6254,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraFluids/Binaries/Win64/UnrealEditor-NiagaraFluids.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraFluids/Binaries/Win64/UnrealEditor-NiagaraFluids.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraFluids/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/Binaries/Win64/UnrealEditor-NiagaraSimCaching.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -33352,6 +33364,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/FX/NiagaraFluids/NiagaraFluids.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/FX/NiagaraSimCaching/NiagaraSimCaching.uplugin",
 			"Type": "UFS"
 		},
@@ -33813,6 +33829,7 @@
 		"NNEDenoiser",
 		"NNERuntimeORT",
 		"Niagara",
+		"NiagaraFluids",
 		"NiagaraSimCaching",
 		"NullSourceCodeAccess",
 		"ObjectMixer",
