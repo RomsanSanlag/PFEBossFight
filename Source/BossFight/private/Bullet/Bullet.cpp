@@ -28,7 +28,7 @@ void ABullet::BeginPlay()
 			FColor::Yellow,
 			FString::Printf(TEXT("Found Collision Component"))
 		);
-		CollisionComponent->OnComponentHit.AddDynamic(this, &ABullet::OnHit);
+		CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &ABullet::BeginOverlap);
 	}
 	
 	// Récupération du player
@@ -52,8 +52,12 @@ void ABullet::BeginPlay()
 			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
 		}
 	}
-	StartPos = PlayerCharacter->GetActorLocation();
-	EndPos = StartPos+PlayerCharacter->GetActorForwardVector()*5000;
+	
+	PC->GetPlayerViewPoint(Origin, ViewRot);
+
+	StartPos = GetActorLocation();
+	EndPos = StartPos + ViewRot.Vector() * ShootPower;
+
 
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
@@ -64,6 +68,8 @@ void ABullet::BeginPlay()
 		FColor::Magenta,
 		FString::Printf(TEXT("Aim distance from boss %f"), GetDistanceFromAim(BossLocation))
 	);
+
+	Up = GetActorRotation().RotateVector(FVector::UpVector);
 }
 
 // Called every frame
@@ -74,8 +80,12 @@ void ABullet::Tick(float DeltaTime)
 
 	time += DeltaTime;
 	float T = FMath::Clamp(time / TravelTime, 0.f, 1.f);
-	FVector Up = FVector::UpVector;
 
+	if (T>=1.f)
+	{
+		OnBulletDestroyed(this);
+		Destroy();
+	}
 	// Distance de visée
 	float AimDist = GetDistanceFromAim(BossLocation);
 
@@ -88,11 +98,22 @@ void ABullet::Tick(float DeltaTime)
 	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
 
 	// Arc Bezier
-	FVector NewPos = ComputeArcBezier(StartPos, FinalTarget, Up, ArcHeight, T);
+	FVector NewPos = ComputeArcBezier(StartPos, FinalTarget, ArcHeight, T);
+
+	// --- Rotation vers la direction de déplacement ---
+	FVector CurrentPos = GetActorLocation();
+	FVector MoveDir = (NewPos - CurrentPos).GetSafeNormal();
+
+	if (!MoveDir.IsNearlyZero())
+	{
+		FRotator NewRotation = MoveDir.Rotation();
+		SetActorRotation(NewRotation);
+	}
+	
 	SetActorLocation(NewPos);
 }
 
-FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, const FVector& Up, float Height, float T)
+FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, float Height, float T)
 {
 	T = FMath::Clamp(T, 0.f, 1.f);
 
@@ -132,25 +153,14 @@ float ABullet::GetDistanceFromAim(FVector& Target)
 
 	return DistPerpendicular;
 }
-
-void ABullet::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void ABullet::BeginOverlap(UPrimitiveComponent* OverlappedComponent, 
+					  AActor* OtherActor, 
+					  UPrimitiveComponent* OtherComp, 
+					  int32 OtherBodyIndex, 
+					  bool bFromSweep, 
+					  const FHitResult &SweepResult )
 {
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Yellow,
-	FString::Printf(TEXT("Triggering overlap %s"), *OtherActor->GetName())
-	);
 	if (!OtherActor || OtherActor == this || !BossCharacter) return;
-	if (OtherActor == BossCharacter)
-	{
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			3.f,
-			FColor::Red,
-			TEXT("Bullet hit the boss !")
-		);
-
-		Destroy();
-	}
+	OnBulletDestroyed(OtherActor);
+	Destroy();
 }

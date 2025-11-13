@@ -22,37 +22,37 @@ protected:
 
 public:
 	// Called every frame
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnBulletDestroyed(AActor* OtherActor);
+
 	virtual void Tick(float DeltaTime) override;
-	FVector ComputeArcBezier(const FVector& Start, const FVector& End, const FVector& Up, float Height, float T);
+	FVector ComputeArcBezier(const FVector& Start, const FVector& End, float Height, float T);
 	float GetDistanceFromAim(FVector& Target);
 	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse,
-	           const FHitResult& Hit);
-	UPROPERTY(EditAnywhere)
-	float time;
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent, 
+					  AActor* OtherActor, 
+					  UPrimitiveComponent* OtherComp, 
+					  int32 OtherBodyIndex, 
+					  bool bFromSweep, 
+					  const FHitResult &SweepResult );
+
+	
 	UPROPERTY(EditAnywhere)
 	float TravelTime;
 	UPROPERTY(EditAnywhere)
 	float ArcHeight;
 	UPROPERTY(EditAnywhere)
+	float ShootPower;
+
+
+	
 	FVector StartPos;
-	UPROPERTY(EditAnywhere)
 	FVector EndPos;
-	UPROPERTY(EditAnywhere)
 	FVector BossLocation;
-	UPROPERTY(EditAnywhere)
 	FVector Origin;
-	UPROPERTY(EditAnywhere)
 	FRotator ViewRot;
-
-	UPROPERTY(EditAnywhere)
-	FVector2f XOffset;
-	UPROPERTY(EditAnywhere)
-	FVector2f YOffset;
-	UPROPERTY(EditAnywhere)
-	float SpawnRadius;
-
-	FVector OffSetVector;
+	FVector Up;
+	float time;
 
 	ACharacter* BossCharacter;
 	APlayerCharacter* PlayerCharacter;
