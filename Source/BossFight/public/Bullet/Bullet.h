@@ -43,6 +43,14 @@ public:
 	float ArcHeight;
 	UPROPERTY(EditAnywhere)
 	float ShootPower;
+	UPROPERTY(EditAnywhere)
+	float MaxAimDistanceToTriggerHoming;
+	UPROPERTY(EditAnywhere)
+	float CloseDistance;
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* CurveOverTime;
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* SpeedOverTime;
 
 
 	

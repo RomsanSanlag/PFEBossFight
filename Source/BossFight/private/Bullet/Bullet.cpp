@@ -22,12 +22,6 @@ void ABullet::BeginPlay()
 	UStaticMeshComponent* CollisionComponent = FindComponentByClass<UStaticMeshComponent>();
 	if (CollisionComponent)
 	{
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			3.f,
-			FColor::Yellow,
-			FString::Printf(TEXT("Found Collision Component"))
-		);
 		CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &ABullet::BeginOverlap);
 	}
 	
@@ -56,7 +50,14 @@ void ABullet::BeginPlay()
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
 	StartPos = GetActorLocation();
-	EndPos = StartPos + ViewRot.Vector() * ShootPower;
+	
+	float PlayerToBossDist = FVector::Dist(PlayerLoc, BossLocation);
+
+	float Factor = 1.f - FMath::Clamp(PlayerToBossDist / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
+
+	FVector AimEndPos = StartPos + ViewRot.Vector() * ShootPower;
+	EndPos = FMath::Lerp(AimEndPos, BossLocation, Factor);
+	//EndPos = StartPos + ViewRot.Vector() * ShootPower;
 
 
 	PC->GetPlayerViewPoint(Origin, ViewRot);
@@ -78,38 +79,55 @@ void ABullet::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (!PlayerCharacter || !BossCharacter) return;
 
-	time += DeltaTime;
+	// --- Application de SpeedOverTime ---
+	float SpeedMultiplier = 1.f;
+	if (SpeedOverTime)
+	{
+		float CurveValue = SpeedOverTime->GetFloatValue(time);
+		SpeedMultiplier = FMath::Max(0.01f, CurveValue); // sécurité
+	}
+
+	time += DeltaTime * SpeedMultiplier;
+
+	// Time normalisé
 	float T = FMath::Clamp(time / TravelTime, 0.f, 1.f);
 
-	if (T>=1.f)
+	if (T >= 1.f)
 	{
 		OnBulletDestroyed(this);
 		Destroy();
+		return;
 	}
+
 	// Distance de visée
 	float AimDist = GetDistanceFromAim(BossLocation);
-
-	// Paramètre de lissage (plus AimDist est petit, plus la balle va vers le boss)
-	float MaxAimDistance = 2000.f;
-	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistance), 0.f, 1.f);
+	
+	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistanceToTriggerHoming), 0.f, 1.f);
 	float TimedHomingFactor = FMath::Clamp(HomingFactor * T, 0.f, HomingFactor);
 
-	// Interpolation de la destination
 	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
 
-	// Arc Bezier
-	FVector NewPos = ComputeArcBezier(StartPos, FinalTarget, ArcHeight, T);
+	// --- Application de CurveOverTime sur l'apex ---
+	float DynamicArcHeight = ArcHeight;
 
-	// --- Rotation vers la direction de déplacement ---
+	if (CurveOverTime)
+	{
+		float CurveValue = CurveOverTime->GetFloatValue(T);  // entre 0 et 1 typiquement
+		DynamicArcHeight = ArcHeight * CurveValue;
+	}
+
+	// Bézier avec arc dynamique
+	FVector NewPos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, T);
+
+	// Rotation dans la direction du mouvement
 	FVector CurrentPos = GetActorLocation();
 	FVector MoveDir = (NewPos - CurrentPos).GetSafeNormal();
 
 	if (!MoveDir.IsNearlyZero())
 	{
-		FRotator NewRotation = MoveDir.Rotation();
-		SetActorRotation(NewRotation);
+		SetActorRotation(MoveDir.Rotation());
 	}
-	
+
 	SetActorLocation(NewPos);
 }
 
@@ -118,12 +136,10 @@ FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, floa
 	T = FMath::Clamp(T, 0.f, 1.f);
 
 	FVector Mid = (Start + End) * 0.5f;
-	FVector Control = Mid + Up * (2.f * Height);
+	FVector Control = Mid + Up * Height; // déjà dynamique grâce à CurveOverTime
 
 	float U = 1.f - T;
-	FVector Result = U * U * Start + 2.f * U * T * Control + T * T * End;
-
-	return Result;
+	return U * U * Start + 2.f * U * T * Control + T * T * End;
 }
 
 float ABullet::GetDistanceFromAim(FVector& Target)
