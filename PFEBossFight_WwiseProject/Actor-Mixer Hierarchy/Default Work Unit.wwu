@@ -1,6 +1,550 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}" SchemaVersion="123">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="MC" ID="{DD487630-EDF3-4BEB-A213-F4766A9ABA38}" ShortID="785366060">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="MC_SFX" ID="{9AEBA0FB-BA66-4387-8DB8-9A5D6045F0FB}" ShortID="192356516">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MC_SFX_Shoot" ID="{DB4E39AB-FAB9-4277-B8E5-2524097AEA7A}" ShortID="755545561">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Shoot_Charge_LP" ID="{3C62607E-323F-40B9-BA3D-2CC66DE59F61}" ShortID="842804962">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Shoot_Charge_OS" ID="{16E7DC9E-7AB1-4878-83D7-B975EBC906CF}" ShortID="809797016">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_ChargedShoot" ID="{CB6871A0-3D3D-4F5D-80B8-ED7620186D0E}" ShortID="743334380">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Dash" ID="{CC8393AB-9D62-4DB8-AA59-E859945CA216}" ShortID="194475812">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Dash_Perfect" ID="{747BF096-F0F6-4938-9111-D77C8374A865}" ShortID="635932414">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Projectile" ID="{B07E91F9-0855-4D30-A1DB-EED0084911EF}" ShortID="941668315">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Projectile_Impact_Surface" ID="{BC56260C-992E-4928-8A79-D3DF48BAD264}" ShortID="780859565">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Projectile_Impact_Boss" ID="{A2001130-BE6F-4F7C-A005-8622122292CF}" ShortID="594233460">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="MC_SFX_Laser_Explosion" ID="{43F9C793-1E74-402F-B457-7F76D3848D0A}" ShortID="23414492">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<Sound Name="MC_FT" ID="{F895B136-D11C-4FBC-86A0-DE3C401B52C1}" ShortID="335783854">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="MC_Pain" ID="{20D494EA-5978-4269-93ED-5CFC9CACB873}" ShortID="286978274">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="MC_Damage_Light" ID="{54517302-7CE0-4849-8F77-C29B0F23CC62}" ShortID="709926549">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="MC_Damage_Heavy" ID="{45C77BBC-0E79-40FD-8EDA-29907CA726B2}" ShortID="531973520">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="MC_Death" ID="{BA3F9DC5-BFB5-4AE3-A69F-E2DF26ADE39E}" ShortID="337421086">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="BOSS" ID="{F8EDEAD7-3654-422B-B3CD-FD6D9877F255}" ShortID="834735370">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="BOSS_Moves" ID="{5FF58848-E3DE-4DA6-A2E1-B5BC5EFC9D44}" ShortID="868694830">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="BOSS_Flying" ID="{CD44D181-A047-49C0-9414-ECA6DEB0F4CA}" ShortID="1023237199">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_Damage" ID="{B525808B-C09E-4276-80B6-9A768D1AB9E2}" ShortID="50348290">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_Warning" ID="{7A0DACA4-2FF8-48B5-A05F-97D97F64154C}" ShortID="872839992">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_TP" ID="{04904572-740E-4FF4-90DC-1A71C863AC9C}" ShortID="445747765">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_TP_BirdFX" ID="{827C845D-9F9D-4504-8854-9BDA8B328933}" ShortID="880192666">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_OpenWings" ID="{05BC1844-B211-45DD-BA95-2BADD8887ADB}" ShortID="1048231906">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_Flapping" ID="{9A486330-B87E-4506-8F46-DF969F8438EB}" ShortID="990210999">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_CurledUp" ID="{DEF79CB4-DF6A-4D4F-BD22-1D615DC62666}" ShortID="404406293">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_Dying" ID="{25FA16D5-96BC-43F9-A690-76854528172F}" ShortID="648206328">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_Ground_Eyes" ID="{7C4867D1-3622-4E42-A58D-E690463C509C}" ShortID="330964974">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="BOSS_SFX" ID="{5A2D425E-BAD6-4C8E-9172-493326A41C54}" ShortID="127003890">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="BOSS_SFX_Laser_LP" ID="{84CE3130-F179-4C67-B876-0B696A5D1F3A}" ShortID="689925574">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Laser_Short" ID="{74194D50-B227-491C-BC5A-C20A93EF798B}" ShortID="1048945787">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Prepare_AOE" ID="{85AED785-54C8-43FF-9C83-D912C93612FE}" ShortID="657460102">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Explosion_AOE" ID="{ABF15A2B-1811-4EB4-AE01-FC77C26156BF}" ShortID="229333486">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Sniper_Eye_LP" ID="{9A404291-500D-4065-AB97-D028C9C0E965}" ShortID="1066005844">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Jit_Tsunami" ID="{67FD5D7C-4D86-4A03-9029-F68FBFC2DF2B}" ShortID="62451595">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Destroy_Tsunami" ID="{EDBC9469-6C6D-4D36-AE50-43F1B546AE2D}" ShortID="354344028">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Flash" ID="{17B2A7C3-4A1D-4034-874B-A0D5660F2394}" ShortID="73474829">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Destroy_Eye" ID="{57DBB32D-3FD9-4082-A5C1-FF399494D586}" ShortID="340266830">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Heal" ID="{E70762D6-7A11-44C9-A854-C72DB78AE8AE}" ShortID="457974927">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+								<Sound Name="BOSS_SFX_Stun" ID="{EC2A1012-6FF0-49E1-B00A-ED47249CDBAB}" ShortID="389482115">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+										</Reference>
+									</ReferenceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="MUS" ID="{EE386CB3-7C10-4AF1-A6C2-A4AFAD2BE638}" ShortID="403839301">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="MUS_Fight" ID="{2D45E0D8-F90B-4A83-A325-096D89130661}" ShortID="952611597">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="UI" ID="{26D8F096-83B0-4C35-961E-5D54ADA3E951}" ShortID="416031769">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="UI_Confirm" ID="{EB1C3B0B-49C1-4C9B-871F-5908D96BE2E7}" ShortID="1066645182">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="UI_Navigate" ID="{F6E1AF20-74EB-4448-B406-E084552A4407}" ShortID="943575133">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="UI_Cancel" ID="{4C469D31-1895-44AC-A647-4FB083ECDB02}" ShortID="173492663">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="UI_Start_Button" ID="{9FCAE5A0-F95C-432C-97FA-02252BCBA0A5}" ShortID="639864954">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="AMB" ID="{7A2F8287-15D9-47D9-A03C-382212DEE222}" ShortID="613907436">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="AMB_Calm_LP" ID="{C155A777-26CE-41BE-88B1-96AD67293C95}" ShortID="1005561962">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="AMB_Global_Forest_LP" ID="{48551972-BF92-4703-952E-C17F91DAE289}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.67565815854483"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>AMB_Global_Forest_LP.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="950465057"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="AMB_Global_Forest_LP" ID="{48551972-BF92-4703-952E-C17F91DAE289}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

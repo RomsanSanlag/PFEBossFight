@@ -1,0 +1,21 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1329476194",
+    "Type": "User",
+    "GUID": "{480AA04F-24DB-46C2-88D0-FDBCE82D96BA}",
+    "Language": "SFX",
+    "Hash": "{986D43D8-CDAD-B6F6-BCAB-4E5BF8B5313C}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\MUS_SB",
+    "ShortName": "MUS_SB",
+    "Path": "MUS_SB.bnk"
+   }
+  ],
+  "FileHash": "{F043CBEB-3C4D-B775-E71F-D4CF8753746C}"
+ }
+}

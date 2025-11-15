@@ -1,0 +1,21 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1343634778",
+    "Type": "User",
+    "GUID": "{35AA7A40-A5B5-4768-88EC-D2B9A3FC0864}",
+    "Language": "SFX",
+    "Hash": "{7E5A9A52-BA56-595A-ECE7-1EF359EC415E}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\BOSS_SB",
+    "ShortName": "BOSS_SB",
+    "Path": "BOSS_SB.bnk"
+   }
+  ],
+  "FileHash": "{3C2173CF-DCAA-A081-1AB0-EA150D9B52A8}"
+ }
+}
