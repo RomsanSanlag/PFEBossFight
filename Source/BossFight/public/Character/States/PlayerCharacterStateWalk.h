@@ -22,33 +22,30 @@ public:
 protected:
     UPlayerMovementParameters* PlayerMovementParameters;
     // === PARAMÈTRES DE VITESSE ===
-    float WalkSpeed;
-    float WalkAcceleration;
-    float WalkBrakingDeceleration;
-    float WalkGroundFriction;
-
-    // === PARAMÈTRES D'ACCÉLÉRATION ===
-    EAccelerationCurve AccelerationCurveType;
+    float MaxWalkSpeed;
     float AccelerationDuration;
+    float DeccelerationForce;
+    float AccelerationForce;
 
     // === PARAMÈTRES DE CHANGEMENT DE DIRECTION ===
+
     float DirectionChangeThreshold;
-    float DirectionChangeDuration;
-    float DirectionChangeDecelerationDuration;
-    float TurnDecelerationFrictionMultiplier;
-    float TurnVelocityRetention;
+    float TurnAccelerationRetention;
+    
+    float TurnDeccelerationForce;
+    float TurnDeccelerationTime;
+
+    float TurnReaccelerationForce;
+    float TurnReaccelerationTime;
+
+
 private:
     // === VARIABLES INTERNES ===
     
     float CurrentSpeed;
-    float AccelerationTime;
-    FVector LastInputDirection;
-    
-    bool bIsChangingDirection;
-    float DirectionChangeTimer;
 
-    // === FONCTIONS HELPER ===
+    float CurrentTurnDeccelerationTime;
+    float CurrentTurnReaccelerationTime;
     
-    void DetectDirectionChange(const FVector& NewDirection, float DeltaTime);
-    float CalculateSpeedMultiplier(float Time);
+    FVector LastMoveDirection;
 };

@@ -12,4 +12,5 @@ enum class PlayerCharacterStateID : uint8
 	Walk,
 	Jump,
 	Fall,
+	Dodge,
 };

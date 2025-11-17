@@ -21,6 +21,9 @@ class BOSSFIGHT_API UPlayerStateMachine : public UObject
 	GENERATED_BODY()
 
 public:
+	UPROPERTY()
+	float DodgeCooldown = 0.f;
+	
 	void Init(APlayerCharacter* inCharacter);
 
 	void Tick(float DeltaTime);
@@ -31,6 +34,7 @@ public:
 	void ChangeState(PlayerCharacterStateID NextStateID);
 
 	UPlayerCharacterState* GetState(PlayerCharacterStateID StateID);
+	void TickDodgeCoolDown(float DeltaTime);
 
 protected:
 	UPROPERTY()
