@@ -6,11 +6,15 @@
 #include "BossFight/BossFightCharacter.h"
 #include "GameFramework/Character.h"
 #include "BossFight/public/StateMachine/PlayerStateMachine.h"
+#include "Features/PersistingDodgeHitbox.h"
 #include "Inputs/PlayerCharacterInputData.h"
 #include "MovementParameters/PlayerMovementParameters.h"
 #include "PlayerCharacter.generated.h"
 
 class UPlayerStateMachine;
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnTakeDamageNative, float);
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnPerfectDodge, float);
 
 UCLASS()
 class BOSSFIGHT_API APlayerCharacter : public ACharacter
@@ -47,11 +51,30 @@ public:
 	UPROPERTY(EditAnywhere)
 	UPlayerMovementParameters* PlayerMovementParameters;
 
+	UPROPERTY(EditAnywhere)
+	UClass* PersistingDodgeHitbox;
+
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnTakeDamage(float DamageAmount);
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnPerfectDodge(float DamageAmount);
+	
+	void TriggerTimeDilation();
+
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
 
 #pragma endregion
+#pragma region HealthSystem
+public:
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	int GetLifePoint() const;
+protected:
+	int LifePoint;
+	UPROPERTY()
+	int LifePointMax = 5;
+	void ReduceLifePoint(int DamageAmount);
 #pragma region Input Data / Mapping Context
 public:
 	UPROPERTY()
@@ -63,9 +86,12 @@ public:
 protected:
 	void SetupMappingContextIntoController() const;
 	void SetupInputs();
-
 #pragma region InputMove
 public:
+
+	FOnTakeDamageNative OnTakeDamageNative;
+	FOnPerfectDodge OnPerfectDodge;
+	
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
 	float GetInputDodgeBuffer() const;
@@ -79,6 +105,8 @@ protected:
 
 	UPROPERTY()
 	float InputDodgeBuffer = 0.f;
+
+	
 
 private:
 	void OnInputMoveX(const FInputActionValue& InputActionValue);

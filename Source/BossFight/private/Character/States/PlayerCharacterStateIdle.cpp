@@ -38,8 +38,6 @@ void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 	
-	
-	
 	if (Character->GetInputDodgeBuffer() and StateMachine->DodgeCooldown <= 0.0f)
 	{
 		StateMachine->ChangeState(PlayerCharacterStateID::Dodge);

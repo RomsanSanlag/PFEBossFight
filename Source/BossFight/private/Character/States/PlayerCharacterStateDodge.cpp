@@ -45,9 +45,13 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	
 	DashDuration = PlayerMovementParameters->DashDuration;
 	DashDistance = PlayerMovementParameters->DashDistance;
+	DashEasing = PlayerMovementParameters->DashEasing;
+	DodgeDelay = PlayerMovementParameters->DodgeDelay;
+	PerfectDodgeWindow = PlayerMovementParameters->PerfectDodgeWindow;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
 
+	IsPerfectDodgeHitboxSpawned = false;
 }
 
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
@@ -65,17 +69,38 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("X: %f, Y: %f"), Character->GetInputMoveX(),Character->GetInputMoveY())
-	);
-
 	DashTime += DeltaTime;
-	float Alpha = FMath::Clamp(DashTime / DashDuration, 0.f, 1.f);
-	FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
-	Character->SetActorLocation(NewLocation, true);
+	float MinTime, MaxTime;
+	if (DashEasing != nullptr)
+	{
+		DashEasing->GetTimeRange(MinTime, MaxTime);
+		float NormalizedTime = FMath::Lerp(MinTime, MaxTime, DashTime / DashDuration);
+		float Alpha = FMath::Clamp(DashEasing->GetFloatValue(NormalizedTime), 0.f, 1.f);
+		FVector NewLocation = DashStartLocation + DashDirection * DashDistance * Alpha;
+		Character->SetActorLocation(NewLocation, true);
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(
+		-1,
+		3.f,
+		FColor::Red,
+		FString::Printf(TEXT("TU AS OUBLIE D'AJOUTER UNE COURBE D'EASING DANS LES PARAMETRES DE MOUVEMENT"))
+		);
+	}
+	if (Character->PersistingDodgeHitbox and !IsPerfectDodgeHitboxSpawned and DashTime>DodgeDelay)
+	{
+		IsPerfectDodgeHitboxSpawned = true;
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+		FVector SpawnLocation = Character->GetActorLocation();
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		DodgeHitbox = GetWorld()->SpawnActor<APersistingDodgeHitbox>(Character->PersistingDodgeHitbox, SpawnLocation, SpawnRotation, SpawnParams);
+		DodgeHitbox->SetDestroyTime(PerfectDodgeWindow);
+	}
+
 
 	if (DashTime >= DashDuration)
 	{

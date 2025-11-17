@@ -9,6 +9,8 @@
 #include "PlayerCharacterStateDodge.generated.h"
 
 
+class APersistingDodgeHitbox;
+
 UCLASS(ClassGroup=(PlayerCharacterState), meta=(BlueprintSpawnableComponent))
 class BOSSFIGHT_API UPlayerCharacterStateDodge : public UPlayerCharacterState
 {
@@ -30,11 +32,17 @@ protected:
 	// === PARAMÈTRES DE DODGE ===
 	float DashDuration;
 	float DashDistance;
+	float DodgeDelay;
+    float PerfectDodgeWindow;
+	UCurveFloat* DashEasing;
 
 private:
 	// === VARIABLES INTERNES ===
 	float DashTime;
 	FVector DashStartLocation;
 	FVector DashDirection;
+
+	bool IsPerfectDodgeHitboxSpawned;
+	APersistingDodgeHitbox* DodgeHitbox;
 };
 
