@@ -10,12 +10,101 @@
     "Type": "User",
     "GUID": "{F9934541-F40E-4EF4-BCD3-9A043ACE5918}",
     "Language": "SFX",
-    "Hash": "{35B1D1A8-529D-6386-B09A-443F9FB31921}",
+    "Hash": "{A45C1498-43D8-C1CA-B036-176760F5EA9E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MC_SB",
     "ShortName": "MC_SB",
-    "Path": "MC_SB.bnk"
+    "Path": "MC_SB.bnk",
+    "Media": [
+     {
+      "Id": "369601204",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Shoot_04.wav",
+      "CachePath": "43/{43A0B5F1-4228-93F1-2EAE-C7FE6311555D}.wem"
+     },
+     {
+      "Id": "475504615",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Shoot_03.wav",
+      "CachePath": "43/{4351FB1A-CEE2-A3B0-DC9A-D5241E8B8291}.wem"
+     },
+     {
+      "Id": "508983556",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Shoot_05.wav",
+      "CachePath": "9E/{9ECD36FD-7BA3-56F4-5283-8C9845A1013F}.wem"
+     },
+     {
+      "Id": "682864703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Shoot_01.wav",
+      "CachePath": "E8/{E82EB5F8-CBB5-D4F8-804E-A956DC0B922C}.wem"
+     },
+     {
+      "Id": "765980188",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Shoot_02.wav",
+      "CachePath": "34/{3430ED19-64E9-B143-3C80-C85FEF6D31E8}.wem"
+     }
+    ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3604890626",
+       "Name": "High_Pass_60Hz",
+       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\High Pass Filters\\High_Pass_60Hz",
+       "GUID": "{F9627628-0B10-4272-BC30-D4C20423CB38}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "1649412178",
+      "Name": "Play_MC_SFX_Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\MC\\Play_MC_SFX_Shoot",
+      "GUID": "{275495FB-949C-414A-9C16-543C3B70F01B}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.594721",
+      "DurationMax": "1.668938",
+      "MediaRefs": [
+       {
+        "Id": "369601204"
+       },
+       {
+        "Id": "475504615"
+       },
+       {
+        "Id": "508983556"
+       },
+       {
+        "Id": "682864703"
+       },
+       {
+        "Id": "765980188"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3604890626"
+        }
+       ]
+      }
+     }
+    ]
    }
   ],
-  "FileHash": "{DB11FE49-312A-B304-40F7-E0CC73833CB2}"
+  "FileHash": "{E05AC215-901E-A5A6-78F8-E531E44E7867}"
  }
 }

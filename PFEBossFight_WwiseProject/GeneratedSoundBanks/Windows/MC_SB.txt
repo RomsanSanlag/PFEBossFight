@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1649412178	Play_MC_SFX_Shoot			\Default Work Unit\MC\Play_MC_SFX_Shoot	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3604890626	High_Pass_60Hz	Wwise Parametric EQ			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	369601204	MC_SFX_Shoot_04	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\43\{43A0B5F1-4228-93F1-2EAE-C7FE6311555D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MC\MC_SFX\MC_SFX_Shoot\MC_SFX_Shoot_04		313944
+	475504615	MC_SFX_Shoot_03	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\43\{4351FB1A-CEE2-A3B0-DC9A-D5241E8B8291}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MC\MC_SFX\MC_SFX_Shoot\MC_SFX_Shoot_03		319608
+	508983556	MC_SFX_Shoot_05	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\9E\{9ECD36FD-7BA3-56F4-5283-8C9845A1013F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MC\MC_SFX\MC_SFX_Shoot\MC_SFX_Shoot_05		310092
+	682864703	MC_SFX_Shoot_01	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\E8\{E82EB5F8-CBB5-D4F8-804E-A956DC0B922C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MC\MC_SFX\MC_SFX_Shoot\MC_SFX_Shoot_01		307168
+	765980188	MC_SFX_Shoot_02	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\34\{3430ED19-64E9-B143-3C80-C85FEF6D31E8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MC\MC_SFX\MC_SFX_Shoot\MC_SFX_Shoot_02		312676
+

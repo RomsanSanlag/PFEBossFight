@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{7A7D77B0-0BE7-46FD-B12E-D830972C377C}",
     "Language": "SFX",
-    "Hash": "{E047967D-A77A-B145-5C80-17DFE4FE6119}",
+    "Hash": "{5D9D418F-C46B-2CFB-16AE-FAEBEA2A5437}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\AMB_SB",
     "ShortName": "AMB_SB",
     "Path": "AMB_SB.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "AMB_Global_Forest_LP.wav",
       "Path": "Media/950465057.wem",
-      "CachePath": "2A/{2A86397A-98B0-1D0A-2E38-B11D1A2E580E}.wem"
+      "CachePath": "5C/{5CFDEBAA-BF7A-2376-E5B5-B0FC77C93BC5}.wem"
      }
     ],
     "Events": [
@@ -41,6 +41,6 @@
     ]
    }
   ],
-  "FileHash": "{E9EFE4B9-C646-C553-B205-EC11F1546813}"
+  "FileHash": "{837059D3-BACE-510D-F5FB-E9655D7A2922}"
  }
 }
