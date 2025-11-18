@@ -34,7 +34,8 @@ void ABullet::BeginPlay()
 	FRotator ControlRot = PC->GetControlRotation();
 	FVector LookDir = ControlRot.Vector();
 
-	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossDev.BP_BossDev_C'"));
+	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.BP_BossCharacter_C'"));
+
 	if (BossBPClass)
 	{
 		TArray<AActor*> FoundBosses;
@@ -46,6 +47,8 @@ void ABullet::BeginPlay()
 			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
 		}
 	}
+	else
+		return;
 	
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
@@ -77,12 +80,7 @@ void ABullet::BeginPlay()
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
 	BossLocation = BossCharacter->GetActorLocation();
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Magenta,
-		FString::Printf(TEXT("Aim distance from boss %f"), GetDistanceFromAim(BossLocation))
-	);
+	
 
 	Up = GetActorRotation().RotateVector(FVector::UpVector);
 	
