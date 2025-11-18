@@ -34,7 +34,8 @@ void ABullet::BeginPlay()
 	FRotator ControlRot = PC->GetControlRotation();
 	FVector LookDir = ControlRot.Vector();
 
-	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossDev.BP_BossDev_C'"));
+	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.BP_BossCharacter_C'"));
+
 	if (BossBPClass)
 	{
 		TArray<AActor*> FoundBosses;
@@ -46,37 +47,50 @@ void ABullet::BeginPlay()
 			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
 		}
 	}
+	else
+		return;
 	
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
-	StartPos = GetActorLocation();
+	StartPos = PlayerCharacter->GetActorLocation();
 	
-	float PlayerToBossDist = FVector::Dist(PlayerLoc, BossLocation);
+	FVector StartTrace = Origin;
+	FVector EndTrace = Origin + ViewRot.Vector() * ShootPower;
 
-	float Factor = 1.f - FMath::Clamp(PlayerToBossDist / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
+	FHitResult Hit;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+	Params.AddIgnoredActor(PlayerCharacter);
 
-	FVector AimEndPos = StartPos + ViewRot.Vector() * ShootPower;
-	EndPos = FMath::Lerp(AimEndPos, BossLocation, Factor);
-	//EndPos = StartPos + ViewRot.Vector() * ShootPower;
+	if (GetWorld()->LineTraceSingleByChannel(
+			Hit,
+			StartTrace,
+			EndTrace,
+			ECC_Visibility,
+			Params))
+	{
+		EndPos = Hit.ImpactPoint + ViewRot.Vector();
+	}
+	else
+	{
+		EndPos = EndTrace;
+	}
 
 
 	PC->GetPlayerViewPoint(Origin, ViewRot);
 
 	BossLocation = BossCharacter->GetActorLocation();
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Magenta,
-		FString::Printf(TEXT("Aim distance from boss %f"), GetDistanceFromAim(BossLocation))
-	);
+	
 
 	Up = GetActorRotation().RotateVector(FVector::UpVector);
+	
 }
 
 // Called every frame
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 	if (!PlayerCharacter || !BossCharacter) return;
 
 	// --- Application de SpeedOverTime ---
@@ -101,9 +115,13 @@ void ABullet::Tick(float DeltaTime)
 
 	// Distance de visée
 	float AimDist = GetDistanceFromAim(BossLocation);
+
+	float PlayerToBossDist = FVector::Dist(PlayerCharacter->GetActorLocation(), BossLocation);
+	float CurveAttenuation = FMath::Clamp(PlayerToBossDist / MaxAimDistanceToTriggerHoming, 0.f, 1.f);	
 	
 	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistanceToTriggerHoming), 0.f, 1.f);
-	float TimedHomingFactor = FMath::Clamp(HomingFactor * T, 0.f, HomingFactor);
+	float HomingAttenuation = FMath::Clamp((PlayerToBossDist - MinHomingDistance) / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
+	float TimedHomingFactor = HomingFactor * HomingAttenuation * FMath::Pow(T, 0.5f);
 
 	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
 
@@ -112,8 +130,8 @@ void ABullet::Tick(float DeltaTime)
 
 	if (CurveOverTime)
 	{
-		float CurveValue = CurveOverTime->GetFloatValue(T);  // entre 0 et 1 typiquement
-		DynamicArcHeight = ArcHeight * CurveValue;
+		float CurveValue = CurveOverTime->GetFloatValue(T);  // 0 → 1 selon time
+		DynamicArcHeight = ArcHeight * CurveValue * CurveAttenuation;
 	}
 
 	// Bézier avec arc dynamique
