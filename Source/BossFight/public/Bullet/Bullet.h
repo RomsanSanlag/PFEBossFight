@@ -46,12 +46,11 @@ public:
 	UPROPERTY(EditAnywhere)
 	float MaxAimDistanceToTriggerHoming;
 	UPROPERTY(EditAnywhere)
-	float CloseDistance;
+	float MinHomingDistance = 300.f;
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* CurveOverTime;
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* SpeedOverTime;
-
 
 	
 	FVector StartPos;
@@ -65,7 +64,4 @@ public:
 	ACharacter* BossCharacter;
 	APlayerCharacter* PlayerCharacter;
 	APlayerController* PC;
-
-	UPROPERTY(EditAnywhere)
-	UCurveFloat* OffsetEasing;
 };
