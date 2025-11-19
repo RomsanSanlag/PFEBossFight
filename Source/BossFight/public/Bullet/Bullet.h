@@ -19,6 +19,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	AActor* FindBestTarget();
 
 public:
 	// Called every frame
@@ -51,8 +52,12 @@ public:
 	UCurveFloat* CurveOverTime;
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* SpeedOverTime;
+	UPROPERTY(EditAnywhere)
+	TArray<TSubclassOf<AActor>> TargetableClasses;
 
-	
+
+	TArray<AActor*> FoundTargets;
+	AActor* CurrentTarget;
 	FVector StartPos;
 	FVector EndPos;
 	FVector BossLocation;

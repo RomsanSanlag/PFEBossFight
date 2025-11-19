@@ -19,38 +19,38 @@ void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
 
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
 	UStaticMeshComponent* CollisionComponent = FindComponentByClass<UStaticMeshComponent>();
 	if (CollisionComponent)
 	{
 		CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &ABullet::BeginOverlap);
 	}
 	
-	// Récupération du player
 	PlayerCharacter = Cast<APlayerCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
 	PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	if (!PlayerCharacter || !PC) return;
 
-	FVector PlayerLoc = PlayerCharacter->GetActorLocation();
-	FRotator ControlRot = PC->GetControlRotation();
-	FVector LookDir = ControlRot.Vector();
-
-	UClass* BossBPClass = StaticLoadClass(ACharacter::StaticClass(), nullptr, TEXT("/Script/Engine.Blueprint'/Game/StarterContent/Blueprints/BP_Boss/BP_BossDev.BP_BossDev_C'"));
-	if (BossBPClass)
-	{
-		TArray<AActor*> FoundBosses;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), BossBPClass, FoundBosses);
-
-		if (FoundBosses.Num() > 0)
-		{
-			BossCharacter = Cast<ACharacter>(FoundBosses[0]);
-			UE_LOG(LogTemp, Warning, TEXT("Boss trouvé : %s"), *BossCharacter->GetName());
-		}
-	}
-	
 	PC->GetPlayerViewPoint(Origin, ViewRot);
-
 	StartPos = PlayerCharacter->GetActorLocation();
 	
+	// Trouver la cible la plus visée
+	CurrentTarget = FindBestTarget();
+	
+	if (CurrentTarget)
+	{
+		BossLocation = CurrentTarget->GetActorLocation();
+		GEngine->AddOnScreenDebugMessage(
+			-1,
+			3.f,
+			FColor::Magenta,
+			FString::Printf(TEXT("Cible selectionnée: %s, Distance aim: %f"), 
+				*CurrentTarget->GetName(), 
+				GetDistanceFromAim(BossLocation))
+		);
+	}
+
+	// Calcul de la position finale pour le tir
 	FVector StartTrace = Origin;
 	FVector EndTrace = Origin + ViewRot.Vector() * ShootPower;
 
@@ -59,12 +59,7 @@ void ABullet::BeginPlay()
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(PlayerCharacter);
 
-	if (GetWorld()->LineTraceSingleByChannel(
-			Hit,
-			StartTrace,
-			EndTrace,
-			ECC_Visibility,
-			Params))
+	if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
 	{
 		EndPos = Hit.ImpactPoint + ViewRot.Vector();
 	}
@@ -73,28 +68,73 @@ void ABullet::BeginPlay()
 		EndPos = EndTrace;
 	}
 
-
-	PC->GetPlayerViewPoint(Origin, ViewRot);
-
-	BossLocation = BossCharacter->GetActorLocation();
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Magenta,
-		FString::Printf(TEXT("Aim distance from boss %f"), GetDistanceFromAim(BossLocation))
-	);
-
 	Up = GetActorRotation().RotateVector(FVector::UpVector);
-	
 }
 
-// Called every frame
+AActor* ABullet::FindBestTarget()
+{
+	if (TargetableClasses.Num() == 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Aucune classe cible définie"));
+		return nullptr;
+	}
+
+	// Collecte toutes les instances des classes targetables
+	FoundTargets.Empty();
+	
+	for (TSubclassOf<AActor> TargetClass : TargetableClasses)
+	{
+		if (!TargetClass) continue;
+
+		TArray<AActor*> ActorsOfClass;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), TargetClass, ActorsOfClass);
+		
+		FoundTargets.Append(ActorsOfClass);
+		
+		UE_LOG(LogTemp, Log, TEXT("Trouvé %d instances de %s"), 
+			ActorsOfClass.Num(), 
+			*TargetClass->GetName());
+	}
+
+	if (FoundTargets.Num() == 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Aucune instance des classes cibles trouvée dans la scène"));
+		return nullptr;
+	}
+
+	// Trouve la cible la plus proche du curseur
+	AActor* BestTarget = nullptr;
+	float SmallestAimDistance = FLT_MAX;
+
+	for (AActor* Target : FoundTargets)
+	{
+		if (!Target || !Target->IsValidLowLevel()) continue;
+
+		FVector TargetLocation = Target->GetActorLocation();
+		float AimDistance = GetDistanceFromAim(TargetLocation);
+
+		UE_LOG(LogTemp, Verbose, TEXT("Cible %s : distance aim = %f"), 
+			*Target->GetName(), 
+			AimDistance);
+
+		if (AimDistance < SmallestAimDistance)
+		{
+			SmallestAimDistance = AimDistance;
+			BestTarget = Target;
+		}
+	}
+
+	return BestTarget;
+}
+
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (!PlayerCharacter || !BossCharacter) return;
+	if (!PlayerCharacter || !CurrentTarget) return;
 
+	BossLocation = CurrentTarget->GetActorLocation();
+	
 	// --- Application de SpeedOverTime ---
 	float SpeedMultiplier = 1.f;
 	if (SpeedOverTime)
@@ -194,9 +234,11 @@ void ABullet::BeginOverlap(UPrimitiveComponent* OverlappedComponent,
 					  UPrimitiveComponent* OtherComp, 
 					  int32 OtherBodyIndex, 
 					  bool bFromSweep, 
-					  const FHitResult &SweepResult )
+					  const FHitResult &SweepResult)
 {
-	if (!OtherActor || OtherActor == this || !BossCharacter) return;
-	OnBulletDestroyed(OtherActor);
+	if (OtherActor && OtherActor != this && CurrentTarget)
+	{
+		OnBulletDestroyed(OtherActor);
+	}
 	Destroy();
 }
