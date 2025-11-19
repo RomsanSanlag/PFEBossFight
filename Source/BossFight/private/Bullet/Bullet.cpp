@@ -18,9 +18,7 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
-
-	SetActorHiddenInGame(true);
-	SetActorEnableCollision(false);
+	
 	UStaticMeshComponent* CollisionComponent = FindComponentByClass<UStaticMeshComponent>();
 	if (CollisionComponent)
 	{
@@ -40,14 +38,6 @@ void ABullet::BeginPlay()
 	if (CurrentTarget)
 	{
 		BossLocation = CurrentTarget->GetActorLocation();
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			3.f,
-			FColor::Magenta,
-			FString::Printf(TEXT("Cible selectionnée: %s, Distance aim: %f"), 
-				*CurrentTarget->GetName(), 
-				GetDistanceFromAim(BossLocation))
-		);
 	}
 
 	// Calcul de la position finale pour le tir
@@ -90,15 +80,10 @@ AActor* ABullet::FindBestTarget()
 		UGameplayStatics::GetAllActorsOfClass(GetWorld(), TargetClass, ActorsOfClass);
 		
 		FoundTargets.Append(ActorsOfClass);
-		
-		UE_LOG(LogTemp, Log, TEXT("Trouvé %d instances de %s"), 
-			ActorsOfClass.Num(), 
-			*TargetClass->GetName());
 	}
 
 	if (FoundTargets.Num() == 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Aucune instance des classes cibles trouvée dans la scène"));
 		return nullptr;
 	}
 
@@ -239,6 +224,6 @@ void ABullet::BeginOverlap(UPrimitiveComponent* OverlappedComponent,
 	if (OtherActor && OtherActor != this && CurrentTarget)
 	{
 		OnBulletDestroyed(OtherActor);
+		Destroy();
 	}
-	Destroy();
 }
