@@ -10,12 +10,38 @@
     "Type": "User",
     "GUID": "{480AA04F-24DB-46C2-88D0-FDBCE82D96BA}",
     "Language": "SFX",
-    "Hash": "{986D43D8-CDAD-B6F6-BCAB-4E5BF8B5313C}",
+    "Hash": "{AE8C88FE-7C15-1FBE-FB7D-61ED2927BB87}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MUS_SB",
     "ShortName": "MUS_SB",
-    "Path": "MUS_SB.bnk"
+    "Path": "MUS_SB.bnk",
+    "Media": [
+     {
+      "Id": "121661552",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BossFight_PH.wav",
+      "CachePath": "B1/{B186AB4B-5C17-AE22-A839-5B23E12A2E6C}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "961842128",
+      "Name": "Play_MUS_Fight",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_MUS_Fight",
+      "GUID": "{A9B7A1F9-DE02-496C-95AA-98E7E293AFC7}",
+      "DurationType": "OneShot",
+      "DurationMin": "206.99998",
+      "DurationMax": "206.99998",
+      "MediaRefs": [
+       {
+        "Id": "121661552"
+       }
+      ]
+     }
+    ]
    }
   ],
-  "FileHash": "{F043CBEB-3C4D-B775-E71F-D4CF8753746C}"
+  "FileHash": "{4B9E2C24-B2D8-E688-3F21-9C1BD6A2FEB3}"
  }
 }

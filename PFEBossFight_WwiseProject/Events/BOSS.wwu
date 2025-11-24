@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{712B218E-ED98-46EC-91E9-37791AE50C08}" SchemaVersion="123" RootDocumentID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" ParentDocumentID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}">
 	<Events>
-		<WorkUnit Name="BOSS" ID="{712B218E-ED98-46EC-91E9-37791AE50C08}" OwnerID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" PersistMode="Nested"/>
+		<WorkUnit Name="BOSS" ID="{712B218E-ED98-46EC-91E9-37791AE50C08}" OwnerID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_BOSS_SFX_Explosion_AOE" ID="{9DF89FB4-FA25-4CAC-B782-FB3426A7EC50}">
+					<ChildrenList>
+						<Action Name="" ID="{EB39AFF6-15FE-418C-AA87-3F70B848B06B}" ShortID="30486309">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Explosion_AOE" ID="{30FB7EE0-1E2D-4091-B015-B5F4E3441EB0}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

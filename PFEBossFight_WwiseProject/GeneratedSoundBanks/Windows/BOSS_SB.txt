@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3788246369	Play_BOSS_SFX_Explosion_AOE			\Default Work Unit\BOSS\Play_BOSS_SFX_Explosion_AOE	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	390811697	BOSS_SFX_Explosion_AOE	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\09\{09D97C89-2132-0372-CEC3-7391EAEEF936}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_AOE\BOSS_SFX_Explosion_AOE		2029292
+

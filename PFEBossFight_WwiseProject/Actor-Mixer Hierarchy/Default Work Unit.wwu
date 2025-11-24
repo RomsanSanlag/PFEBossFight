@@ -25,6 +25,8 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="MC_SFX_Shoot" ID="{811464CB-A523-4E3C-A886-EE21FD124003}" ShortID="134434587">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="ListenerRelativeRouting" Type="bool" Value="False"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
@@ -32,8 +34,8 @@
 													<Modifier Name="" ID="{1117FC94-CB4D-412E-9252-84490022C9B2}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="5"/>
-															<Property Name="Min" Type="Real64" Value="-5"/>
+															<Property Name="Max" Type="Real64" Value="250"/>
+															<Property Name="Min" Type="Real64" Value="-250"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -467,6 +469,21 @@
 									</ReferenceList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="BOSS_SFX_Explosion_AOE" ID="{30FB7EE0-1E2D-4091-B015-B5F4E3441EB0}" ShortID="779387503">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{DBDE001F-9C3B-4CF4-A0A4-3C82E2FC6CE5}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-200"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
@@ -475,6 +492,30 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="BOSS_SFX_Explosion_AOE" ID="{983C525B-F41D-4589-BB11-F3CC0C0AC8FE}" ShortID="648310657">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BOSS_SFX_Explosion_AOE" ID="{024EAF59-9B00-4D09-A65F-9A5ECDF7235C}">
+													<Language>SFX</Language>
+													<AudioFile>BOSS_SFX_Explosion_AOE.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="390811697"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BOSS_SFX_Explosion_AOE" ID="{024EAF59-9B00-4D09-A65F-9A5ECDF7235C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="BOSS_SFX_Flash" ID="{154DBDD6-9C3D-4806-96B2-E6D637EDA270}" ShortID="659504963">
 									<ReferenceList>
@@ -496,7 +537,7 @@
 										</Reference>
 									</ReferenceList>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="BOSS_SFX_Jit_Tsunami" ID="{41BFDC9E-10DF-48AC-867A-F6100AFF93AF}" ShortID="218217245">
+								<RandomSequenceContainer Name="BOSS_SFX_Hit_Tsunami" ID="{41BFDC9E-10DF-48AC-867A-F6100AFF93AF}" ShortID="218217245">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
@@ -506,7 +547,7 @@
 										</Reference>
 									</ReferenceList>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="BOSS_SFX_Laser_LP" ID="{2E00505E-399D-480F-A667-211487F508B5}" ShortID="99736851">
+								<RandomSequenceContainer Name="BOSS_SFX_LaserEye_LP" ID="{2E00505E-399D-480F-A667-211487F508B5}" ShortID="99736851">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
@@ -516,7 +557,7 @@
 										</Reference>
 									</ReferenceList>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="BOSS_SFX_Laser_Short" ID="{CA40621B-980E-4258-BFFB-B029026BCC3D}" ShortID="990115200">
+								<RandomSequenceContainer Name="BOSS_SFX_LaserEye_Short" ID="{CA40621B-980E-4258-BFFB-B029026BCC3D}" ShortID="990115200">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
@@ -571,6 +612,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="MUS_Fight" ID="{2D45E0D8-F90B-4A83-A325-096D89130661}" ShortID="952611597">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{210A13C9-0BB2-40A0-A3B2-9C5277B5E980}"/>
@@ -579,6 +627,18 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossFight_PH" ID="{7BEC7F14-347B-46A8-982D-5635AFB6E1D4}">
+									<Language>SFX</Language>
+									<AudioFile>BossFight_PH.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="121661552"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossFight_PH" ID="{7BEC7F14-347B-46A8-982D-5635AFB6E1D4}" Platform="Linked"/>
+							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
