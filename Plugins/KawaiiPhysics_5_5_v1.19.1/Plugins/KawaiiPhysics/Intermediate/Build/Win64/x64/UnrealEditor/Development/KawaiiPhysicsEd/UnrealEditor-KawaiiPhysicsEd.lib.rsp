@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-KawaiiPhysicsEd.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\AnimGraphNode_KawaiiPhysics.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\KawaiiPhysicsEd.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\KawaiiPhysicsEditMode.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\KawaiiPhysicsEd.init.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\Default.rc2.res"
+/OUT:"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\KawaiiPhysics\Intermediate\Build\Win64\x64\UnrealEditor\Development\KawaiiPhysicsEd\UnrealEditor-KawaiiPhysicsEd.lib"

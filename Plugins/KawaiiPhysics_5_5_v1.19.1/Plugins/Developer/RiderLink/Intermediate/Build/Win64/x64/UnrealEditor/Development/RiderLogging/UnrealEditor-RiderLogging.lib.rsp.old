@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-RiderLogging.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLogging\RiderLogging.cpp.obj"
+"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLogging\RiderOutputDevice.cpp.obj"
+"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLogging\PerModuleInline.gen.cpp.obj"
+"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLogging\Default.rc2.res"
+/OUT:"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLogging\UnrealEditor-RiderLogging.lib"

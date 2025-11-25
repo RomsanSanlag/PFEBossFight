@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\home\\documents\\unreal projects\\pfebossfight\\plugins\\kawaiiphysics_5_5_v1.19.1\\plugins\\developer\\riderlink\\source\\riderdebuggersupport\\private\\debuglogger.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\home\\documents\\unreal projects\\pfebossfight\\plugins\\kawaiiphysics_5_5_v1.19.1\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\riderdebuggersupport\\definitions.h",
+            "c:\\users\\home\\documents\\unreal projects\\pfebossfight\\plugins\\kawaiiphysics_5_5_v1.19.1\\plugins\\developer\\riderlink\\source\\riderdebuggersupport\\private\\debuglogger.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
