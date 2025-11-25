@@ -37,8 +37,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NATVIS:"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\RenderCore\RenderCore.natvis"
-"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.obj"
-"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\Module.RiderShaderInfo.cpp.obj"
 "C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Projects\UnrealEditor-Projects.lib"

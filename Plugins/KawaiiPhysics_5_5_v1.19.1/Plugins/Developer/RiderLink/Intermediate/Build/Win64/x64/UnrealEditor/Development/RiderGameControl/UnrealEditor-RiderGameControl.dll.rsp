@@ -36,8 +36,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 /NOIMPLIB
-"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\RiderGameControl.cpp.obj"
-"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.obj"
 "C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Default.rc2.res"
 "C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\UnrealEditor-RD.lib"
 "C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\UnrealEditor-RiderLink.lib"

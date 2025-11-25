@@ -1,5 +1,18 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.KawaiiPhysics.cpp.obj": [
+			"KawaiiPhysics.init.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"AnimNotifyState_KawaiiPhysics.cpp.obj",
+			"AnimNotify_KawaiiPhysics.cpp.obj",
+			"AnimNode_KawaiiPhysics.cpp.obj",
+			"KawaiiPhysics.cpp.obj",
+			"KawaiiPhysicsBoneConstraintsDataAsset.cpp.obj",
+			"KawaiiPhysicsCustomExternalForce.cpp.obj",
+			"KawaiiPhysicsExternalForce.cpp.obj",
+			"KawaiiPhysicsLibrary.cpp.obj",
+			"KawaiiPhysicsLimitsDataAsset.cpp.obj"
+		]
 	}
 }

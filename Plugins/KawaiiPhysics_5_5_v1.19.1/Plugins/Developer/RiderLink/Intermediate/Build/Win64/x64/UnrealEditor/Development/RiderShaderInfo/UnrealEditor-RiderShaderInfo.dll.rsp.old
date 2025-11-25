@@ -37,9 +37,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NATVIS:"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\RenderCore\RenderCore.natvis"
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.obj"
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\PerModuleInline.gen.cpp.obj"
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\Default.rc2.res"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderShaderInfo\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Projects\UnrealEditor-Projects.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\RenderCore\UnrealEditor-RenderCore.lib"
@@ -68,6 +68,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Binaries\Win64\UnrealEditor-RiderShaderInfo.dll"
-/PDB:"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Binaries\Win64\UnrealEditor-RiderShaderInfo.pdb"
+/OUT:"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Binaries\Win64\UnrealEditor-RiderShaderInfo.dll"
+/PDB:"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Binaries\Win64\UnrealEditor-RiderShaderInfo.pdb"
 /ignore:4078

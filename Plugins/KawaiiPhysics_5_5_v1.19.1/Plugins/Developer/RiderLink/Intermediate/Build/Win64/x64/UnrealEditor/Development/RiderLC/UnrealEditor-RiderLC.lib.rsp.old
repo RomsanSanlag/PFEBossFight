@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-RiderLC.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\RiderLC.cpp.obj"
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\PerModuleInline.gen.cpp.obj"
-"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\Default.rc2.res"
-/OUT:"F:\Github\KawaiiPhysicsRelease\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\UnrealEditor-RiderLC.lib"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\RiderLC.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\PerModuleInline.gen.cpp.obj"
+"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\Default.rc2.res"
+/OUT:"C:\Users\Home\Documents\Unreal Projects\PFEBossFight\Plugins\KawaiiPhysics_5_5_v1.19.1\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLC\UnrealEditor-RiderLC.lib"
