@@ -21,6 +21,39 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MovementParameters/DA_PlayerMovementParametre_Scotty.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MovementParameters/DA_PlayerMovementParametre_Scotty.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WB_HUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WB_HUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/KawaiiPhysics_5_5_v1.19.1/Plugins/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/StateMachine/PlayerStateMachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/StateMachine/PlayerStateMachine.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +125,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "DEV",
+    "git-widget-placeholder": "Léandro",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,12 +135,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="C++ Project.BossFight">
+  <component name="RunManager" selected="C/C++ Project.BossFight">
     <configuration name="BossFight" type="CppProject" factoryName="C++ Project">
-      <configuration_1>
+      <configuration_1 setup="1">
         <option name="CONFIGURATION" value="Development_Editor" />
         <option name="PLATFORM" value="x64" />
-        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
@@ -115,11 +147,11 @@
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="AUTO_DETECT" />
+        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
       </configuration_1>
-      <configuration_2>
+      <configuration_2 setup="1">
         <option name="CONFIGURATION" value="Development Editor" />
         <option name="PLATFORM" value="Win64" />
-        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(TargetPath)" />
         <option name="PROGRAM_PARAMETERS" value="" />
@@ -127,8 +159,10 @@
         <option name="PASS_PARENT_ENVS" value="1" />
         <option name="USE_EXTERNAL_CONSOLE" value="0" />
         <option name="TERMINAL_INTERACTION_BEHAVIOR" value="AUTO_DETECT" />
+        <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
       </configuration_2>
       <option name="DEFAULT_PROJECT_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
+      <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/BossFight.vcxproj" />
       <option name="AUTO_SELECT_PRIORITY" value="10010" />
       <method v="2">
         <option name="Build" />
@@ -136,6 +170,7 @@
     </configuration>
     <configuration name="UE5" type="CppProject" factoryName="C++ Project">
       <option name="DEFAULT_PROJECT_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/UE5.vcxproj" />
+      <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/UE5.vcxproj" />
       <option name="AUTO_SELECT_PRIORITY" value="10000" />
       <method v="2">
         <option name="Build" />
@@ -255,6 +290,7 @@
       <workItem from="1763465608006" duration="6990000" />
       <workItem from="1763712427833" duration="708000" />
       <workItem from="1763989267292" duration="2353000" />
+      <workItem from="1764063359652" duration="2396000" />
     </task>
     <servers />
   </component>

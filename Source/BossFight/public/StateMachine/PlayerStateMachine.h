@@ -26,23 +26,23 @@ public:
 	int MaxDodgeCharges = 3;
 
 	// Charges actuelles
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	int StartingDodgeCharges = 3;
 
 	// Temps de recharge d’une charge
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float DodgeChargeRechargeTime = 1.0f;
 
 	// Timer interne pour la recharge
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	float DodgeChargeRechargeTimer = 0.0f;
 
 	// Cooldown mini entre deux dashs (si charges dispo)
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float DodgeCooldown = 0.25f;
 
 	// Timer interne pour ce cooldown
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	float DodgeCooldownTimer = 0.0f;
 
 
