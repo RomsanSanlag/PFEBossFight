@@ -95,6 +95,29 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 		FString::Printf(TEXT("TU AS OUBLIE D'AJOUTER UNE COURBE D'EASING DANS LES PARAMETRES DE MOUVEMENT"))
 		);
 	}
+	if (Character->DodgeShadow && Character->isPerfectDodging)
+	{
+            
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+			USkeletalMeshComponent* Mesh = Character->GetMesh();
+			FVector SpawnLocation = Mesh->GetComponentLocation();
+			FRotator SpawnRotation = Mesh->GetComponentRotation();
+            
+			AActor* TrailObject = GetWorld()->SpawnActor<AActor>(
+				Character->DodgeShadow, 
+				SpawnLocation, 
+				SpawnRotation, 
+				SpawnParams
+			);
+            
+			if (TrailObject)
+			{
+				TrailObject->SetLifeSpan(1);
+				SpawnedTrailObjects.Add(TrailObject);
+			}
+	}
 	if (Character->PersistingDodgeHitbox and !IsPerfectDodgeHitboxSpawned and DashTime>DodgeDelay)
 	{
 		IsPerfectDodgeHitboxSpawned = true;
@@ -113,11 +136,13 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	{
 		if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
 		{
+			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Walk);
 			return;
 		}
 		else
 		{
+			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 			return;
 		}
