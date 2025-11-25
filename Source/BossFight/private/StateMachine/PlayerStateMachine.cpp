@@ -6,11 +6,22 @@
 #include "BossFight/private/Character/PlayerCharacterState.h"
 #include "BossFight/public/Character/PlayerCharacter.h"
 
+void UPlayerStateMachine::InitParameters()
+{
+	UPlayerMovementParameters* PlayerMovementParameters = Character->PlayerMovementParameters;
+	MaxDodgeCharges = PlayerMovementParameters->MaxDodgeCharges;
+	StartingDodgeCharges = PlayerMovementParameters->StartingDodgeCharges;
+	DodgeChargeRechargeTime = PlayerMovementParameters->DodgeChargeRechargeTime;
+	DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
+}
+
 void UPlayerStateMachine::Init(APlayerCharacter* inCharacter)
 {
 	Character = inCharacter;
 	FindStates();
 	InitStates();
+
+	InitParameters();
 
 	ChangeState(PlayerCharacterStateID::Idle);
 }
@@ -61,9 +72,28 @@ UPlayerCharacterState* UPlayerStateMachine::GetState(PlayerCharacterStateID Stat
 
 void UPlayerStateMachine::TickDodgeCoolDown(float DeltaTime)
 {
-	DodgeCooldown -= DeltaTime;
-	if (DodgeCooldown <= 0) DodgeCooldown = 0.0f;
+
+	// Cooldown mini entre deux dashs
+	if (DodgeCooldownTimer > 0.0f)
+	{
+		DodgeCooldownTimer -= DeltaTime;
+		if (DodgeCooldownTimer < 0.0f)
+			DodgeCooldownTimer = 0.0f;
+	}
+
+	// Recharge des charges
+	if (StartingDodgeCharges < MaxDodgeCharges)
+	{
+		DodgeChargeRechargeTimer += DeltaTime;
+
+		if (DodgeChargeRechargeTimer >= DodgeChargeRechargeTime)
+		{
+			DodgeChargeRechargeTimer -= DodgeChargeRechargeTime;
+			StartingDodgeCharges++;
+		}
+	}
 }
+
 
 void UPlayerStateMachine::ChangeState(PlayerCharacterStateID NextStateID)
 {
