@@ -27,6 +27,9 @@ public:
 
 	virtual void StateTick(float DeltaTime) override;
 
+	UPROPERTY()
+	TArray<AActor*> SpawnedTrailObjects;
+
 protected:
 	UPlayerMovementParameters* PlayerMovementParameters;
 	// === PARAMÈTRES DE DODGE ===

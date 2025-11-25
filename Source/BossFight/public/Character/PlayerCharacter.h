@@ -53,6 +53,8 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UClass* PersistingDodgeHitbox;
+	UPROPERTY(EditAnywhere)
+	UClass* DodgeShadow;
 
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnTakeDamage(float DamageAmount);
@@ -61,6 +63,7 @@ public:
 	
 	void TriggerTimeDilation();
 
+	bool isPerfectDodging = false;
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
