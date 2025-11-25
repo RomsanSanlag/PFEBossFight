@@ -102,3 +102,19 @@ WwiseProject/.userprefs
 WwiseProject/Backup/**
 # ---------------------------------------------
 
+# ---------------------------------------------
+# KawaiiPhysics_5_5_v1.19.1 a garder avec ses DLL
+# ---------------------------------------------
+
+# Ne pas ignorer ce plugin (code, .uplugin, etc.)
+!Plugins/KawaiiPhysics_5_5_v1.19.1/
+!Plugins/KawaiiPhysics_5_5_v1.19.1/**
+
+# Mais on continue d'ignorer son dossier Intermediate
+Plugins/KawaiiPhysics_5_5_v1.19.1/Intermediate/
+Plugins/KawaiiPhysics_5_5_v1.19.1/Intermediate/**
+
+# On s'assure que ses Binaries (et donc ses .dll) ne sont PAS ignores
+!Plugins/KawaiiPhysics_5_5_v1.19.1/Binaries/
+!Plugins/KawaiiPhysics_5_5_v1.19.1/Binaries/**
+!Plugins/KawaiiPhysics_5_5_v1.19.1/Binaries/Win64/*.dll
