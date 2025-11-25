@@ -54,8 +54,9 @@ public:
 	UCurveFloat* SpeedOverTime;
 	UPROPERTY(EditAnywhere)
 	TArray<TSubclassOf<AActor>> TargetableClasses;
-
-
+	UPROPERTY(EditAnywhere)
+	float HomingStrength = 1.0f;
+	
 	TArray<AActor*> FoundTargets;
 	AActor* CurrentTarget;
 	FVector StartPos;
@@ -63,7 +64,8 @@ public:
 	FVector BossLocation;
 	FVector Origin;
 	FRotator ViewRot;
-	FVector Up;
+	FVector InitialDirection;
+	FVector ArcDirection;
 	float time;
 
 	ACharacter* BossCharacter;

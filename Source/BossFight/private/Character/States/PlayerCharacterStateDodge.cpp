@@ -50,8 +50,15 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	PerfectDodgeWindow = PlayerMovementParameters->PerfectDodgeWindow;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
-
+	
 	IsPerfectDodgeHitboxSpawned = false;
+
+	StateMachine->StartingDodgeCharges--;
+	StateMachine->DodgeCooldownTimer = StateMachine->DodgeCooldown;
+	if (StateMachine->StartingDodgeCharges < StateMachine->MaxDodgeCharges && StateMachine->DodgeChargeRechargeTimer <= 0.0f)
+	{
+		StateMachine->DodgeChargeRechargeTimer = 0.0f;
+	}
 }
 
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)

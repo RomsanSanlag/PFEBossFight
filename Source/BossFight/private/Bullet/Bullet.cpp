@@ -30,7 +30,7 @@ void ABullet::BeginPlay()
 	if (!PlayerCharacter || !PC) return;
 
 	PC->GetPlayerViewPoint(Origin, ViewRot);
-	StartPos = PlayerCharacter->GetActorLocation();
+	StartPos = GetActorLocation();
 	
 	// Trouver la cible la plus visée
 	CurrentTarget = FindBestTarget();
@@ -57,8 +57,20 @@ void ABullet::BeginPlay()
 	{
 		EndPos = EndTrace;
 	}
-
-	Up = GetActorRotation().RotateVector(FVector::UpVector);
+	
+	FVector ShootDirection = (EndPos - StartPos).GetSafeNormal();
+	
+	FVector WorldUp = GetActorRotation().RotateVector(FVector::UpVector);
+    
+	// Si on tire presque verticalement, utiliser le forward du joueur
+	if (FMath::Abs(FVector::DotProduct(ShootDirection, WorldUp)) > 0.95f)
+	{
+		WorldUp = ViewRot.Vector().RightVector;
+	}
+    
+	// Créer un vecteur perpendiculaire à la direction de tir
+	ArcDirection = FVector::CrossProduct(ShootDirection, WorldUp).GetSafeNormal();
+	ArcDirection = FVector::CrossProduct(ArcDirection, ShootDirection).GetSafeNormal();
 }
 
 AActor* ABullet::FindBestTarget()
@@ -148,7 +160,7 @@ void ABullet::Tick(float DeltaTime)
 	
 	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistanceToTriggerHoming), 0.f, 1.f);
 	float HomingAttenuation = FMath::Clamp((PlayerToBossDist - MinHomingDistance) / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
-	float TimedHomingFactor = HomingFactor * HomingAttenuation * FMath::Pow(T, 0.5f);
+	float TimedHomingFactor = HomingFactor * HomingStrength * HomingAttenuation * FMath::Pow(T, 0.5f);
 
 	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
 
@@ -181,7 +193,7 @@ FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, floa
 	T = FMath::Clamp(T, 0.f, 1.f);
 
 	FVector Mid = (Start + End) * 0.5f;
-	FVector Control = Mid + Up * Height; // déjà dynamique grâce à CurveOverTime
+	FVector Control = Mid + ArcDirection * Height; // déjà dynamique grâce à CurveOverTime
 
 	float U = 1.f - T;
 	return U * U * Start + 2.f * U * T * Control + T * T * End;
@@ -221,7 +233,7 @@ void ABullet::BeginOverlap(UPrimitiveComponent* OverlappedComponent,
 					  bool bFromSweep, 
 					  const FHitResult &SweepResult)
 {
-	if (OtherActor && OtherActor != this && CurrentTarget)
+	if (OtherActor && OtherActor != this)
 	{
 		OnBulletDestroyed(OtherActor);
 		Destroy();

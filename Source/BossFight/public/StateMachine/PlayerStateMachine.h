@@ -21,9 +21,32 @@ class BOSSFIGHT_API UPlayerStateMachine : public UObject
 	GENERATED_BODY()
 
 public:
+	// Nombre max de charges
 	UPROPERTY()
-	float DodgeCooldown = 0.f;
-	
+	int MaxDodgeCharges = 3;
+
+	// Charges actuelles
+	UPROPERTY(EditAnywhere)
+	int StartingDodgeCharges = 3;
+
+	// Temps de recharge d’une charge
+	UPROPERTY(EditAnywhere)
+	float DodgeChargeRechargeTime = 1.0f;
+
+	// Timer interne pour la recharge
+	UPROPERTY()
+	float DodgeChargeRechargeTimer = 0.0f;
+
+	// Cooldown mini entre deux dashs (si charges dispo)
+	UPROPERTY(EditAnywhere)
+	float DodgeCooldown = 0.25f;
+
+	// Timer interne pour ce cooldown
+	UPROPERTY()
+	float DodgeCooldownTimer = 0.0f;
+
+
+	void InitParameters();
 	void Init(APlayerCharacter* inCharacter);
 
 	void Tick(float DeltaTime);
