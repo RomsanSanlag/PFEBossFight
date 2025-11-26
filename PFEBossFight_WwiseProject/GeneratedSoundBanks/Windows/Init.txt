@@ -1,5 +1,19 @@
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\BOSS\SFX	
+	582330804	MOVES_MC			\Default Work Unit\Master Audio Bus\MC\MOVES_MC	
+	712897226	MUS			\Default Work Unit\Master Audio Bus\MUS	
+	1026025285	MOVES			\Default Work Unit\Master Audio Bus\BOSS\MOVES	
+	1117531639	AMB			\Default Work Unit\Master Audio Bus\AMB	
+	1560169506	BOSS			\Default Work Unit\Master Audio Bus\BOSS	
+	1685527061	MC			\Default Work Unit\Master Audio Bus\MC	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3996957973	SFX_MC			\Default Work Unit\Master Audio Bus\MC\SFX_MC	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1883919640	RVB_Outdoor			\Default Work Unit\Master Audio Bus\RVB_Outdoor	
+
+Effect plug-ins	ID	Name	Type				Notes
+	2180422931	One_Tap_Quarter_Second	Wwise Delay			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

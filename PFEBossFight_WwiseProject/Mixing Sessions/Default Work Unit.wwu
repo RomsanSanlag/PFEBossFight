@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AA8FE533-CBCC-4984-9FCB-052579FE6EF5}" SchemaVersion="123">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{AA8FE533-CBCC-4984-9FCB-052579FE6EF5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AA8FE533-CBCC-4984-9FCB-052579FE6EF5}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="Master" ID="{F9A3B291-67B9-48E5-AF0B-25805DDFF038}">
+					<ObjectList>
+						<ObjectRef Name="AMB" ID="{B52AC2AA-F68E-409B-A92E-50CB0B41B2D5}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="MUS" ID="{1021CD29-A3C8-41D8-A6BD-1FF8725DC947}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="MC" ID="{3F0E9E99-F453-4181-A0F4-3D6EF86C46D0}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="MOVES_MC" ID="{17C50DC0-85C5-4513-BD6A-C473D12F089A}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="SFX_MC" ID="{6CF15443-A9B3-4619-9739-C761E0DFB44D}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="BOSS" ID="{404797E3-A35A-49F9-89B9-D0E5C522938F}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="MOVES" ID="{9DEC20B9-9BA6-4416-A698-93368584BE61}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="SFX" ID="{0DDADE53-C1D4-42B9-83C5-CEC2D39064E2}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+						<ObjectRef Name="RVB_Outdoor" ID="{4E203719-0552-4EDA-89FA-C8F54D177212}" WorkUnitID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>

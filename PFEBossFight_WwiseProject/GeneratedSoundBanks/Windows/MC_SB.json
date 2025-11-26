@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F9934541-F40E-4EF4-BCD3-9A043ACE5918}",
     "Language": "SFX",
-    "Hash": "{7EAE593C-7F07-0892-0130-E193E615EF31}",
+    "Hash": "{AD0BC1F7-335A-E10B-233D-3013CC5D8D6D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MC_SB",
     "ShortName": "MC_SB",
     "Path": "MC_SB.bnk",
@@ -139,10 +139,10 @@
       "Name": "Play_MC_SFX_Shoot",
       "ObjectPath": "\\Events\\Default Work Unit\\MC\\Play_MC_SFX_Shoot",
       "GUID": "{275495FB-949C-414A-9C16-543C3B70F01B}",
-      "MaxAttenuation": "1000",
+      "MaxAttenuation": "2000",
       "DurationType": "OneShot",
-      "DurationMin": "1.0323507",
-      "DurationMax": "1.4217336",
+      "DurationMin": "1.4599644",
+      "DurationMax": "2.0106351",
       "MediaRefs": [
        {
         "Id": "369601204"
@@ -164,6 +164,6 @@
     ]
    }
   ],
-  "FileHash": "{14E5F2A5-29CD-E4D3-6EED-29574448AEA7}"
+  "FileHash": "{40F04CCA-CAF0-F748-743E-38EEC3857B6A}"
  }
 }
