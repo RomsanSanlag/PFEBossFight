@@ -13,4 +13,5 @@ enum class PlayerCharacterStateID : uint8
 	Jump,
 	Fall,
 	Dodge,
+	SpecialAttack,
 };

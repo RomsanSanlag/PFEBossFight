@@ -121,6 +121,18 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     }
 
     LastMoveDirection = RawInputDirection.GetSafeNormal();
+    GEngine->AddOnScreenDebugMessage(
+        -1,
+        3.f,
+        FColor::Yellow,
+        FString::Printf(TEXT("SpecialAttack Input: %s"), 
+            Character->GetInputSpecialAttack() ? TEXT("TRUE") : TEXT("FALSE"))
+    );
+    if (Character->GetInputSpecialAttack())
+    {
+        StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
+        return;
+    }
 	if (Character->GetInputDodgeBuffer()
 		&& StateMachine->StartingDodgeCharges > 0
 		&& StateMachine->DodgeCooldownTimer <= 0.0f)
