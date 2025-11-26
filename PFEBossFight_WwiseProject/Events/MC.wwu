@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MC_SFX_Dash" ID="{E119EA09-F0B1-415B-9A24-00FA180D80D3}">
+					<ChildrenList>
+						<Action Name="" ID="{F903E2B6-3C10-408F-BF6C-D34E31C5AE19}" ShortID="919017293">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MC_SFX_Dash" ID="{464EF5BE-5AF3-49C0-B7FF-02D987B11E13}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F9934541-F40E-4EF4-BCD3-9A043ACE5918}",
     "Language": "SFX",
-    "Hash": "{81A2E358-7D99-38C4-4EA2-6B135337053F}",
+    "Hash": "{7EAE593C-7F07-0892-0130-E193E615EF31}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MC_SB",
     "ShortName": "MC_SB",
     "Path": "MC_SB.bnk",
@@ -21,7 +21,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MC_SFX_Shoot_04.wav",
-      "CachePath": "43/{43A0B5F1-4228-93F1-2EAE-C7FE6311555D}.wem"
+      "CachePath": "68/{68F3F094-62C7-29E9-409E-2C9A02DB2837}.wem"
+     },
+     {
+      "Id": "416012287",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_04.wav",
+      "CachePath": "DA/{DA005522-6A4C-00FC-D56C-792D46293DD5}.wem"
+     },
+     {
+      "Id": "438281958",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_05.wav",
+      "CachePath": "CE/{CEB183F7-B6F2-5E77-2AE7-17A07CC6A631}.wem"
      },
      {
       "Id": "475504615",
@@ -29,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MC_SFX_Shoot_03.wav",
-      "CachePath": "43/{4351FB1A-CEE2-A3B0-DC9A-D5241E8B8291}.wem"
+      "CachePath": "BF/{BFF522EB-8207-3564-6BC5-71750FDC4EE1}.wem"
      },
      {
       "Id": "508983556",
@@ -37,7 +53,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MC_SFX_Shoot_05.wav",
-      "CachePath": "9E/{9ECD36FD-7BA3-56F4-5283-8C9845A1013F}.wem"
+      "CachePath": "25/{255E8C77-7972-722B-6BF9-448587CF030D}.wem"
+     },
+     {
+      "Id": "545643149",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_06.wav",
+      "CachePath": "AA/{AAFE3CD9-A8A9-12AC-12FD-101435605E6B}.wem"
+     },
+     {
+      "Id": "629334560",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_01.wav",
+      "CachePath": "B7/{B7781349-20C2-E005-1233-422F4E42F6D3}.wem"
      },
      {
       "Id": "682864703",
@@ -45,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MC_SFX_Shoot_01.wav",
-      "CachePath": "E8/{E82EB5F8-CBB5-D4F8-804E-A956DC0B922C}.wem"
+      "CachePath": "C6/{C6E547EA-1217-0087-43D4-AA3D31C30B00}.wem"
      },
      {
       "Id": "765980188",
@@ -53,30 +85,64 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MC_SFX_Shoot_02.wav",
-      "CachePath": "34/{3430ED19-64E9-B143-3C80-C85FEF6D31E8}.wem"
+      "CachePath": "AD/{AD5AEF49-4FB4-7AEF-5172-35DD8B6F9F39}.wem"
+     },
+     {
+      "Id": "851070712",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_02.wav",
+      "CachePath": "FF/{FFFF8E1B-E439-3445-E9FE-1EEE71292B2C}.wem"
+     },
+     {
+      "Id": "905416393",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MC_SFX_Dash_03.wav",
+      "CachePath": "57/{5734CF67-D2B6-8168-D741-978EFC55DB28}.wem"
      }
     ],
-    "Plugins": {
-     "ShareSets": [
-      {
-       "Id": "3604890626",
-       "Name": "High_Pass_60Hz",
-       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\High Pass Filters\\High_Pass_60Hz",
-       "GUID": "{F9627628-0B10-4272-BC30-D4C20423CB38}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
-      }
-     ]
-    },
     "Events": [
+     {
+      "Id": "1406121661",
+      "Name": "Play_MC_SFX_Dash",
+      "ObjectPath": "\\Events\\Default Work Unit\\MC\\Play_MC_SFX_Dash",
+      "GUID": "{E119EA09-F0B1-415B-9A24-00FA180D80D3}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5063511",
+      "DurationMax": "1.7913635",
+      "MediaRefs": [
+       {
+        "Id": "416012287"
+       },
+       {
+        "Id": "438281958"
+       },
+       {
+        "Id": "545643149"
+       },
+       {
+        "Id": "629334560"
+       },
+       {
+        "Id": "851070712"
+       },
+       {
+        "Id": "905416393"
+       }
+      ]
+     },
      {
       "Id": "1649412178",
       "Name": "Play_MC_SFX_Shoot",
       "ObjectPath": "\\Events\\Default Work Unit\\MC\\Play_MC_SFX_Shoot",
       "GUID": "{275495FB-949C-414A-9C16-543C3B70F01B}",
+      "MaxAttenuation": "1000",
       "DurationType": "OneShot",
-      "DurationMin": "1.3842814",
-      "DurationMax": "1.9226513",
+      "DurationMin": "1.0323507",
+      "DurationMax": "1.4217336",
       "MediaRefs": [
        {
         "Id": "369601204"
@@ -93,18 +159,11 @@
        {
         "Id": "765980188"
        }
-      ],
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "3604890626"
-        }
-       ]
-      }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{9C089ED7-EAFB-7D47-7BE7-C26F5A615D5D}"
+  "FileHash": "{14E5F2A5-29CD-E4D3-6EED-29574448AEA7}"
  }
 }

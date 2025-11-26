@@ -10,18 +10,58 @@
     "Type": "User",
     "GUID": "{35AA7A40-A5B5-4768-88EC-D2B9A3FC0864}",
     "Language": "SFX",
-    "Hash": "{60C1F4E6-762C-5355-D594-F798C5E04217}",
+    "Hash": "{78BFB196-8E11-408F-54C5-022C8A322B4B}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\BOSS_SB",
     "ShortName": "BOSS_SB",
     "Path": "BOSS_SB.bnk",
     "Media": [
+     {
+      "Id": "56927303",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_01.wav",
+      "CachePath": "F7/{F7D9242B-A587-21BD-2E56-0D130AEA4204}.wem"
+     },
+     {
+      "Id": "215002236",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_02.wav",
+      "CachePath": "4F/{4F7357C8-4C88-9C31-DF25-7D7AE264C88A}.wem"
+     },
+     {
+      "Id": "353643052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_03.wav",
+      "CachePath": "C9/{C922BB54-FB37-8000-2DE8-B335544F3A57}.wem"
+     },
      {
       "Id": "390811697",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BOSS_SFX_Explosion_AOE.wav",
-      "CachePath": "09/{09D97C89-2132-0372-CEC3-7391EAEEF936}.wem"
+      "CachePath": "18/{18611C14-08E5-1AC6-F42B-15CE38B2FC1F}.wem"
+     },
+     {
+      "Id": "543603549",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_04.wav",
+      "CachePath": "B5/{B57F912B-2B04-9425-BB66-1E9A9AC95B59}.wem"
+     },
+     {
+      "Id": "925587241",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_05.wav",
+      "CachePath": "CB/{CB85A3B4-5C8B-650F-1365-F8F06F56D8C4}.wem"
      }
     ],
     "Events": [
@@ -30,18 +70,46 @@
       "Name": "Play_BOSS_SFX_Explosion_AOE",
       "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Explosion_AOE",
       "GUID": "{9DF89FB4-FA25-4CAC-B782-FB3426A7EC50}",
+      "MaxAttenuation": "5000",
       "DurationType": "OneShot",
-      "DurationMin": "9.415668",
-      "DurationMax": "11.862997",
+      "DurationMin": "8.713543",
+      "DurationMax": "10.978376",
       "MediaRefs": [
        {
         "Id": "390811697"
+       }
+      ]
+     },
+     {
+      "Id": "2708529024",
+      "Name": "Play_BOSS_SFX_Explosion_V2",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Explosion_V2",
+      "GUID": "{3D3A7735-2897-433E-8106-C4D6996EDCAD}",
+      "MaxAttenuation": "5000",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9043889",
+      "DurationMax": "2.416497",
+      "MediaRefs": [
+       {
+        "Id": "56927303"
+       },
+       {
+        "Id": "215002236"
+       },
+       {
+        "Id": "353643052"
+       },
+       {
+        "Id": "543603549"
+       },
+       {
+        "Id": "925587241"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{D2083A4B-8A5B-01A2-7287-F985A74755C1}"
+  "FileHash": "{8974FDAC-B4D4-EAF7-3026-6032DEFD55E0}"
  }
 }

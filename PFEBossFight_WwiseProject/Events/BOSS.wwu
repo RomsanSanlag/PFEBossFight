@@ -8,7 +8,18 @@
 						<Action Name="" ID="{EB39AFF6-15FE-418C-AA87-3F70B848B06B}" ShortID="30486309">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BOSS_SFX_Explosion_AOE" ID="{30FB7EE0-1E2D-4091-B015-B5F4E3441EB0}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+									<ObjectRef Name="BOSS_SFX_Explosion_V1" ID="{30FB7EE0-1E2D-4091-B015-B5F4E3441EB0}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_Explosion_V2" ID="{3D3A7735-2897-433E-8106-C4D6996EDCAD}">
+					<ChildrenList>
+						<Action Name="" ID="{E6F579A4-CFD6-4C3B-91B6-99E0E9A15B3A}" ShortID="21238462">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Explosion_V2" ID="{E8EE107E-C4C4-44F3-8742-4B06DC56EDF8}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{988C8A6F-0828-4ED0-A8F3-76F7ACC1AEA3}" SchemaVersion="123">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{988C8A6F-0828-4ED0-A8F3-76F7ACC1AEA3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{988C8A6F-0828-4ED0-A8F3-76F7ACC1AEA3}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_iZotope_Trash_Dynamics_Mono" ID="{001A8268-3DD5-4FBE-A8A2-DE720B1E51D5}" PluginName="iZotope Trash Dynamics Mono" CompanyID="259" PluginID="5" PluginType="3"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

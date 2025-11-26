@@ -1,6 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
+	2708529024	Play_BOSS_SFX_Explosion_V2			\Default Work Unit\BOSS\Play_BOSS_SFX_Explosion_V2	
 	3788246369	Play_BOSS_SFX_Explosion_AOE			\Default Work Unit\BOSS\Play_BOSS_SFX_Explosion_AOE	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	390811697	BOSS_SFX_Explosion_AOE	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\09\{09D97C89-2132-0372-CEC3-7391EAEEF936}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_AOE\BOSS_SFX_Explosion_AOE		2029292
+	56927303	BOSS_SFX_Explosion_V2_01	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\F7\{F7D9242B-A587-21BD-2E56-0D130AEA4204}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_01		410516
+	215002236	BOSS_SFX_Explosion_V2_02	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\4F\{4F7357C8-4C88-9C31-DF25-7D7AE264C88A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_02		413204
+	353643052	BOSS_SFX_Explosion_V2_03	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\C9\{C922BB54-FB37-8000-2DE8-B335544F3A57}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_03		412608
+	390811697	BOSS_SFX_Explosion_V1	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\18\{18611C14-08E5-1AC6-F42B-15CE38B2FC1F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V1\BOSS_SFX_Explosion_V1		1877976
+	543603549	BOSS_SFX_Explosion_V2_04	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\B5\{B57F912B-2B04-9425-BB66-1E9A9AC95B59}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_04		413164
+	925587241	BOSS_SFX_Explosion_V2_05	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\CB\{CB85A3B4-5C8B-650F-1365-F8F06F56D8C4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_05		413444
 
