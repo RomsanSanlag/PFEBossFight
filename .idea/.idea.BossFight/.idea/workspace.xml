@@ -19,9 +19,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/L_Marion_4000.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/L_Marion_4000.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BP_BossCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BTTask_TriggerAttack5.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BT_BossTree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/BT_BossTree.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerViolet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerViolet.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/VFX/VFX/BOSS/TP/Materials/M_TP_Boss.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/VFX/VFX/BOSS/TP/Materials/M_TP_Boss.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/VFX/VFX/BOSS/TP/Materials/NewMaterialParameterCollection.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
