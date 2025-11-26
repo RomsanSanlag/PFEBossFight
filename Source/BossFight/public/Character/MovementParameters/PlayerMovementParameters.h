@@ -37,9 +37,12 @@ public:
         
         DashDuration = 1.0f;
         DashDistance = 600.0f;
-        DodgeCooldown = 5.0f;
+        DodgeCooldown = 1.0f;
         DodgeDelay = 0.1f;
         PerfectDodgeWindow = 0.15f;
+        MaxDodgeCharges = 3.f;
+        StartingDodgeCharges = 3;
+        DodgeChargeRechargeTime = 3.f;
         DashEasing;
 
         TimeSlowDuration = 0.25f;
@@ -79,6 +82,12 @@ public:
     float DodgeCooldown;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
     float DodgeDelay;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    float MaxDodgeCharges;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    int StartingDodgeCharges;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    float DodgeChargeRechargeTime;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Perfect Dodge")
     UCurveFloat* DashEasing;
