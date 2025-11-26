@@ -101,6 +101,7 @@
 											<XPos>0</XPos>
 											<YPos>0</YPos>
 											<Flags>5</Flags>
+											<SegmentShape>Log2</SegmentShape>
 										</Point>
 										<Point>
 											<XPos>2000</XPos>

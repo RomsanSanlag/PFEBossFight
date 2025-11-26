@@ -25,6 +25,83 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BOSS_SFX_Angoisse_Load" ID="{05FE06A9-F855-4C3F-86E0-FB1C55BA2354}">
+					<ChildrenList>
+						<Action Name="" ID="{EB74A098-6957-4656-8667-1014F2D3C219}" ShortID="390386872">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Angoisse_Load" ID="{9DA466B8-15BD-417D-9620-AA6B974E3E6B}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_Angoisse_Impact" ID="{25314277-72E7-415C-85D2-06669797EB6D}">
+					<ChildrenList>
+						<Action Name="" ID="{1BA3F1A0-E06C-4540-9DD9-0C673AB7DEEE}" ShortID="304994768">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Angoisse_Impact" ID="{1A38B989-A9EF-4933-805E-8C180F479411}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_Pleur_Load" ID="{AE469F9B-46A6-4E0D-AF3D-918C7246BEAA}">
+					<ChildrenList>
+						<Action Name="" ID="{54605CA5-E38A-4853-B2D1-D7C8C3AD6BA4}" ShortID="759167324">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Pleur_Load" ID="{A9CA5741-4DFD-4736-865B-438B3362B756}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_Pleur_Impact" ID="{BFAA3C60-F458-43B6-9541-C3C6159E5D5D}">
+					<ChildrenList>
+						<Action Name="" ID="{60368180-9D0A-4D82-AF3A-80F1327608CB}" ShortID="95781059">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_Pleur_Impact" ID="{BB579B55-E5F7-45D1-9A69-C0D775199C3D}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_LaserEye_Shoot" ID="{CC1CE78C-A23A-4702-A6DD-7665515772D6}">
+					<ChildrenList>
+						<Action Name="" ID="{04EF4262-A03A-4D13-AAE4-6E195F130546}" ShortID="472029639">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_LaserEye_Shoot" ID="{CA40621B-980E-4258-BFFB-B029026BCC3D}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_LaserEye_Focus" ID="{15157F9C-F636-4532-9294-E0BADA799535}">
+					<ChildrenList>
+						<Action Name="" ID="{7A19001F-5E39-4900-B4FB-8F819382740A}" ShortID="301303756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_LaserEye_Focus" ID="{564923B0-ECD5-4321-A98C-6B35DB1737A8}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_LaserEye_UnFocus" ID="{4FFB5225-80B7-4DD5-B01B-65E186CDCF39}">
+					<ChildrenList>
+						<Action Name="" ID="{1DE5B161-2E95-4239-B084-B55B47026D1B}" ShortID="624483437">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_LaserEye_UnFocus" ID="{509AEFD7-930A-4960-B5A0-B747A33235B1}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -10,12 +10,266 @@
     "Type": "User",
     "GUID": "{35AA7A40-A5B5-4768-88EC-D2B9A3FC0864}",
     "Language": "SFX",
-    "Hash": "{7E5A9A52-BA56-595A-ECE7-1EF359EC415E}",
+    "Hash": "{59E74B39-97AA-03F5-E05A-0FB07E14F66D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\BOSS_SB",
     "ShortName": "BOSS_SB",
-    "Path": "BOSS_SB.bnk"
+    "Path": "BOSS_SB.bnk",
+    "Media": [
+     {
+      "Id": "56927303",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_01.wav",
+      "CachePath": "F7/{F7D9242B-A587-21BD-2E56-0D130AEA4204}.wem"
+     },
+     {
+      "Id": "186876471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOOS_SFX_LaserEyeShoot_UnFocus.wav",
+      "CachePath": "BD/{BDF53BA9-1E5C-7340-0730-67DC00ADB1FF}.wem"
+     },
+     {
+      "Id": "215002236",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_02.wav",
+      "CachePath": "4F/{4F7357C8-4C88-9C31-DF25-7D7AE264C88A}.wem"
+     },
+     {
+      "Id": "315126234",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_PleurLoad.wav",
+      "CachePath": "6C/{6C7F6470-A8B1-E97B-143C-1D370AC08C15}.wem"
+     },
+     {
+      "Id": "353643052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_03.wav",
+      "CachePath": "C9/{C922BB54-FB37-8000-2DE8-B335544F3A57}.wem"
+     },
+     {
+      "Id": "390811697",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_AOE.wav",
+      "CachePath": "2E/{2E96E485-BC87-F230-A5CE-D642D13FC6AB}.wem"
+     },
+     {
+      "Id": "392970654",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_PleurImpact.wav",
+      "CachePath": "A1/{A1F7A6D5-F512-502D-53A9-CD8C14AC0E0D}.wem"
+     },
+     {
+      "Id": "513405651",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOOS_SFX_LaserEyeShoot_Focus.wav",
+      "CachePath": "FC/{FCA11208-8409-D6EC-4892-4CE9362847F2}.wem"
+     },
+     {
+      "Id": "543603549",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_04.wav",
+      "CachePath": "B5/{B57F912B-2B04-9425-BB66-1E9A9AC95B59}.wem"
+     },
+     {
+      "Id": "778929564",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Angoisse_Impact.wav",
+      "CachePath": "31/{3120EC33-C70A-8FB0-19ED-56743C951C6D}.wem"
+     },
+     {
+      "Id": "888418604",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOOS_SFX_LaserEyeShoot.wav",
+      "CachePath": "08/{08B1D1D5-E404-A898-3272-2864F52B2057}.wem"
+     },
+     {
+      "Id": "925587241",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Explosion_V2_05.wav",
+      "CachePath": "CB/{CB85A3B4-5C8B-650F-1365-F8F06F56D8C4}.wem"
+     },
+     {
+      "Id": "1026903730",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_Angoisse_Load.wav",
+      "CachePath": "CC/{CCCDC083-4278-2906-83D8-E6A56E6ECB08}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "325277420",
+      "Name": "Play_BOSS_SFX_Angoisse_Impact",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Angoisse_Impact",
+      "GUID": "{25314277-72E7-415C-85D2-06669797EB6D}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "2.7514951",
+      "DurationMax": "4.3677263",
+      "MediaRefs": [
+       {
+        "Id": "778929564"
+       }
+      ]
+     },
+     {
+      "Id": "2636526858",
+      "Name": "Play_BOSS_SFX_Angoisse_Load",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Angoisse_Load",
+      "GUID": "{05FE06A9-F855-4C3F-86E0-FB1C55BA2354}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "5.233333",
+      "DurationMax": "5.233333",
+      "MediaRefs": [
+       {
+        "Id": "1026903730"
+       }
+      ]
+     },
+     {
+      "Id": "3788246369",
+      "Name": "Play_BOSS_SFX_Explosion_AOE",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Explosion_AOE",
+      "GUID": "{9DF89FB4-FA25-4CAC-B782-FB3426A7EC50}",
+      "MaxAttenuation": "5000",
+      "DurationType": "OneShot",
+      "DurationMin": "8.713543",
+      "DurationMax": "10.978376",
+      "MediaRefs": [
+       {
+        "Id": "390811697"
+       }
+      ]
+     },
+     {
+      "Id": "2708529024",
+      "Name": "Play_BOSS_SFX_Explosion_V2",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Explosion_V2",
+      "GUID": "{3D3A7735-2897-433E-8106-C4D6996EDCAD}",
+      "MaxAttenuation": "5000",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9043889",
+      "DurationMax": "2.416497",
+      "MediaRefs": [
+       {
+        "Id": "56927303"
+       },
+       {
+        "Id": "215002236"
+       },
+       {
+        "Id": "353643052"
+       },
+       {
+        "Id": "543603549"
+       },
+       {
+        "Id": "925587241"
+       }
+      ]
+     },
+     {
+      "Id": "1362624021",
+      "Name": "Play_BOSS_SFX_LaserEye_Focus",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_Focus",
+      "GUID": "{15157F9C-F636-4532-9294-E0BADA799535}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0333333",
+      "DurationMax": "2.0333333",
+      "MediaRefs": [
+       {
+        "Id": "513405651"
+       }
+      ]
+     },
+     {
+      "Id": "1738699012",
+      "Name": "Play_BOSS_SFX_LaserEye_Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_Shoot",
+      "GUID": "{CC1CE78C-A23A-4702-A6DD-7665515772D6}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "MediaRefs": [
+       {
+        "Id": "888418604"
+       }
+      ]
+     },
+     {
+      "Id": "2773932494",
+      "Name": "Play_BOSS_SFX_LaserEye_UnFocus",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_UnFocus",
+      "GUID": "{4FFB5225-80B7-4DD5-B01B-65E186CDCF39}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "1.4",
+      "DurationMax": "1.4",
+      "MediaRefs": [
+       {
+        "Id": "186876471"
+       }
+      ]
+     },
+     {
+      "Id": "1792758125",
+      "Name": "Play_BOSS_SFX_Pleur_Impact",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Pleur_Impact",
+      "GUID": "{BFAA3C60-F458-43B6-9541-C3C6159E5D5D}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2390208",
+      "DurationMax": "1.2390208",
+      "MediaRefs": [
+       {
+        "Id": "392970654"
+       }
+      ]
+     },
+     {
+      "Id": "1788233747",
+      "Name": "Play_BOSS_SFX_Pleur_Load",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_Pleur_Load",
+      "GUID": "{AE469F9B-46A6-4E0D-AF3D-918C7246BEAA}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "2.1333334",
+      "DurationMax": "2.1333334",
+      "MediaRefs": [
+       {
+        "Id": "315126234"
+       }
+      ]
+     }
+    ]
    }
   ],
-  "FileHash": "{6E83ABED-529B-A404-39DA-373CBB91F2C6}"
+  "FileHash": "{E516D294-C34A-F126-37FA-F56296A5784C}"
  }
 }

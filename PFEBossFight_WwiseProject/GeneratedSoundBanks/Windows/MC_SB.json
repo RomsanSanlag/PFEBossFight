@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F9934541-F40E-4EF4-BCD3-9A043ACE5918}",
     "Language": "SFX",
-    "Hash": "{AD0BC1F7-335A-E10B-233D-3013CC5D8D6D}",
+    "Hash": "{AA97852B-BF3B-0DED-B8AB-53C9E2B4EDCA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MC_SB",
     "ShortName": "MC_SB",
     "Path": "MC_SB.bnk",
@@ -110,6 +110,7 @@
       "Name": "Play_MC_SFX_Dash",
       "ObjectPath": "\\Events\\Default Work Unit\\MC\\Play_MC_SFX_Dash",
       "GUID": "{E119EA09-F0B1-415B-9A24-00FA180D80D3}",
+      "MaxAttenuation": "2000",
       "DurationType": "OneShot",
       "DurationMin": "1.5063511",
       "DurationMax": "1.7913635",
@@ -164,6 +165,6 @@
     ]
    }
   ],
-  "FileHash": "{40F04CCA-CAF0-F748-743E-38EEC3857B6A}"
+  "FileHash": "{E3F4EBD4-04F8-333C-2699-E611B71B9929}"
  }
 }
