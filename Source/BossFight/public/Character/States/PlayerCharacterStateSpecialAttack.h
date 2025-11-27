@@ -27,6 +27,7 @@ protected:
 	float TimeToChargeSpecialAttack;
 	float MaxTimeToHoldAttack;
 	float StunAfterAttack;
+	float CancelWindow;
 	
 	
 	float InitialSpeed = 0.f;
@@ -45,7 +46,9 @@ protected:
 	bool bIsCharging = true;
 	bool bIsHolding = false;
 	bool bHasShot = false;
+	bool bIsCommitted = false;
 
 private:
-	
+	float w;
+	float InitialMouseSensitivity;
 };

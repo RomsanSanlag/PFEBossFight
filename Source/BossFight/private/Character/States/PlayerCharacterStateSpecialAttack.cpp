@@ -5,6 +5,7 @@
 
 #include "Character/PlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 void UPlayerCharacterStateSpecialAttack::StateInit(UPlayerStateMachine* InStateMachine)
 {
@@ -48,7 +49,11 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	TimeToChargeSpecialAttack = PlayerMovementParameters->TimeToChargeSpecialAttack;
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
-
+	CancelWindow = PlayerMovementParameters->CancelWindow;
+	
+	// Sauvegarde la sensibilité initiale
+	InitialMouseSensitivity = Character->MouseSensitivity;
+	
 	// Récupère la vitesse actuelle du personnage
 	InitialSpeed = Movement->Velocity.Size();
 	CurrentSlowDownTime = 0.f;
@@ -78,24 +83,99 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 			FActorSpawnParameters SpawnParams;
 			SpawnParams.Owner = Character;
 			SpawnParams.Instigator = Character;
+
+			APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			if (!PC) return;
+
+			FRotator ViewRot;
+			FVector Origin;
+
+			PC->GetPlayerViewPoint(Origin, ViewRot);
+			
+			FHitResult Hit;
+			FCollisionQueryParams Params;
+			Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+			Params.AddIgnoredActor(Character);
+			
+			FVector StartTrace = Origin;
+			FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+
+			FVector EndPos;
+
+			if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+			{
+				EndPos = Hit.ImpactPoint + ViewRot.Vector();
+			}
+			else
+			{
+				EndPos = EndTrace;
+			}
+
+			// look at
+			FRotator LookAtRotation = (EndPos - SpawnLocation).Rotation();
+			SceneComponent->SetWorldRotation(LookAtRotation);
+
+			if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+			{
+				EndPos = Hit.ImpactPoint + ViewRot.Vector();
+    
+				// Debug: Ligne verte jusqu'au point d'impact
+				DrawDebugLine(
+					GetWorld(),
+					StartTrace,
+					Hit.ImpactPoint,
+					FColor::Green,
+					false,
+					1.0f,  // Durée en secondes
+					0,
+					2.0f   // Épaisseur
+				);
+    
+				// Debug: Sphère rouge au point d'impact
+				DrawDebugSphere(
+					GetWorld(),
+					Hit.ImpactPoint,
+					10.0f,  // Rayon
+					12,     // Segments
+					FColor::Red,
+					false,
+					1.0f
+				);
+			}
+			else
+			{
+				EndPos = EndTrace;
+    
+				// Debug: Ligne jaune si pas de hit
+				DrawDebugLine(
+					GetWorld(),
+					StartTrace,
+					EndTrace,
+					FColor::Yellow,
+					false,
+					1.0f,
+					0,
+					2.0f
+				);
+			}
 			
 			UWorld* World = Character->GetWorld();
 			if (World)
 			{
-				SpawnedVFX = World->SpawnActor<AActor>(
-					Character->SpecialAttackVFX,
-					SpawnLocation,
-					SpawnRotation,
-					SpawnParams
-				);
-				
-				if (SpawnedVFX)
-				{
-					// Attache le VFX à l'AttackOrigin pour qu'il suive le joueur
-					SpawnedVFX->AttachToComponent(
-						SceneComponent,
-						FAttachmentTransformRules::SnapToTargetNotIncludingScale
-					);
+			    SpawnedVFX = World->SpawnActor<AActor>(
+			        Character->SpecialAttackVFX,
+			        SpawnLocation,
+			        LookAtRotation,  // Utilise LookAtRotation au lieu de SpawnRotation
+			        SpawnParams
+			    );
+			    
+			    if (SpawnedVFX)
+			    {
+			        // Attache le VFX à l'AttackOrigin pour qu'il suive le joueur
+			        SpawnedVFX->AttachToComponent(
+			            SceneComponent,
+			            FAttachmentTransformRules::SnapToTargetNotIncludingScale
+			        );
 					
 					// Calcule la TimeDilation nécessaire
 					// Le VFX dure 2 secondes de base, on veut qu'il dure TimeToChargeSpecialAttack
@@ -134,6 +214,9 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 		FString::Printf(TEXT("Exit Special Attack"))
 	);
 
+	// Restaure la sensibilité de la souris
+	Character->MouseSensitivity = InitialMouseSensitivity;
+
 	// Détruit tous les VFX quand on quitte l'état
 	if (SpawnedVFX && SpawnedVFX->IsValidLowLevel())
 	{
@@ -160,6 +243,13 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
+
+	// Phase de charge : lerp de la sensibilité vers 0
+	if (bIsCharging)
+	{
+		float ChargeProgress = FMath::Clamp(CurrentChargeTime / TimeToChargeSpecialAttack, 0.f, 1.f);
+		Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+	}
 
 	// Continue le ralentissement tant qu'on n'a pas atteint TimeToSlowDown
 	if (CurrentSlowDownTime < TimeToSlowDown)
@@ -200,6 +290,43 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	// Phase 1: Charge
 	if (bIsCharging)
 	{
+		// Vérifie si le bouton est toujours maintenu
+		if (!Character->GetInputSpecialAttack() && CurrentChargeTime<CancelWindow) 
+		{
+			// Bouton relâché pendant la charge - annule l'attaque
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				3.f,
+				FColor::Orange,
+				FString::Printf(TEXT("Special Attack cancelled - button released during charge"))
+			);
+			
+			// Double la TimeDilation du VFX pour qu'il disparaisse rapidement
+			if (SpawnedVFX && SpawnedVFX->IsValidLowLevel())
+			{
+				FProperty* TimeDilationProp = SpawnedVFX->GetClass()->FindPropertyByName(TEXT("TimeDilation"));
+				if (TimeDilationProp)
+				{
+					if (FFloatProperty* FloatProp = CastField<FFloatProperty>(TimeDilationProp))
+					{
+						float CurrentDilation = FloatProp->GetPropertyValue_InContainer(SpawnedVFX);
+						FloatProp->SetPropertyValue_InContainer(SpawnedVFX, CurrentDilation * 2.0f);
+						
+						GEngine->AddOnScreenDebugMessage(
+							-1,
+							3.f,
+							FColor::Orange,
+							FString::Printf(TEXT("VFX TimeDilation doubled to: %.2f"), CurrentDilation * 2.0f)
+						);
+					}
+				}
+			}
+			
+			// Retourne à l'état Idle
+			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+			return;
+		}
+		
 		CurrentChargeTime += DeltaTime;
 		
 		if (CurrentChargeTime >= TimeToChargeSpecialAttack)
@@ -260,11 +387,17 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	// Phase 2: Hold
 	else if (bIsHolding)
 	{
-		CurrentHoldTime += DeltaTime;
-		
-		if (CurrentHoldTime >= MaxTimeToHoldAttack)
+		// Vérifie si le bouton est relâché pendant le hold
+		if (!Character->GetInputSpecialAttack())
 		{
-			// Fin du hold, passage au Shoot
+			// Bouton relâché pendant le hold - lance l'attaque immédiatement
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				3.f,
+				FColor::Green,
+				FString::Printf(TEXT("Special Attack released - firing!"))
+			);
+			
 			bIsHolding = false;
 			bHasShot = true;
 			
@@ -309,7 +442,65 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 								-1,
 								3.f,
 								FColor::Magenta,
-								FString::Printf(TEXT("Shoot VFX spawned"))
+								FString::Printf(TEXT("Shoot VFX spawned (released early)"))
+							);
+						}
+					}
+				}
+			}
+			return;
+		}
+		
+		CurrentHoldTime += DeltaTime;
+		
+		if (CurrentHoldTime >= MaxTimeToHoldAttack)
+		{
+			// Fin du hold, passage au Shoot (temps maximum atteint)
+			bIsHolding = false;
+			bHasShot = true;
+			
+			// Détruit le HoldVFX
+			if (HoldVFX && HoldVFX->IsValidLowLevel())
+			{
+				HoldVFX->Destroy();
+				HoldVFX = nullptr;
+			}
+			
+			// Spawn le ShootVFX
+			if (Character->ShootVFX && AttackOrigin)
+			{
+				USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
+				if (SceneComponent)
+				{
+					FVector SpawnLocation = SceneComponent->GetComponentLocation();
+					FRotator SpawnRotation = SceneComponent->GetComponentRotation();
+					
+					FActorSpawnParameters SpawnParams;
+					SpawnParams.Owner = Character;
+					SpawnParams.Instigator = Character;
+					
+					UWorld* World = Character->GetWorld();
+					if (World)
+					{
+						ShootVFX = World->SpawnActor<AActor>(
+							Character->ShootVFX,
+							SpawnLocation,
+							SpawnRotation,
+							SpawnParams
+						);
+						
+						if (ShootVFX)
+						{
+							ShootVFX->AttachToComponent(
+								SceneComponent,
+								FAttachmentTransformRules::SnapToTargetNotIncludingScale
+							);
+							
+							GEngine->AddOnScreenDebugMessage(
+								-1,
+								3.f,
+								FColor::Magenta,
+								FString::Printf(TEXT("Shoot VFX spawned (max hold time reached)"))
 							);
 						}
 					}
