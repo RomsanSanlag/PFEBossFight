@@ -54,6 +54,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	BindInputMoveYAxisActions(EnhancedInputComponent);
 	BindInputLookActions(EnhancedInputComponent);
 	BindInputDodge(EnhancedInputComponent);
+	BindInputSpecialAttack(EnhancedInputComponent);
 }
 
 void APlayerCharacter::CreateStateMachine()
@@ -106,15 +107,12 @@ void APlayerCharacter::TriggerTimeDilation()
 {
 	UCameraComponent* Camera = GetComponentByClass<UCameraComponent>();
 	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
-	Camera->PostProcessSettings.bOverride_ColorSaturation = true;
-	Camera->PostProcessSettings.ColorSaturation = FVector4(0.0f, 0.0f, 0.0f, 1.0f);
 	isPerfectDodging = true;
 	FTimerHandle TimerHandle;
 	GetWorldTimerManager().SetTimer(
 		TimerHandle,
-		[this, Camera]() {
+		[this]() {
 			UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
-			Camera->PostProcessSettings.ColorSaturation = FVector4(1.0f, 1.0f, 1.0f, 1.0f);
 		},
 		PlayerMovementParameters->TimeSlowDuration,
 		false
@@ -156,6 +154,11 @@ float APlayerCharacter::GetInputMoveY() const
 float APlayerCharacter::GetInputDodgeBuffer() const
 {
 	return InputDodgeBuffer;
+}
+
+float APlayerCharacter::GetInputSpecialAttack() const
+{
+	return InputSpecialAttackBuffer;
 }
 
 void APlayerCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent)
@@ -247,6 +250,38 @@ void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInp
 void APlayerCharacter::OnInputDodge(const FInputActionValue& InputActionValue)
 {
 	InputDodgeBuffer = InputActionValue.Get<bool>();
+}
+
+void APlayerCharacter::BindInputSpecialAttack(UEnhancedInputComponent* EnhancedInputComponent)
+{
+	if (InputData == nullptr) return;
+
+	if (InputData->InputActionSpecialAttackBuffer)
+	{
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Started,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Triggered,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Completed,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+	}
+}
+
+void APlayerCharacter::OnInputSpecialAttack(const FInputActionValue& InputActionValue)
+{
+	InputSpecialAttackBuffer = InputActionValue.Get<bool>();
 }
 
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
