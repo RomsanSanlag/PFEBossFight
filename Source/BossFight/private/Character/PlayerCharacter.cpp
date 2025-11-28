@@ -93,7 +93,8 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 {
 	LifePoint -= DamageAmount;
-	if (LifePoint < 0) LifePoint = 0; // game over a mettre plus tard
+	if (LifePoint < 0) LifePoint = 0; 
+	OnDomagePlayer(LifePoint);// game over a mettre plus tard
 }
 
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
