@@ -3,6 +3,8 @@
 
 #include "BossFight/Public/Character/States/PlayerCharacterStateSpecialAttack.h"
 
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
 #include "Character/PlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -33,14 +35,7 @@ PlayerCharacterStateID UPlayerCharacterStateSpecialAttack::GetStateID()
 
 void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
-	Super::StateEnter(PlayerStateID);
-
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Cyan,
-		FString::Printf(TEXT("Enter SpecialAttack"))
-	);
+	Super::StateEnter(PlayerStateID);	
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
@@ -61,6 +56,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	// Réinitialise les timers et états
 	CurrentChargeTime = 0.f;
 	CurrentHoldTime = 0.f;
+	CurrentStunTime = 0.f;
 	bIsCharging = true;
 	bIsHolding = false;
 	bHasShot = false;
@@ -190,13 +186,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 							FloatProp->SetPropertyValue_InContainer(SpawnedVFX, CalculatedTimeDilation);
 						}
 					}
-					
-					GEngine->AddOnScreenDebugMessage(
-						-1,
-						3.f,
-						FColor::Green,
-						FString::Printf(TEXT("Charge VFX spawned with TimeDilation: %.2f"), CalculatedTimeDilation)
-					);
+			    	
 				}
 			}
 		}
@@ -207,12 +197,6 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 {
 	Super::StateExit(PlayerStateID);
 	
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Red,
-		FString::Printf(TEXT("Exit Special Attack"))
-	);
 
 	// Restaure la sensibilité de la souris
 	Character->MouseSensitivity = InitialMouseSensitivity;
@@ -232,7 +216,6 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 	
 	if (ShootVFX && ShootVFX->IsValidLowLevel())
 	{
-		ShootVFX->Destroy();
 		ShootVFX = nullptr;
 	}
 }
@@ -243,6 +226,32 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
+
+	// === PHASE DE STUN APRÈS L'ATTAQUE ===
+	if (bHasShot)
+	{
+		CurrentStunTime += DeltaTime;
+		
+		// Maintient le joueur immobile pendant le stun
+		Movement->MaxWalkSpeed = 0.f;
+		
+		// Une fois le stun terminé, retourne à Idle
+		if (CurrentStunTime >= StunAfterAttack)
+		{
+			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+			return;
+		}
+		
+		// Ne continue pas le reste du tick pendant le stun
+		return;
+	}
+
+	// === MISE À JOUR DE LA ROTATION DU SPAWN POINT ===
+	// Continue de mettre à jour la rotation pendant la charge et le hold
+	if ((bIsCharging || bIsHolding) && AttackOrigin)
+	{
+		UpdateAttackOriginRotation();
+	}
 
 	// Phase de charge : lerp de la sensibilité vers 0
 	if (bIsCharging)
@@ -291,15 +300,9 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	if (bIsCharging)
 	{
 		// Vérifie si le bouton est toujours maintenu
-		if (!Character->GetInputSpecialAttack() && CurrentChargeTime<CancelWindow) 
+		if (!Character->GetInputSpecialAttack() && CurrentChargeTime < CancelWindow) 
 		{
 			// Bouton relâché pendant la charge - annule l'attaque
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				3.f,
-				FColor::Orange,
-				FString::Printf(TEXT("Special Attack cancelled - button released during charge"))
-			);
 			
 			// Double la TimeDilation du VFX pour qu'il disparaisse rapidement
 			if (SpawnedVFX && SpawnedVFX->IsValidLowLevel())
@@ -311,13 +314,6 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 					{
 						float CurrentDilation = FloatProp->GetPropertyValue_InContainer(SpawnedVFX);
 						FloatProp->SetPropertyValue_InContainer(SpawnedVFX, CurrentDilation * 2.0f);
-						
-						GEngine->AddOnScreenDebugMessage(
-							-1,
-							3.f,
-							FColor::Orange,
-							FString::Printf(TEXT("VFX TimeDilation doubled to: %.2f"), CurrentDilation * 2.0f)
-						);
 					}
 				}
 			}
@@ -371,13 +367,6 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 								SceneComponent,
 								FAttachmentTransformRules::SnapToTargetNotIncludingScale
 							);
-							
-							GEngine->AddOnScreenDebugMessage(
-								-1,
-								3.f,
-								FColor::Yellow,
-								FString::Printf(TEXT("Hold VFX spawned"))
-							);
 						}
 					}
 				}
@@ -391,63 +380,7 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 		if (!Character->GetInputSpecialAttack())
 		{
 			// Bouton relâché pendant le hold - lance l'attaque immédiatement
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				3.f,
-				FColor::Green,
-				FString::Printf(TEXT("Special Attack released - firing!"))
-			);
-			
-			bIsHolding = false;
-			bHasShot = true;
-			
-			// Détruit le HoldVFX
-			if (HoldVFX && HoldVFX->IsValidLowLevel())
-			{
-				HoldVFX->Destroy();
-				HoldVFX = nullptr;
-			}
-			
-			// Spawn le ShootVFX
-			if (Character->ShootVFX && AttackOrigin)
-			{
-				USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
-				if (SceneComponent)
-				{
-					FVector SpawnLocation = SceneComponent->GetComponentLocation();
-					FRotator SpawnRotation = SceneComponent->GetComponentRotation();
-					
-					FActorSpawnParameters SpawnParams;
-					SpawnParams.Owner = Character;
-					SpawnParams.Instigator = Character;
-					
-					UWorld* World = Character->GetWorld();
-					if (World)
-					{
-						ShootVFX = World->SpawnActor<AActor>(
-							Character->ShootVFX,
-							SpawnLocation,
-							SpawnRotation,
-							SpawnParams
-						);
-						
-						if (ShootVFX)
-						{
-							ShootVFX->AttachToComponent(
-								SceneComponent,
-								FAttachmentTransformRules::SnapToTargetNotIncludingScale
-							);
-							
-							GEngine->AddOnScreenDebugMessage(
-								-1,
-								3.f,
-								FColor::Magenta,
-								FString::Printf(TEXT("Shoot VFX spawned (released early)"))
-							);
-						}
-					}
-				}
-			}
+			SpawnShootVFX();
 			return;
 		}
 		
@@ -456,56 +389,162 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 		if (CurrentHoldTime >= MaxTimeToHoldAttack)
 		{
 			// Fin du hold, passage au Shoot (temps maximum atteint)
-			bIsHolding = false;
-			bHasShot = true;
+			SpawnShootVFX();
+		}
+	}
+}
+void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
+{
+	bIsHolding = false;
+	bHasShot = true;
+	
+	// Détruit le HoldVFX
+	if (HoldVFX && HoldVFX->IsValidLowLevel())
+	{
+		HoldVFX->Destroy();
+		HoldVFX = nullptr;
+	}
+	
+	// Spawn le ShootVFX
+	if (Character->ShootVFX && AttackOrigin)
+	{
+		USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
+		if (SceneComponent)
+		{
+			FVector SpawnLocation = SceneComponent->GetComponentLocation();
+			FRotator SpawnRotation = SceneComponent->GetComponentRotation();
 			
-			// Détruit le HoldVFX
-			if (HoldVFX && HoldVFX->IsValidLowLevel())
+			// === CALCUL DE LA DISTANCE AVANT LE SPAWN ===
+			float Distance = 1500.0f; // Valeur par défaut
+			float Multiplier = 1.0f;
+			
+			APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			if (PC)
 			{
-				HoldVFX->Destroy();
-				HoldVFX = nullptr;
+				FRotator ViewRot;
+				FVector Origin;
+				PC->GetPlayerViewPoint(Origin, ViewRot);
+				
+				FHitResult Hit;
+				FCollisionQueryParams Params;
+				Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+				Params.AddIgnoredActor(Character);
+				
+				FVector StartTrace = Origin;
+				FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+				
+				FVector TargetPos;
+				if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+				{
+					TargetPos = Hit.ImpactPoint;
+				}
+				else
+				{
+					TargetPos = EndTrace;
+				}
+				
+				// Calcule la distance
+				Distance = FVector::Dist(SpawnLocation, TargetPos);
+				
+				// Le laser de base fait 1500 unités, calcule le multiplicateur
+				float BaseDistance = 1500.0f;
+				Multiplier = Distance / BaseDistance;
+				
 			}
 			
-			// Spawn le ShootVFX
-			if (Character->ShootVFX && AttackOrigin)
+			// === SPAWN DE L'ACTOR ===
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = Character;
+			SpawnParams.Instigator = Character;
+			
+			UWorld* World = Character->GetWorld();
+			if (World)
 			{
-				USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
-				if (SceneComponent)
+				ShootVFX = World->SpawnActor<AActor>(
+					Character->ShootVFX,
+					SpawnLocation,
+					SpawnRotation,
+					SpawnParams
+				);
+				
+				if (ShootVFX)
 				{
-					FVector SpawnLocation = SceneComponent->GetComponentLocation();
-					FRotator SpawnRotation = SceneComponent->GetComponentRotation();
+					ShootVFX->AttachToComponent(
+						SceneComponent,
+						FAttachmentTransformRules::SnapToTargetNotIncludingScale
+					);
 					
-					FActorSpawnParameters SpawnParams;
-					SpawnParams.Owner = Character;
-					SpawnParams.Instigator = Character;
+					// === MODIFICATION DES PARAMÈTRES NIAGARA JUSTE APRÈS LE SPAWN ===
+					// Récupère le composant Niagara enfant
+					TArray<UActorComponent*> Components;
+					ShootVFX->GetComponents(Components);
 					
-					UWorld* World = Character->GetWorld();
-					if (World)
+					UNiagaraComponent* NiagaraComp = nullptr;
+					for (UActorComponent* Comp : Components)
 					{
-						ShootVFX = World->SpawnActor<AActor>(
-							Character->ShootVFX,
-							SpawnLocation,
-							SpawnRotation,
-							SpawnParams
-						);
-						
-						if (ShootVFX)
+						if (UNiagaraComponent* NiagaraCandidate = Cast<UNiagaraComponent>(Comp))
 						{
-							ShootVFX->AttachToComponent(
-								SceneComponent,
-								FAttachmentTransformRules::SnapToTargetNotIncludingScale
-							);
-							
-							GEngine->AddOnScreenDebugMessage(
-								-1,
-								3.f,
-								FColor::Magenta,
-								FString::Printf(TEXT("Shoot VFX spawned (max hold time reached)"))
-							);
+							if (NiagaraCandidate->GetName().Contains(TEXT("NS_Burst_Dark")))
+							{
+								NiagaraComp = NiagaraCandidate;
+								break;
+							}
 						}
+					}
+					
+					if (NiagaraComp)
+					{
+						// Désactive le component temporairement pour appliquer les changements
+						NiagaraComp->Deactivate();
+						
+						// Modifie Position Max X (multiplié sur tous les axes)
+						FVector PositionMaxX = FVector(1.0f, 1.0f, 1.0f) * Multiplier;
+						NiagaraComp->SetVariableVec3(FName("Position Max X"), PositionMaxX);
+						
+						// Modifie Position Max Y (multiplié uniquement sur Y)
+						FVector PositionMaxY = FVector(1.0f, Multiplier, 1.0f);
+						NiagaraComp->SetVariableVec3(FName("Position Max Y"), PositionMaxY);
+						
+						// Réactive le component avec les nouveaux paramètres
+						NiagaraComp->Activate(true);
 					}
 				}
 			}
 		}
 	}
+}
+void UPlayerCharacterStateSpecialAttack::UpdateAttackOriginRotation()
+{
+	USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
+	if (!SceneComponent) return;
+
+	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (!PC) return;
+
+	FRotator ViewRot;
+	FVector Origin;
+	PC->GetPlayerViewPoint(Origin, ViewRot);
+	
+	FHitResult Hit;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+	Params.AddIgnoredActor(Character);
+	
+	FVector StartTrace = Origin;
+	FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+
+	FVector EndPos;
+	if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+	{
+		EndPos = Hit.ImpactPoint;
+	}
+	else
+	{
+		EndPos = EndTrace;
+	}
+
+	// Met à jour la rotation pour pointer vers la cible
+	FVector SpawnLocation = SceneComponent->GetComponentLocation();
+	FRotator LookAtRotation = (EndPos - SpawnLocation).Rotation();
+	SceneComponent->SetWorldRotation(LookAtRotation);
 }

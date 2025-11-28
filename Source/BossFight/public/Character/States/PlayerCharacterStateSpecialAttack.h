@@ -17,6 +17,8 @@ public:
 	virtual void StateEnter(PlayerCharacterStateID PreviousStateID) override;
 	virtual void StateExit(PlayerCharacterStateID NextStateID) override;
 	virtual void StateTick(float DeltaTime) override;
+	void SpawnShootVFX();
+	void UpdateAttackOriginRotation();
 
 protected:
 	UPlayerMovementParameters* PlayerMovementParameters;
@@ -28,6 +30,7 @@ protected:
 	float MaxTimeToHoldAttack;
 	float StunAfterAttack;
 	float CancelWindow;
+	float CurrentStunTime;
 	
 	
 	float InitialSpeed = 0.f;
