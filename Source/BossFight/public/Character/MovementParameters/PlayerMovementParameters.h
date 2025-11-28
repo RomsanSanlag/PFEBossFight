@@ -47,6 +47,11 @@ public:
 
         TimeSlowDuration = 0.25f;
         TimeDilationDuringSlow = 0.25f;
+
+        TimeToSlowDown = 0.25f;
+        TimeToChargeSpecialAttack = 1.5;
+        MaxTimeToHoldAttack = 2.0f;
+        StunAfterAttack = 1.0f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -98,4 +103,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Time Slow")
     float TimeDilationDuringSlow;
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeToSlowDown;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeToChargeSpecialAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float MaxTimeToHoldAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float StunAfterAttack;
 };
