@@ -27,4 +27,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UInputAction> InputActionDodgeBuffer;
+
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UInputAction> InputActionSpecialAttackBuffer;
 };
