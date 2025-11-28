@@ -25,6 +25,8 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnDomagePlayer(int PV);
 
 protected:
 	// Called when the game starts or when spawned
@@ -55,6 +57,13 @@ public:
 	UClass* PersistingDodgeHitbox;
 	UPROPERTY(EditAnywhere)
 	UClass* DodgeShadow;
+	UPROPERTY(EditAnywhere)
+	UClass* SpecialAttackVFX;
+	UPROPERTY(EditAnywhere)
+	UClass* HoldVFX;
+	UPROPERTY(EditAnywhere)
+	UClass* ShootVFX;;
+	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnTakeDamage(float DamageAmount);
@@ -98,6 +107,7 @@ public:
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
 	float GetInputDodgeBuffer() const;
+	float GetInputSpecialAttack() const;
 
 protected:
 	UPROPERTY()
@@ -108,6 +118,9 @@ protected:
 
 	UPROPERTY()
 	float InputDodgeBuffer = 0.f;
+	
+	UPROPERTY()
+	float InputSpecialAttackBuffer = 0.f;
 
 	
 
@@ -123,6 +136,9 @@ private:
 	void BindInputDodge(UEnhancedInputComponent* EnhancedInputComponent);
 	void BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent);
 	void OnInputDodge(const FInputActionValue& InputActionValue);
+
+	void BindInputSpecialAttack(UEnhancedInputComponent* EnhancedInputComponent);
+	void OnInputSpecialAttack(const FInputActionValue& InputActionValue);
 
 #pragma endregion
 
