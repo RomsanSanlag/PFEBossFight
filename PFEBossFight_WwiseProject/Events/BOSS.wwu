@@ -102,6 +102,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BOSS_SFX_LaserEye_Constant_OS" ID="{7DCD9D18-DBF3-44CA-8DBC-F200FD1B73C0}">
+					<ChildrenList>
+						<Action Name="" ID="{5D50CFBA-C038-4500-BD04-5FA8BFD82EEF}" ShortID="202789699">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_LaserEye_Constant_OS" ID="{3F359822-C418-4AFE-80E9-DA7A5AB19E33}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BOSS_SFX_LaserEye_Constant_LP" ID="{5ED0293D-55E6-4F71-806D-2DC04A32CE75}">
+					<ChildrenList>
+						<Action Name="" ID="{4C276E0A-9E9E-4F6B-860A-54E7CEF783D8}" ShortID="734956242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BOSS_SFX_LaserEye_Constant_LP" ID="{2E00505E-399D-480F-A667-211487F508B5}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
