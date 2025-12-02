@@ -114,45 +114,10 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 			if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
 			{
 				EndPos = Hit.ImpactPoint + ViewRot.Vector();
-    
-				// Debug: Ligne verte jusqu'au point d'impact
-				DrawDebugLine(
-					GetWorld(),
-					StartTrace,
-					Hit.ImpactPoint,
-					FColor::Green,
-					false,
-					1.0f,  // Durée en secondes
-					0,
-					2.0f   // Épaisseur
-				);
-    
-				// Debug: Sphère rouge au point d'impact
-				DrawDebugSphere(
-					GetWorld(),
-					Hit.ImpactPoint,
-					10.0f,  // Rayon
-					12,     // Segments
-					FColor::Red,
-					false,
-					1.0f
-				);
 			}
 			else
 			{
 				EndPos = EndTrace;
-    
-				// Debug: Ligne jaune si pas de hit
-				DrawDebugLine(
-					GetWorld(),
-					StartTrace,
-					EndTrace,
-					FColor::Yellow,
-					false,
-					1.0f,
-					0,
-					2.0f
-				);
 			}
 			
 			UWorld* World = Character->GetWorld();
@@ -414,9 +379,10 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 			FVector SpawnLocation = SceneComponent->GetComponentLocation();
 			FRotator SpawnRotation = SceneComponent->GetComponentRotation();
 			
-			// === CALCUL DE LA DISTANCE AVANT LE SPAWN ===
-			float Distance = 1500.0f; // Valeur par défaut
+			// === CALCUL DE LA DISTANCE ET DÉTECTION DE L'ACTEUR HITTÉ ===
+			float Distance = 1500.0f;
 			float Multiplier = 1.0f;
+			AActor* HitActor = nullptr; // L'acteur touché par le laser
 			
 			APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 			if (PC)
@@ -431,12 +397,13 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 				Params.AddIgnoredActor(Character);
 				
 				FVector StartTrace = Origin;
-				FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+				FVector EndTrace = Origin + ViewRot.Vector() * 100000;
 				
 				FVector TargetPos;
 				if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
 				{
 					TargetPos = Hit.ImpactPoint;
+					HitActor = Hit.GetActor(); // Récupère l'acteur touché
 				}
 				else
 				{
@@ -449,7 +416,6 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 				// Le laser de base fait 1500 unités, calcule le multiplicateur
 				float BaseDistance = 1500.0f;
 				Multiplier = Distance / BaseDistance;
-				
 			}
 			
 			// === SPAWN DE L'ACTOR ===
@@ -474,8 +440,7 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 						FAttachmentTransformRules::SnapToTargetNotIncludingScale
 					);
 					
-					// === MODIFICATION DES PARAMÈTRES NIAGARA JUSTE APRÈS LE SPAWN ===
-					// Récupère le composant Niagara enfant
+					// === MODIFICATION DES PARAMÈTRES NIAGARA ===
 					TArray<UActorComponent*> Components;
 					ShootVFX->GetComponents(Components);
 					
@@ -494,20 +459,19 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 					
 					if (NiagaraComp)
 					{
-						// Désactive le component temporairement pour appliquer les changements
 						NiagaraComp->Deactivate();
 						
-						// Modifie Position Max X (multiplié sur tous les axes)
 						FVector PositionMaxX = FVector(1.0f, 1.0f, 1.0f) * Multiplier;
 						NiagaraComp->SetVariableVec3(FName("Position Max X"), PositionMaxX);
 						
-						// Modifie Position Max Y (multiplié uniquement sur Y)
 						FVector PositionMaxY = FVector(1.0f, Multiplier, 1.0f);
 						NiagaraComp->SetVariableVec3(FName("Position Max Y"), PositionMaxY);
 						
-						// Réactive le component avec les nouveaux paramètres
 						NiagaraComp->Activate(true);
 					}
+
+					// === APPEL DE OnLaserLaunched AVEC L'ACTEUR HITTÉ ===
+					Character->OnLaserLaunched(HitActor);
 				}
 			}
 		}
