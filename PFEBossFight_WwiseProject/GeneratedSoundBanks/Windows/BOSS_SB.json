@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{35AA7A40-A5B5-4768-88EC-D2B9A3FC0864}",
     "Language": "SFX",
-    "Hash": "{59E74B39-97AA-03F5-E05A-0FB07E14F66D}",
+    "Hash": "{52F3CF28-C4D6-B21F-EEAC-FA75140B617F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\BOSS_SB",
     "ShortName": "BOSS_SB",
     "Path": "BOSS_SB.bnk",
@@ -40,12 +40,28 @@
       "CachePath": "4F/{4F7357C8-4C88-9C31-DF25-7D7AE264C88A}.wem"
      },
      {
+      "Id": "247049112",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_LaserEye_Constant_LP.wav",
+      "CachePath": "F6/{F6183084-6759-0B56-A7C8-AF57F7C3A4E9}.wem"
+     },
+     {
       "Id": "315126234",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BOSS_SFX_PleurLoad.wav",
       "CachePath": "6C/{6C7F6470-A8B1-E97B-143C-1D370AC08C15}.wem"
+     },
+     {
+      "Id": "349976009",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BOSS_SFX_LaserEye_Constant_OS.wav",
+      "CachePath": "52/{52DC2651-F85A-F9F2-3ED7-254E098A391D}.wem"
      },
      {
       "Id": "353643052",
@@ -194,6 +210,34 @@
       ]
      },
      {
+      "Id": "1828209242",
+      "Name": "Play_BOSS_SFX_LaserEye_Constant_LP",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_Constant_LP",
+      "GUID": "{5ED0293D-55E6-4F71-806D-2DC04A32CE75}",
+      "MaxAttenuation": "2000",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "247049112"
+       }
+      ]
+     },
+     {
+      "Id": "1811431652",
+      "Name": "Play_BOSS_SFX_LaserEye_Constant_OS",
+      "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_Constant_OS",
+      "GUID": "{7DCD9D18-DBF3-44CA-8DBC-F200FD1B73C0}",
+      "MaxAttenuation": "2000",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0212293",
+      "DurationMax": "2.0212293",
+      "MediaRefs": [
+       {
+        "Id": "349976009"
+       }
+      ]
+     },
+     {
       "Id": "1362624021",
       "Name": "Play_BOSS_SFX_LaserEye_Focus",
       "ObjectPath": "\\Events\\Default Work Unit\\BOSS\\Play_BOSS_SFX_LaserEye_Focus",
@@ -270,6 +314,6 @@
     ]
    }
   ],
-  "FileHash": "{CAABF419-0DF5-AA79-8F40-6D72DCCAB7E6}"
+  "FileHash": "{45D5AFA4-D1D6-8A23-E04C-104292F9B1D0}"
  }
 }

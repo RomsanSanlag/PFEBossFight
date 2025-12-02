@@ -6,9 +6,12 @@
 				<Event Name="Play_AMB_Calm_LP" ID="{471C5876-D437-407A-AD32-00BFB0968118}">
 					<ChildrenList>
 						<Action Name="" ID="{3438C634-722D-44C3-86C2-DB0EBC5098E9}" ShortID="60321262">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AMB_Calm_LP" ID="{C155A777-26CE-41BE-88B1-96AD67293C95}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+									<ObjectRef Name="AMB_Calm_LP" ID="{6CE8E418-B0F4-411C-A584-9D7F6FB55830}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -30,7 +33,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AMB_Calm_LP" ID="{C155A777-26CE-41BE-88B1-96AD67293C95}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+									<ObjectRef Name="AMB_Calm_LP" ID="{6CE8E418-B0F4-411C-A584-9D7F6FB55830}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

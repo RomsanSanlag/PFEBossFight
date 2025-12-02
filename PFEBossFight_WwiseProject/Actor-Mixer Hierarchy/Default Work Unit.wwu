@@ -1956,12 +1956,17 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="AMB_Calm_LP" ID="{C155A777-26CE-41BE-88B1-96AD67293C95}" ShortID="1005561962">
+						<Sound Name="AMB_Calm_LP" ID="{6CE8E418-B0F4-411C-A584-9D7F6FB55830}" ShortID="765110240">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="IsStreamingEnabled" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1974,21 +1979,20 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="AMB_Global_Forest_LP" ID="{48551972-BF92-4703-952E-C17F91DAE289}">
+								<AudioFileSource Name="AMB_Calm_LP" ID="{2AE4B597-4640-4A8E-883C-391C0F7CFC70}">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="1.67565815854483"/>
-										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="3.173"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>AMB_Global_Forest_LP.wav</AudioFile>
+									<AudioFile>AMB_Calm_LP.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="950465057"/>
+										<MediaID ID="368331927"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="AMB_Global_Forest_LP" ID="{48551972-BF92-4703-952E-C17F91DAE289}" Platform="Linked"/>
+								<ActiveSource Name="AMB_Calm_LP" ID="{2AE4B597-4640-4A8E-883C-391C0F7CFC70}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -2,5 +2,5 @@ Event	ID	Name			Wwise Object Path	Notes
 	2894078803	Play_AMB_Calm_LP			\Default Work Unit\AMB\Play_AMB_Calm_LP	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	950465057	AMB_Calm_LP	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\5C\{5CFDEBAA-BF7A-2376-E5B5-B0FC77C93BC5}.wem	950465057.wem	\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_Calm_LP	
+	368331927	AMB_Calm_LP	G:\Unreal\Unreal_Projects\PFEBossFight\PFEBossFight_WwiseProject\.cache\D7\{D7814145-BAD2-BF5F-1D01-AD5BC6EB89EE}.wem	368331927.wem	\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_Calm_LP	
 

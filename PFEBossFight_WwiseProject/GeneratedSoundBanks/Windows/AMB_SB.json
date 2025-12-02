@@ -10,19 +10,19 @@
     "Type": "User",
     "GUID": "{7A7D77B0-0BE7-46FD-B12E-D830972C377C}",
     "Language": "SFX",
-    "Hash": "{5D9D418F-C46B-2CFB-16AE-FAEBEA2A5437}",
+    "Hash": "{77740F9B-08E1-B1AC-6754-8A46AB3ED35C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\AMB_SB",
     "ShortName": "AMB_SB",
     "Path": "AMB_SB.bnk",
     "Media": [
      {
-      "Id": "950465057",
+      "Id": "368331927",
       "Language": "SFX",
       "Streaming": "true",
       "Location": "Loose",
-      "ShortName": "AMB_Global_Forest_LP.wav",
-      "Path": "Media/950465057.wem",
-      "CachePath": "5C/{5CFDEBAA-BF7A-2376-E5B5-B0FC77C93BC5}.wem"
+      "ShortName": "AMB_Calm_LP.wav",
+      "Path": "Media/368331927.wem",
+      "CachePath": "D7/{D7814145-BAD2-BF5F-1D01-AD5BC6EB89EE}.wem"
      }
     ],
     "Events": [
@@ -34,13 +34,13 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "950465057"
+        "Id": "368331927"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{837059D3-BACE-510D-F5FB-E9655D7A2922}"
+  "FileHash": "{E96BC60E-8176-EFE7-07BD-37145C95D1CC}"
  }
 }
