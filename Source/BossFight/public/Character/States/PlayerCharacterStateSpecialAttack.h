@@ -12,11 +12,14 @@ class BOSSFIGHT_API UPlayerCharacterStateSpecialAttack : public UPlayerCharacter
 	GENERATED_BODY()
 
 public:
+
 	virtual PlayerCharacterStateID GetStateID() override;
 	virtual void StateInit(UPlayerStateMachine* InStateMachine) override;
 	virtual void StateEnter(PlayerCharacterStateID PreviousStateID) override;
 	virtual void StateExit(PlayerCharacterStateID NextStateID) override;
 	virtual void StateTick(float DeltaTime) override;
+	void SpawnShootVFX();
+	void UpdateAttackOriginRotation();
 
 protected:
 	UPlayerMovementParameters* PlayerMovementParameters;
@@ -27,6 +30,8 @@ protected:
 	float TimeToChargeSpecialAttack;
 	float MaxTimeToHoldAttack;
 	float StunAfterAttack;
+	float CancelWindow;
+	float CurrentStunTime;
 	
 	
 	float InitialSpeed = 0.f;
@@ -45,7 +50,9 @@ protected:
 	bool bIsCharging = true;
 	bool bIsHolding = false;
 	bool bHasShot = false;
+	bool bIsCommitted = false;
 
 private:
-	
+	float w;
+	float InitialMouseSensitivity;
 };
