@@ -46,10 +46,23 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
     CurrentTurnDeccelerationTime = TurnDeccelerationTime;
     CurrentTurnReaccelerationTime = TurnReaccelerationTime;
 
+    if (PreviousStateID == PlayerCharacterStateID::Dodge)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Purple, 
+            FString::Printf(TEXT("Just Dodged - Starting at max speed")));
+        
+        // Directement à la vitesse maximale
+        CurrentSpeed = MaxWalkSpeed;
+        Movement->MaxWalkSpeed = MaxWalkSpeed;
+        
+        // Mettre les timers au maximum pour skip l'accélération
+        CurrentTurnDeccelerationTime = TurnDeccelerationTime;
+        CurrentTurnReaccelerationTime = TurnReaccelerationTime;
+    }
+
     GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Cyan, 
         FString::Printf(TEXT("Enter StateWalk")));
 }
-
 void UPlayerCharacterStateWalk::StateExit(PlayerCharacterStateID NextStateID)
 {
     Super::StateExit(NextStateID);
@@ -121,6 +134,12 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     }
 
     LastMoveDirection = RawInputDirection.GetSafeNormal();
+    
+    if (Character->GetInputSpecialAttack())
+    {
+        StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
+        return;
+    }
 	if (Character->GetInputDodgeBuffer()
 		&& StateMachine->StartingDodgeCharges > 0
 		&& StateMachine->DodgeCooldownTimer <= 0.0f)
