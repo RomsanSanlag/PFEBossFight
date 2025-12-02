@@ -23,6 +23,8 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
 	APlayerCharacter();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
@@ -109,18 +111,20 @@ public:
 	float GetInputDodgeBuffer() const;
 	float GetInputSpecialAttack() const;
 
+	float MouseSensitivity = 1.f;
+
 protected:
 	UPROPERTY()
 	float InputMoveX = 0.f;
 	
-	UPROPERTY()
+	UPROPERTY()	
 	float InputMoveY = 0.f;
 
 	UPROPERTY()
-	float InputDodgeBuffer = 0.f;
+	bool InputDodgeBuffer = false;
 	
 	UPROPERTY()
-	float InputSpecialAttackBuffer = 0.f;
+	bool InputSpecialAttackBuffer = false;
 
 	
 

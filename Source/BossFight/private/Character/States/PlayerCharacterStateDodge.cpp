@@ -5,6 +5,7 @@
 
 
 #include "Character/PlayerCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 PlayerCharacterStateID UPlayerCharacterStateDodge::GetStateID()
@@ -61,14 +62,26 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	}
 }
 
+// Dans StateExit du Dodge
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
+    
+	// Stocker la direction du dodge pour la transition vers Walk
+	if (PlayerStateID == PlayerCharacterStateID::Walk)
+	{
+		UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
+		if (Movement)
+		{
+			Movement->Velocity = DashDirection * PlayerMovementParameters->MaxWalkSpeed;
+		}
+	}
+    
 	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("Exit StateDodge"))
+		-1,
+		3.f,
+		FColor::Red,
+		FString::Printf(TEXT("Exit StateDodge"))
 	);
 }
 
