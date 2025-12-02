@@ -25,6 +25,8 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnDomagePlayer(int PV);
 
 protected:
 	// Called when the game starts or when spawned
