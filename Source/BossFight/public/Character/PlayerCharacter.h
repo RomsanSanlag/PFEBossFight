@@ -23,6 +23,8 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
 	APlayerCharacter();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
