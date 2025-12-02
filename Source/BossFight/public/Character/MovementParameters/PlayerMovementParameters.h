@@ -52,6 +52,7 @@ public:
         TimeToChargeSpecialAttack = 1.5;
         MaxTimeToHoldAttack = 2.0f;
         StunAfterAttack = 1.0f;
+        CancelWindow = 0.5f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -111,4 +112,6 @@ public:
     float MaxTimeToHoldAttack;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
     float StunAfterAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float CancelWindow;
 };
