@@ -121,6 +121,7 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     }
 
     LastMoveDirection = RawInputDirection.GetSafeNormal();
+    
     if (Character->GetInputSpecialAttack())
     {
         StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);

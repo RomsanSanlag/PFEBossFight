@@ -3,8 +3,11 @@
 
 #include "BossFight/Public/Character/States/PlayerCharacterStateSpecialAttack.h"
 
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
 #include "Character/PlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 void UPlayerCharacterStateSpecialAttack::StateInit(UPlayerStateMachine* InStateMachine)
 {
@@ -32,14 +35,7 @@ PlayerCharacterStateID UPlayerCharacterStateSpecialAttack::GetStateID()
 
 void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
-	Super::StateEnter(PlayerStateID);
-
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Cyan,
-		FString::Printf(TEXT("Enter SpecialAttack"))
-	);
+	Super::StateEnter(PlayerStateID);	
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
@@ -48,7 +44,11 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	TimeToChargeSpecialAttack = PlayerMovementParameters->TimeToChargeSpecialAttack;
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
-
+	CancelWindow = PlayerMovementParameters->CancelWindow;
+	
+	// Sauvegarde la sensibilité initiale
+	InitialMouseSensitivity = Character->MouseSensitivity;
+	
 	// Récupère la vitesse actuelle du personnage
 	InitialSpeed = Movement->Velocity.Size();
 	CurrentSlowDownTime = 0.f;
@@ -56,6 +56,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	// Réinitialise les timers et états
 	CurrentChargeTime = 0.f;
 	CurrentHoldTime = 0.f;
+	CurrentStunTime = 0.f;
 	bIsCharging = true;
 	bIsHolding = false;
 	bHasShot = false;
@@ -78,24 +79,99 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 			FActorSpawnParameters SpawnParams;
 			SpawnParams.Owner = Character;
 			SpawnParams.Instigator = Character;
+
+			APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			if (!PC) return;
+
+			FRotator ViewRot;
+			FVector Origin;
+
+			PC->GetPlayerViewPoint(Origin, ViewRot);
+			
+			FHitResult Hit;
+			FCollisionQueryParams Params;
+			Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+			Params.AddIgnoredActor(Character);
+			
+			FVector StartTrace = Origin;
+			FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+
+			FVector EndPos;
+
+			if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+			{
+				EndPos = Hit.ImpactPoint + ViewRot.Vector();
+			}
+			else
+			{
+				EndPos = EndTrace;
+			}
+
+			// look at
+			FRotator LookAtRotation = (EndPos - SpawnLocation).Rotation();
+			SceneComponent->SetWorldRotation(LookAtRotation);
+
+			if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+			{
+				EndPos = Hit.ImpactPoint + ViewRot.Vector();
+    
+				// Debug: Ligne verte jusqu'au point d'impact
+				DrawDebugLine(
+					GetWorld(),
+					StartTrace,
+					Hit.ImpactPoint,
+					FColor::Green,
+					false,
+					1.0f,  // Durée en secondes
+					0,
+					2.0f   // Épaisseur
+				);
+    
+				// Debug: Sphère rouge au point d'impact
+				DrawDebugSphere(
+					GetWorld(),
+					Hit.ImpactPoint,
+					10.0f,  // Rayon
+					12,     // Segments
+					FColor::Red,
+					false,
+					1.0f
+				);
+			}
+			else
+			{
+				EndPos = EndTrace;
+    
+				// Debug: Ligne jaune si pas de hit
+				DrawDebugLine(
+					GetWorld(),
+					StartTrace,
+					EndTrace,
+					FColor::Yellow,
+					false,
+					1.0f,
+					0,
+					2.0f
+				);
+			}
 			
 			UWorld* World = Character->GetWorld();
 			if (World)
 			{
-				SpawnedVFX = World->SpawnActor<AActor>(
-					Character->SpecialAttackVFX,
-					SpawnLocation,
-					SpawnRotation,
-					SpawnParams
-				);
-				
-				if (SpawnedVFX)
-				{
-					// Attache le VFX à l'AttackOrigin pour qu'il suive le joueur
-					SpawnedVFX->AttachToComponent(
-						SceneComponent,
-						FAttachmentTransformRules::SnapToTargetNotIncludingScale
-					);
+			    SpawnedVFX = World->SpawnActor<AActor>(
+			        Character->SpecialAttackVFX,
+			        SpawnLocation,
+			        LookAtRotation,  // Utilise LookAtRotation au lieu de SpawnRotation
+			        SpawnParams
+			    );
+			    
+			    if (SpawnedVFX)
+			    {
+			        // Attache le VFX à l'AttackOrigin pour qu'il suive le joueur
+			        SpawnedVFX->AttachToComponent(
+			            SceneComponent,
+			            FAttachmentTransformRules::SnapToTargetNotIncludingScale
+			        );
 					
 					// Calcule la TimeDilation nécessaire
 					// Le VFX dure 2 secondes de base, on veut qu'il dure TimeToChargeSpecialAttack
@@ -110,13 +186,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 							FloatProp->SetPropertyValue_InContainer(SpawnedVFX, CalculatedTimeDilation);
 						}
 					}
-					
-					GEngine->AddOnScreenDebugMessage(
-						-1,
-						3.f,
-						FColor::Green,
-						FString::Printf(TEXT("Charge VFX spawned with TimeDilation: %.2f"), CalculatedTimeDilation)
-					);
+			    	
 				}
 			}
 		}
@@ -127,12 +197,9 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 {
 	Super::StateExit(PlayerStateID);
 	
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Red,
-		FString::Printf(TEXT("Exit Special Attack"))
-	);
+
+	// Restaure la sensibilité de la souris
+	Character->MouseSensitivity = InitialMouseSensitivity;
 
 	// Détruit tous les VFX quand on quitte l'état
 	if (SpawnedVFX && SpawnedVFX->IsValidLowLevel())
@@ -149,7 +216,6 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 	
 	if (ShootVFX && ShootVFX->IsValidLowLevel())
 	{
-		ShootVFX->Destroy();
 		ShootVFX = nullptr;
 	}
 }
@@ -160,6 +226,39 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
+
+	// === PHASE DE STUN APRÈS L'ATTAQUE ===
+	if (bHasShot)
+	{
+		CurrentStunTime += DeltaTime;
+		
+		// Maintient le joueur immobile pendant le stun
+		Movement->MaxWalkSpeed = 0.f;
+		
+		// Une fois le stun terminé, retourne à Idle
+		if (CurrentStunTime >= StunAfterAttack)
+		{
+			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+			return;
+		}
+		
+		// Ne continue pas le reste du tick pendant le stun
+		return;
+	}
+
+	// === MISE À JOUR DE LA ROTATION DU SPAWN POINT ===
+	// Continue de mettre à jour la rotation pendant la charge et le hold
+	if ((bIsCharging || bIsHolding) && AttackOrigin)
+	{
+		UpdateAttackOriginRotation();
+	}
+
+	// Phase de charge : lerp de la sensibilité vers 0
+	if (bIsCharging)
+	{
+		float ChargeProgress = FMath::Clamp(CurrentChargeTime / TimeToChargeSpecialAttack, 0.f, 1.f);
+		Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+	}
 
 	// Continue le ralentissement tant qu'on n'a pas atteint TimeToSlowDown
 	if (CurrentSlowDownTime < TimeToSlowDown)
@@ -200,6 +299,30 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	// Phase 1: Charge
 	if (bIsCharging)
 	{
+		// Vérifie si le bouton est toujours maintenu
+		if (!Character->GetInputSpecialAttack() && CurrentChargeTime < CancelWindow) 
+		{
+			// Bouton relâché pendant la charge - annule l'attaque
+			
+			// Double la TimeDilation du VFX pour qu'il disparaisse rapidement
+			if (SpawnedVFX && SpawnedVFX->IsValidLowLevel())
+			{
+				FProperty* TimeDilationProp = SpawnedVFX->GetClass()->FindPropertyByName(TEXT("TimeDilation"));
+				if (TimeDilationProp)
+				{
+					if (FFloatProperty* FloatProp = CastField<FFloatProperty>(TimeDilationProp))
+					{
+						float CurrentDilation = FloatProp->GetPropertyValue_InContainer(SpawnedVFX);
+						FloatProp->SetPropertyValue_InContainer(SpawnedVFX, CurrentDilation * 2.0f);
+					}
+				}
+			}
+			
+			// Retourne à l'état Idle
+			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
+			return;
+		}
+		
 		CurrentChargeTime += DeltaTime;
 		
 		if (CurrentChargeTime >= TimeToChargeSpecialAttack)
@@ -244,13 +367,6 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 								SceneComponent,
 								FAttachmentTransformRules::SnapToTargetNotIncludingScale
 							);
-							
-							GEngine->AddOnScreenDebugMessage(
-								-1,
-								3.f,
-								FColor::Yellow,
-								FString::Printf(TEXT("Hold VFX spawned"))
-							);
 						}
 					}
 				}
@@ -260,61 +376,175 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 	// Phase 2: Hold
 	else if (bIsHolding)
 	{
+		// Vérifie si le bouton est relâché pendant le hold
+		if (!Character->GetInputSpecialAttack())
+		{
+			// Bouton relâché pendant le hold - lance l'attaque immédiatement
+			SpawnShootVFX();
+			return;
+		}
+		
 		CurrentHoldTime += DeltaTime;
 		
 		if (CurrentHoldTime >= MaxTimeToHoldAttack)
 		{
-			// Fin du hold, passage au Shoot
-			bIsHolding = false;
-			bHasShot = true;
+			// Fin du hold, passage au Shoot (temps maximum atteint)
+			SpawnShootVFX();
+		}
+	}
+}
+void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
+{
+	bIsHolding = false;
+	bHasShot = true;
+	
+	// Détruit le HoldVFX
+	if (HoldVFX && HoldVFX->IsValidLowLevel())
+	{
+		HoldVFX->Destroy();
+		HoldVFX = nullptr;
+	}
+	
+	// Spawn le ShootVFX
+	if (Character->ShootVFX && AttackOrigin)
+	{
+		USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
+		if (SceneComponent)
+		{
+			FVector SpawnLocation = SceneComponent->GetComponentLocation();
+			FRotator SpawnRotation = SceneComponent->GetComponentRotation();
 			
-			// Détruit le HoldVFX
-			if (HoldVFX && HoldVFX->IsValidLowLevel())
+			// === CALCUL DE LA DISTANCE AVANT LE SPAWN ===
+			float Distance = 1500.0f; // Valeur par défaut
+			float Multiplier = 1.0f;
+			
+			APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+			if (PC)
 			{
-				HoldVFX->Destroy();
-				HoldVFX = nullptr;
+				FRotator ViewRot;
+				FVector Origin;
+				PC->GetPlayerViewPoint(Origin, ViewRot);
+				
+				FHitResult Hit;
+				FCollisionQueryParams Params;
+				Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+				Params.AddIgnoredActor(Character);
+				
+				FVector StartTrace = Origin;
+				FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+				
+				FVector TargetPos;
+				if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+				{
+					TargetPos = Hit.ImpactPoint;
+				}
+				else
+				{
+					TargetPos = EndTrace;
+				}
+				
+				// Calcule la distance
+				Distance = FVector::Dist(SpawnLocation, TargetPos);
+				
+				// Le laser de base fait 1500 unités, calcule le multiplicateur
+				float BaseDistance = 1500.0f;
+				Multiplier = Distance / BaseDistance;
+				
 			}
 			
-			// Spawn le ShootVFX
-			if (Character->ShootVFX && AttackOrigin)
+			// === SPAWN DE L'ACTOR ===
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = Character;
+			SpawnParams.Instigator = Character;
+			
+			UWorld* World = Character->GetWorld();
+			if (World)
 			{
-				USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
-				if (SceneComponent)
+				ShootVFX = World->SpawnActor<AActor>(
+					Character->ShootVFX,
+					SpawnLocation,
+					SpawnRotation,
+					SpawnParams
+				);
+				
+				if (ShootVFX)
 				{
-					FVector SpawnLocation = SceneComponent->GetComponentLocation();
-					FRotator SpawnRotation = SceneComponent->GetComponentRotation();
+					ShootVFX->AttachToComponent(
+						SceneComponent,
+						FAttachmentTransformRules::SnapToTargetNotIncludingScale
+					);
 					
-					FActorSpawnParameters SpawnParams;
-					SpawnParams.Owner = Character;
-					SpawnParams.Instigator = Character;
+					// === MODIFICATION DES PARAMÈTRES NIAGARA JUSTE APRÈS LE SPAWN ===
+					// Récupère le composant Niagara enfant
+					TArray<UActorComponent*> Components;
+					ShootVFX->GetComponents(Components);
 					
-					UWorld* World = Character->GetWorld();
-					if (World)
+					UNiagaraComponent* NiagaraComp = nullptr;
+					for (UActorComponent* Comp : Components)
 					{
-						ShootVFX = World->SpawnActor<AActor>(
-							Character->ShootVFX,
-							SpawnLocation,
-							SpawnRotation,
-							SpawnParams
-						);
-						
-						if (ShootVFX)
+						if (UNiagaraComponent* NiagaraCandidate = Cast<UNiagaraComponent>(Comp))
 						{
-							ShootVFX->AttachToComponent(
-								SceneComponent,
-								FAttachmentTransformRules::SnapToTargetNotIncludingScale
-							);
-							
-							GEngine->AddOnScreenDebugMessage(
-								-1,
-								3.f,
-								FColor::Magenta,
-								FString::Printf(TEXT("Shoot VFX spawned"))
-							);
+							if (NiagaraCandidate->GetName().Contains(TEXT("NS_Burst_Dark")))
+							{
+								NiagaraComp = NiagaraCandidate;
+								break;
+							}
 						}
+					}
+					
+					if (NiagaraComp)
+					{
+						// Désactive le component temporairement pour appliquer les changements
+						NiagaraComp->Deactivate();
+						
+						// Modifie Position Max X (multiplié sur tous les axes)
+						FVector PositionMaxX = FVector(1.0f, 1.0f, 1.0f) * Multiplier;
+						NiagaraComp->SetVariableVec3(FName("Position Max X"), PositionMaxX);
+						
+						// Modifie Position Max Y (multiplié uniquement sur Y)
+						FVector PositionMaxY = FVector(1.0f, Multiplier, 1.0f);
+						NiagaraComp->SetVariableVec3(FName("Position Max Y"), PositionMaxY);
+						
+						// Réactive le component avec les nouveaux paramètres
+						NiagaraComp->Activate(true);
 					}
 				}
 			}
 		}
 	}
+}
+void UPlayerCharacterStateSpecialAttack::UpdateAttackOriginRotation()
+{
+	USceneComponent* SceneComponent = Cast<USceneComponent>(AttackOrigin);
+	if (!SceneComponent) return;
+
+	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (!PC) return;
+
+	FRotator ViewRot;
+	FVector Origin;
+	PC->GetPlayerViewPoint(Origin, ViewRot);
+	
+	FHitResult Hit;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredComponent(Cast<const UPrimitiveComponent>(SceneComponent));
+	Params.AddIgnoredActor(Character);
+	
+	FVector StartTrace = Origin;
+	FVector EndTrace = Origin + ViewRot.Vector() * 10000;
+
+	FVector EndPos;
+	if (GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, ECC_Visibility, Params))
+	{
+		EndPos = Hit.ImpactPoint;
+	}
+	else
+	{
+		EndPos = EndTrace;
+	}
+
+	// Met à jour la rotation pour pointer vers la cible
+	FVector SpawnLocation = SceneComponent->GetComponentLocation();
+	FRotator LookAtRotation = (EndPos - SpawnLocation).Rotation();
+	SceneComponent->SetWorldRotation(LookAtRotation);
 }
