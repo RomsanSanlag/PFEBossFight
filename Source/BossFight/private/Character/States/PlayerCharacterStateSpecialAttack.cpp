@@ -36,6 +36,8 @@ PlayerCharacterStateID UPlayerCharacterStateSpecialAttack::GetStateID()
 void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateEnter(PlayerStateID);	
+
+	Character->OnCameraTransition(2);
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;

@@ -22,6 +22,8 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 {
 	Super::StateEnter(PlayerStateID);
 
+	Character->OnCameraTransition(1);
+	
 	GEngine->AddOnScreenDebugMessage(
 	-1,
 	3.f,
