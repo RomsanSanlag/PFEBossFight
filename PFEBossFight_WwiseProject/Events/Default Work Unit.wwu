@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="AMB" ID="{5E868F96-AFE9-4014-BFA9-3299954DC3C2}" PersistMode="Reference"/>
+				<WorkUnit Name="BOSS" ID="{712B218E-ED98-46EC-91E9-37791AE50C08}" PersistMode="Reference"/>
+				<WorkUnit Name="MC" ID="{BD86B052-56AF-46DE-904B-5A2C9D61984A}" PersistMode="Reference"/>
+				<WorkUnit Name="MUS" ID="{48F8BF3B-7238-4498-8C91-39DEE03C891E}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
