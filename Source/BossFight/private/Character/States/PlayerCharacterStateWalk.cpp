@@ -21,6 +21,8 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
 {
     Super::StateEnter(PreviousStateID);
 
+    Character->OnCameraTransition(0);
+
     UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
     if (!Movement) return;
 

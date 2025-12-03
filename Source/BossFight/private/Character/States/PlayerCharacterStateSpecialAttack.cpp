@@ -198,7 +198,8 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
-	
+
+	Character->OnCameraTransition(0);
 
 	// Restaure la sensibilité de la souris
 	Character->MouseSensitivity = InitialMouseSensitivity;
