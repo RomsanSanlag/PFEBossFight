@@ -23,7 +23,7 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 {
 	Super::StateEnter(PlayerStateID);
 
-	Character->OnCameraTransition(1);
+	//Character->OnCameraTransition(1);
 	
 	GEngine->AddOnScreenDebugMessage(
 	-1,
@@ -69,7 +69,7 @@ void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
 
-	Character->OnCameraTransition(0);
+	//Character->OnCameraTransition(0);
 	
     
 	// Stocker la direction du dodge pour la transition vers Walk
