@@ -102,7 +102,7 @@ void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
 	OnPerfectDodge.Broadcast(DamageAmount);
-	//OnCameraTransition(1);
+	OnCameraTransition(1);
 	TriggerTimeDilation();
 }
 
