@@ -53,6 +53,8 @@ public:
         MaxTimeToHoldAttack = 2.0f;
         StunAfterAttack = 1.0f;
         CancelWindow = 0.5f;
+
+        InvincibilityTimeAfterHit = 0.5f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -114,4 +116,9 @@ public:
     float StunAfterAttack;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
     float CancelWindow;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    UCurveFloat* MouseSensitivityCurve;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Invincibility")
+    float InvincibilityTimeAfterHit;
 };

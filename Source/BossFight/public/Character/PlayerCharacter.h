@@ -35,6 +35,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+	UFUNCTION(BlueprintCallable)
+	void SetInvicibleAfterHit();
+	
+	void TickInvicibility(float DeltaTime);
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -65,6 +69,16 @@ public:
 	UClass* HoldVFX;
 	UPROPERTY(EditAnywhere)
 	UClass* ShootVFX;;
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void LockAllInputs();
+    
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void UnlockAllInputs();
+    
+	// Functions to lock/unlock individual inputs
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook);
 	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
@@ -86,6 +100,8 @@ public:
 	int GetLifePoint() const;
 	UPROPERTY(VisibleAnywhere)
 	bool isInvincible = false;
+	UPROPERTY(EditAnywhere)
+	float InvicibilityTimer = 0;
 protected:
 	int LifePoint;
 	UPROPERTY()
@@ -102,6 +118,22 @@ public:
 protected:
 	void SetupMappingContextIntoController() const;
 	void SetupInputs();
+	
+	// Input lock booleans
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputMoveXLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputMoveYLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputDodgeLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputSpecialAttackLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputLookLocked = false;
 #pragma region InputMove
 public:
 

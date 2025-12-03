@@ -29,11 +29,27 @@ void APlayerCharacter::BeginPlay()
 	LifePoint = LifePointMax;
 }
 
+
+
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	TickStateMachine(DeltaTime);
+	TickInvicibility(DeltaTime);
+}
+void APlayerCharacter::SetInvicibleAfterHit()
+{
+	InvicibilityTimer = PlayerMovementParameters->InvincibilityTimeAfterHit;
+}
+void APlayerCharacter::TickInvicibility(float DeltaTime)
+{
+	isInvincible = InvicibilityTimer>0.f;
+	if (isInvincible)
+	{
+		InvicibilityTimer -= DeltaTime;
+		if (InvicibilityTimer <= 0.f) InvicibilityTimer = 0.f;
+	}
 }
 
 int APlayerCharacter::GetLifePoint() const
@@ -108,19 +124,53 @@ void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 void APlayerCharacter::TriggerTimeDilation()
 {
 	UCameraComponent* Camera = GetComponentByClass<UCameraComponent>();
-	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
-	isPerfectDodging = true;
-	FTimerHandle TimerHandle;
-	GetWorldTimerManager().SetTimer(
-		TimerHandle,
-		[this]() {
-			UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
-		},
-		PlayerMovementParameters->TimeSlowDuration,
-		false
-	);
+	if (Camera)
+	{
+		// Sauvegarde les paramètres actuels
+		bool bWasOverridingSaturation = Camera->PostProcessSettings.bOverride_ColorSaturation;
+		FVector4 OriginalSaturation = Camera->PostProcessSettings.ColorSaturation;
+        
+		// Active l'effet noir et blanc
+		Camera->PostProcessSettings.bOverride_ColorSaturation = true;
+		Camera->PostProcessSettings.ColorSaturation = FVector4(0.0f, 0.0f, 0.0f, 1.0f);
+        
+		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
+		isPerfectDodging = true;
+        
+		FTimerHandle TimerHandle;
+		GetWorldTimerManager().SetTimer(
+		   TimerHandle,
+		   [this, Camera, bWasOverridingSaturation, OriginalSaturation]() {
+			  UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
+              
+			  // Restaure les paramètres originaux
+			  if (Camera)
+			  {
+				  Camera->PostProcessSettings.bOverride_ColorSaturation = bWasOverridingSaturation;
+				  Camera->PostProcessSettings.ColorSaturation = OriginalSaturation;
+			  }
+		   },
+		   PlayerMovementParameters->TimeSlowDuration,
+		   false
+		);
+	}
+	else
+	{
+		// Si pas de caméra, applique quand même la time dilation
+		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
+		isPerfectDodging = true;
+        
+		FTimerHandle TimerHandle;
+		GetWorldTimerManager().SetTimer(
+		   TimerHandle,
+		   [this]() {
+			  UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
+		   },
+		   PlayerMovementParameters->TimeSlowDuration,
+		   false
+		);
+	}
 }
-
 void APlayerCharacter::SetupMappingContextIntoController() const
 {
 	APlayerController* PlayerController = Cast<APlayerController>(Controller);
@@ -244,6 +294,33 @@ void APlayerCharacter::BindInputDodge(UEnhancedInputComponent* EnhancedInputComp
 	}
 }
 
+void APlayerCharacter::LockAllInputs()
+{
+	bInputMoveXLocked = true;
+	bInputMoveYLocked = true;
+	bInputDodgeLocked = true;
+	bInputSpecialAttackLocked = true;
+	bInputLookLocked = true;
+}
+
+void APlayerCharacter::UnlockAllInputs()
+{
+	bInputMoveXLocked = false;
+	bInputMoveYLocked = false;
+	bInputDodgeLocked = false;
+	bInputSpecialAttackLocked = false;
+	bInputLookLocked = false;
+}
+
+void APlayerCharacter::SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook)
+{
+	bInputMoveXLocked = bLockMove;
+	bInputMoveYLocked = bLockMove;
+	bInputDodgeLocked = bLockDodge;
+	bInputSpecialAttackLocked = bLockSpecialAttack;
+	bInputLookLocked = bLockLook;
+}
+
 void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent)
 {
 	EnhancedInputComponent->BindAction(InputData->InputActionLook, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
@@ -251,6 +328,11 @@ void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInp
 
 void APlayerCharacter::OnInputDodge(const FInputActionValue& InputActionValue)
 {
+	if (bInputDodgeLocked)
+	{
+		InputDodgeBuffer = false;
+		return;
+	}
 	InputDodgeBuffer = InputActionValue.Get<bool>();
 }
 
@@ -283,31 +365,57 @@ void APlayerCharacter::BindInputSpecialAttack(UEnhancedInputComponent* EnhancedI
 
 void APlayerCharacter::OnInputSpecialAttack(const FInputActionValue& InputActionValue)
 {
+	if (bInputSpecialAttackLocked)
+	{
+		InputSpecialAttackBuffer = false;
+		return;
+	}
 	InputSpecialAttackBuffer = InputActionValue.Get<bool>();
 }
 
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 {
+	if (bInputMoveXLocked)
+	{
+		InputMoveX = 0;
+		return;
+	}
 	InputMoveX = InputActionValue.Get<float>();
 }
 
 void APlayerCharacter::OnInputMoveY(const FInputActionValue& InputActionValue)
 {
+	if (bInputMoveYLocked)
+	{
+		InputMoveY = 0;
+		return;
+	}
 	InputMoveY = InputActionValue.Get<float>();
 }
 
 void APlayerCharacter::OnInputMoveXCompleted(const FInputActionValue& InputActionValue)
 {
+	if (bInputMoveXLocked)
+	{
+		InputMoveX = 0;
+		return;
+	}
 	InputMoveX = InputActionValue.Get<float>();
 }
 
 void APlayerCharacter::OnInputMoveYCompleted(const FInputActionValue& InputActionValue)
 {
+	if (bInputMoveYLocked)
+	{
+		InputMoveY = 0;
+		return;
+	}
 	InputMoveY = InputActionValue.Get<float>();
 }
 
 void APlayerCharacter::Look(const FInputActionValue& Value)
 {
+	if (bInputLookLocked) return;
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 	AddControllerYawInput(LookAxisVector.X*MouseSensitivity);

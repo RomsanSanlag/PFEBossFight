@@ -52,6 +52,8 @@ protected:
 	bool bHasShot = false;
 	bool bIsCommitted = false;
 
+	UCurveFloat* MouseSensitivityCurve;
+
 private:
 	float w;
 	float InitialMouseSensitivity;
