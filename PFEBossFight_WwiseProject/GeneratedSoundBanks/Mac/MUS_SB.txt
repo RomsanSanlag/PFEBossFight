@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	961842128	Play_MUS_Fight			\Default Work Unit\MUS\Play_MUS_Fight	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	121661552	MUS_Fight	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\B1\{B186AB4B-5C17-AE22-A839-5B23E12A2E6C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\MUS\MUS_Fight		39744092
-
