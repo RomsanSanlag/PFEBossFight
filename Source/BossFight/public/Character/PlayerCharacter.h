@@ -102,6 +102,13 @@ public:
 	bool isInvincible = false;
 	UPROPERTY(EditAnywhere)
 	float InvicibilityTimer = 0;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraTransition(int indexToGo);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShake(bool isSlowShake, float intensity);
+	
+	
 protected:
 	int LifePoint;
 	UPROPERTY()
