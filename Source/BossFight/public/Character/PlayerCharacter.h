@@ -23,6 +23,8 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
 	APlayerCharacter();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
@@ -82,6 +84,13 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraTransition(int indexToGo);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShake(bool isSlowShake, float intensity);
+	
+	
 protected:
 	int LifePoint;
 	UPROPERTY()
