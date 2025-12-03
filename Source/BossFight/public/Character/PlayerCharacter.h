@@ -84,6 +84,8 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
+	UPROPERTY(VisibleAnywhere)
+	bool isInvincible = false;
 protected:
 	int LifePoint;
 	UPROPERTY()
