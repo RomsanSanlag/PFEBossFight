@@ -84,6 +84,13 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraTransition(int indexToGo);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShake(bool isSlowShake, float intensity);
+	
+	
 protected:
 	int LifePoint;
 	UPROPERTY()
