@@ -1,0 +1,26 @@
+Event	ID	Name			Wwise Object Path	Notes
+	325277420	Play_BOSS_SFX_Angoisse_Impact			\Default Work Unit\BOSS\Play_BOSS_SFX_Angoisse_Impact	
+	1362624021	Play_BOSS_SFX_LaserEye_Focus			\Default Work Unit\BOSS\Play_BOSS_SFX_LaserEye_Focus	
+	1738699012	Play_BOSS_SFX_LaserEye_Shoot			\Default Work Unit\BOSS\Play_BOSS_SFX_LaserEye_Shoot	
+	1788233747	Play_BOSS_SFX_Pleur_Load			\Default Work Unit\BOSS\Play_BOSS_SFX_Pleur_Load	
+	1792758125	Play_BOSS_SFX_Pleur_Impact			\Default Work Unit\BOSS\Play_BOSS_SFX_Pleur_Impact	
+	2636526858	Play_BOSS_SFX_Angoisse_Load			\Default Work Unit\BOSS\Play_BOSS_SFX_Angoisse_Load	
+	2708529024	Play_BOSS_SFX_Explosion_V2			\Default Work Unit\BOSS\Play_BOSS_SFX_Explosion_V2	
+	2773932494	Play_BOSS_SFX_LaserEye_UnFocus			\Default Work Unit\BOSS\Play_BOSS_SFX_LaserEye_UnFocus	
+	3788246369	Play_BOSS_SFX_Explosion_AOE			\Default Work Unit\BOSS\Play_BOSS_SFX_Explosion_AOE	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	56927303	BOSS_SFX_Explosion_V2_01	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\F7\{F7D9242B-A587-21BD-2E56-0D130AEA4204}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_01		410516
+	186876471	BOOS_SFX_LaserEyeShoot_UnFocus	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\BD\{BDF53BA9-1E5C-7340-0730-67DC00ADB1FF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_LaserEye_UnFocus\BOOS_SFX_LaserEyeShoot_UnFocus		268896
+	215002236	BOSS_SFX_Explosion_V2_02	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\4F\{4F7357C8-4C88-9C31-DF25-7D7AE264C88A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_02		413204
+	315126234	BOSS_SFX_PleurLoad	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\6C\{6C7F6470-A8B1-E97B-143C-1D370AC08C15}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Pleur_Load\BOSS_SFX_PleurLoad		409696
+	353643052	BOSS_SFX_Explosion_V2_03	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\C9\{C922BB54-FB37-8000-2DE8-B335544F3A57}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_03		412608
+	390811697	BOSS_SFX_Explosion_V1	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\2E\{2E96E485-BC87-F230-A5CE-D642D13FC6AB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V1\BOSS_SFX_Explosion_V1		1877976
+	392970654	BOSS_SFX_PleurImpact	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\A1\{A1F7A6D5-F512-502D-53A9-CD8C14AC0E0D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Pleur_Impact\BOSS_SFX_PleurImpact		237988
+	513405651	BOOS_SFX_LaserEyeShoot_Focus	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\FC\{FCA11208-8409-D6EC-4892-4CE9362847F2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_LaserEye_Focus\BOOS_SFX_LaserEyeShoot_Focus		390496
+	543603549	BOSS_SFX_Explosion_V2_04	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\B5\{B57F912B-2B04-9425-BB66-1E9A9AC95B59}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_04		413164
+	778929564	BOSS_SFX_Angoisse_Impact	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\31\{3120EC33-C70A-8FB0-19ED-56743C951C6D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Angoisse_Impact\BOSS_SFX_Angoisse_Impact		665696
+	888418604	BOOS_SFX_LaserEyeShoot	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\08\{08B1D1D5-E404-A898-3272-2864F52B2057}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_LaserEye_Shoot\BOOS_SFX_LaserEyeShoot		480096
+	925587241	BOSS_SFX_Explosion_V2_05	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\CB\{CB85A3B4-5C8B-650F-1365-F8F06F56D8C4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Explosion_V2\BOSS_SFX_Explosion_V2_05		413444
+	1026903730	BOSS_SFX_Angoisse_Load	E:\Fork\PFEBossFight 2\PFEBossFight_WwiseProject\.cache\CC\{CCCDC083-4278-2906-83D8-E6A56E6ECB08}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BOSS\BOSS_SFX\BOSS_SFX_Angoisse_Load\BOSS_SFX_Angoisse_Load		1004896
+

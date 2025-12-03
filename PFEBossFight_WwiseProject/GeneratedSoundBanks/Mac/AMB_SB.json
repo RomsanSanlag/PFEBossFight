@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3256182613",
+    "Type": "User",
+    "GUID": "{7A7D77B0-0BE7-46FD-B12E-D830972C377C}",
+    "Language": "SFX",
+    "Hash": "{5D9D418F-C46B-2CFB-16AE-FAEBEA2A5437}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\AMB_SB",
+    "ShortName": "AMB_SB",
+    "Path": "AMB_SB.bnk",
+    "Media": [
+     {
+      "Id": "950465057",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "AMB_Global_Forest_LP.wav",
+      "Path": "Media/950465057.wem",
+      "CachePath": "5C/{5CFDEBAA-BF7A-2376-E5B5-B0FC77C93BC5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2894078803",
+      "Name": "Play_AMB_Calm_LP",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMB\\Play_AMB_Calm_LP",
+      "GUID": "{471C5876-D437-407A-AD32-00BFB0968118}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "950465057"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{009CF046-74F4-0C8F-1052-640DA4D41834}"
+ }
+}

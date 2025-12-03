@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{48F8BF3B-7238-4498-8C91-39DEE03C891E}" SchemaVersion="123" RootDocumentID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" ParentDocumentID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}">
+	<Events>
+		<WorkUnit Name="MUS" ID="{48F8BF3B-7238-4498-8C91-39DEE03C891E}" OwnerID="{DC161A65-CE34-485A-9B74-6C411BAC72B6}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_MUS_Fight" ID="{A9B7A1F9-DE02-496C-95AA-98E7E293AFC7}">
+					<ChildrenList>
+						<Action Name="" ID="{655281DD-4BE0-4F9A-8DEF-9E8A51642C5C}" ShortID="738402507">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_Fight" ID="{2D45E0D8-F90B-4A83-A325-096D89130661}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E04C2A48-D71C-498B-AE76-37C59D099E13}" ShortID="82970024">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_Calm_LP" ID="{6CE8E418-B0F4-411C-A584-9D7F6FB55830}" WorkUnitID="{46480E7A-D139-479A-BF8F-5D60F890FDF0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
