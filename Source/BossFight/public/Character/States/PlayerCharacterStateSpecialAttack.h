@@ -12,6 +12,7 @@ class BOSSFIGHT_API UPlayerCharacterStateSpecialAttack : public UPlayerCharacter
 	GENERATED_BODY()
 
 public:
+
 	virtual PlayerCharacterStateID GetStateID() override;
 	virtual void StateInit(UPlayerStateMachine* InStateMachine) override;
 	virtual void StateEnter(PlayerCharacterStateID PreviousStateID) override;
