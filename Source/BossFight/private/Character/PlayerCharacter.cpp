@@ -37,6 +37,7 @@ void APlayerCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	TickStateMachine(DeltaTime);
 	TickInvicibility(DeltaTime);
+	TickSpecialAttackWindow(DeltaTime);
 }
 void APlayerCharacter::SetInvicibleAfterHit()
 {
@@ -49,6 +50,16 @@ void APlayerCharacter::TickInvicibility(float DeltaTime)
 	{
 		InvicibilityTimer -= DeltaTime;
 		if (InvicibilityTimer <= 0.f) InvicibilityTimer = 0.f;
+	}
+}
+
+void APlayerCharacter::TickSpecialAttackWindow(float DeltaTime)
+{
+	CanInstantspecialAttack = SpecialAttackTimer>0.f;
+	if (CanInstantspecialAttack)
+	{
+		SpecialAttackTimer -= DeltaTime;
+		if (SpecialAttackTimer <= 0.f) SpecialAttackTimer = 0.f;
 	}
 }
 
@@ -86,11 +97,9 @@ void APlayerCharacter::InitStateMachine()
 
 	OnTakeDamageNative.AddLambda([](float Damage)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, TEXT("Took damage!"));
 });
 	OnPerfectDodge.AddLambda([](float Damage)
 {
-GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Purple, TEXT("Perfect Dodge!"));
 });
 }
 
@@ -122,56 +131,34 @@ void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 	TriggerTimeDilation();
 }
 
-
 void APlayerCharacter::TriggerTimeDilation()
 {
 	UCameraComponent* Camera = GetComponentByClass<UCameraComponent>();
 	if (Camera)
 	{
-		// Sauvegarde les paramètres actuels
-		bool bWasOverridingSaturation = Camera->PostProcessSettings.bOverride_ColorSaturation;
-		FVector4 OriginalSaturation = Camera->PostProcessSettings.ColorSaturation;
-        
 		// Active l'effet noir et blanc
 		Camera->PostProcessSettings.bOverride_ColorSaturation = true;
 		Camera->PostProcessSettings.ColorSaturation = FVector4(0.0f, 0.0f, 0.0f, 1.0f);
-        
-		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
-		isPerfectDodging = true;
-        
-		FTimerHandle TimerHandle;
-		GetWorldTimerManager().SetTimer(
-		   TimerHandle,
-		   [this, Camera, bWasOverridingSaturation, OriginalSaturation]() {
-			  UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
-              
-			  // Restaure les paramètres originaux
-			  if (Camera)
-			  {
-				  Camera->PostProcessSettings.bOverride_ColorSaturation = bWasOverridingSaturation;
-				  Camera->PostProcessSettings.ColorSaturation = OriginalSaturation;
-			  }
-		   },
-		   PlayerMovementParameters->TimeSlowDuration,
-		   false
-		);
 	}
-	else
-	{
-		// Si pas de caméra, applique quand même la time dilation
-		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
-		isPerfectDodging = true;
-        
-		FTimerHandle TimerHandle;
-		GetWorldTimerManager().SetTimer(
-		   TimerHandle,
-		   [this]() {
-			  UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
-		   },
-		   PlayerMovementParameters->TimeSlowDuration,
-		   false
-		);
-	}
+    
+	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
+	isPerfectDodging = true;
+    
+	FTimerHandle TimerHandle;
+	GetWorldTimerManager().SetTimer(
+	   TimerHandle,
+	   [this, Camera]() {
+		  UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
+          
+		  // Restaure les couleurs normales
+		  if (Camera)
+		  {
+			  Camera->PostProcessSettings.bOverride_ColorSaturation = false;
+		  }
+	   },
+	   PlayerMovementParameters->TimeSlowDuration,
+	   false
+	);
 }
 void APlayerCharacter::SetupMappingContextIntoController() const
 {

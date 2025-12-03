@@ -44,6 +44,11 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 
 	TimeToSlowDown = PlayerMovementParameters->TimeToSlowDown;
 	TimeToChargeSpecialAttack = PlayerMovementParameters->TimeToChargeSpecialAttack;
+	if (Character->CanInstantspecialAttack)
+	{
+		Character->SpecialAttackTimer = 0.f;
+		TimeToChargeSpecialAttack = PlayerMovementParameters->PerfectDodgeTimeToCharge;
+	}
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
 	CancelWindow = PlayerMovementParameters->CancelWindow;

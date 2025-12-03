@@ -30,6 +30,8 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnDomagePlayer(int PV);
 
+	bool CanInstantspecialAttack = false;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,6 +41,7 @@ public:
 	void SetInvicibleAfterHit();
 	
 	void TickInvicibility(float DeltaTime);
+	void TickSpecialAttackWindow(float DeltaTime);
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -68,7 +71,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	UClass* HoldVFX;
 	UPROPERTY(EditAnywhere)
-	UClass* ShootVFX;;
+	UClass* ShootVFX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool IsDodging = false;
 
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void LockAllInputs();
@@ -98,10 +103,12 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool isInvincible = false;
-	UPROPERTY(EditAnywhere)
-	float InvicibilityTimer = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float InvicibilityTimer = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float SpecialAttackTimer = 0.f;
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraTransition(int indexToGo);

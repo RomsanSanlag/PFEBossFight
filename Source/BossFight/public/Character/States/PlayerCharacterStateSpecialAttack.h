@@ -32,6 +32,8 @@ protected:
 	float StunAfterAttack;
 	float CancelWindow;
 	float CurrentStunTime;
+
+	float PerfectDodgeTimeToCharge;
 	
 	
 	float InitialSpeed = 0.f;
