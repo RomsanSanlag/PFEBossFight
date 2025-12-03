@@ -87,6 +87,7 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
+	OnCameraShake(false,1);
 	OnTakeDamageNative.Broadcast(DamageAmount);
 	ReduceLifePoint(DamageAmount);
 }
@@ -101,6 +102,7 @@ void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
 	OnPerfectDodge.Broadcast(DamageAmount);
+	OnCameraTransition(1);
 	TriggerTimeDilation();
 }
 
