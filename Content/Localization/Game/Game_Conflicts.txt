@@ -1,0 +1,4 @@
+ - 5482B0924370CB00D3E310B4BCBB924E 
+	/Game/UI/WBP_SettingCaroussel.Default__WBP_SettingCaroussel_C.SettingText - "SettingText" 
+	/Game/UI/WBP_SettingCaroussel.WBP_SettingCaroussel_C:WidgetTree.TextBlock.Text - "Text" 
+
