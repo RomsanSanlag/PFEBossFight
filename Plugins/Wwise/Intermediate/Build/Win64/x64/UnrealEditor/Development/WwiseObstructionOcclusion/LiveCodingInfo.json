@@ -1,5 +1,13 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.WwiseObstructionOcclusion.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"AkComponentObstructionAndOcclusionService.cpp.obj",
+			"AkObstructionAndOcclusionService.cpp.obj",
+			"AkPortalObstructionAndOcclusionService.cpp.obj",
+			"ObstructionOcclusion.cpp.obj",
+			"WwiseObstructionOcclusionModuleImpl.cpp.obj"
+		]
 	}
 }
