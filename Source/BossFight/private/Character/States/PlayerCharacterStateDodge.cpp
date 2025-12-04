@@ -23,6 +23,8 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 {
 	Super::StateEnter(PlayerStateID);
 
+	Character->OnCameraTransition(1);
+	
 	GEngine->AddOnScreenDebugMessage(
 	-1,
 	3.f,
@@ -51,6 +53,9 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	PerfectDodgeWindow = PlayerMovementParameters->PerfectDodgeWindow;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
+
+	Character->IsDodging = true;
+	Character->InvicibilityTimer = DashDuration;
 	
 	IsPerfectDodgeHitboxSpawned = false;
 
@@ -66,7 +71,10 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
-    
+
+	Character->OnCameraTransition(0);
+	
+	Character->IsDodging = false;
 	// Stocker la direction du dodge pour la transition vers Walk
 	if (PlayerStateID == PlayerCharacterStateID::Walk)
 	{
@@ -76,6 +84,12 @@ void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 			Movement->Velocity = DashDirection * PlayerMovementParameters->MaxWalkSpeed;
 		}
 	}
+
+	if (Character->isPerfectDodging)
+	{
+		Character->SpecialAttackTimer = PlayerMovementParameters->TimeToKeepPerfectDodgeAttack;
+	}
+	Character->isPerfectDodging = false;
     
 	GEngine->AddOnScreenDebugMessage(
 		-1,
@@ -149,13 +163,11 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	{
 		if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
 		{
-			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Walk);
 			return;
 		}
 		else
 		{
-			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 			return;
 		}

@@ -36,15 +36,23 @@ PlayerCharacterStateID UPlayerCharacterStateSpecialAttack::GetStateID()
 void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateEnter(PlayerStateID);	
+
+	Character->OnCameraTransition(2);
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
 
 	TimeToSlowDown = PlayerMovementParameters->TimeToSlowDown;
 	TimeToChargeSpecialAttack = PlayerMovementParameters->TimeToChargeSpecialAttack;
+	if (Character->CanInstantspecialAttack)
+	{
+		Character->SpecialAttackTimer = 0.f;
+		TimeToChargeSpecialAttack = PlayerMovementParameters->PerfectDodgeTimeToCharge;
+	}
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
 	CancelWindow = PlayerMovementParameters->CancelWindow;
+	MouseSensitivityCurve = PlayerMovementParameters->MouseSensitivityCurve;
 	
 	// Sauvegarde la sensibilité initiale
 	InitialMouseSensitivity = Character->MouseSensitivity;
@@ -161,7 +169,8 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
-	
+
+	Character->OnCameraTransition(0);
 
 	// Restaure la sensibilité de la souris
 	Character->MouseSensitivity = InitialMouseSensitivity;
@@ -218,11 +227,22 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 		UpdateAttackOriginRotation();
 	}
 
-	// Phase de charge : lerp de la sensibilité vers 0
+	// Phase de charge : utilise la courbe pour la sensibilité
 	if (bIsCharging)
 	{
 		float ChargeProgress = FMath::Clamp(CurrentChargeTime / TimeToChargeSpecialAttack, 0.f, 1.f);
-		Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+    
+		if (MouseSensitivityCurve)
+		{
+			// Évalue la courbe (attendu : valeur entre 0 et 1)
+			float CurveValue = MouseSensitivityCurve->GetFloatValue(ChargeProgress);
+			Character->MouseSensitivity = InitialMouseSensitivity * CurveValue;
+		}
+		else
+		{
+			// Fallback sur le lerp linéaire si pas de courbe
+			Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+		}
 	}
 
 	// Continue le ralentissement tant qu'on n'a pas atteint TimeToSlowDown
