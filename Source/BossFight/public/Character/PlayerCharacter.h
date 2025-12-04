@@ -23,8 +23,12 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
 	APlayerCharacter();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnDomagePlayer(int PV);
 
 protected:
 	// Called when the game starts or when spawned
@@ -53,6 +57,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UClass* PersistingDodgeHitbox;
+	UPROPERTY(EditAnywhere)
+	UClass* DodgeShadow;
+	UPROPERTY(EditAnywhere)
+	UClass* SpecialAttackVFX;
+	UPROPERTY(EditAnywhere)
+	UClass* HoldVFX;
+	UPROPERTY(EditAnywhere)
+	UClass* ShootVFX;;
+	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnTakeDamage(float DamageAmount);
@@ -61,6 +74,7 @@ public:
 	
 	void TriggerTimeDilation();
 
+	bool isPerfectDodging = false;
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<UPlayerStateMachine> StateMachine;
@@ -70,6 +84,13 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraTransition(int indexToGo);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShake(bool isSlowShake, float intensity);
+	
+	
 protected:
 	int LifePoint;
 	UPROPERTY()
@@ -95,16 +116,22 @@ public:
 	float GetInputMoveX() const;
 	float GetInputMoveY() const;
 	float GetInputDodgeBuffer() const;
+	float GetInputSpecialAttack() const;
+
+	float MouseSensitivity = 1.f;
 
 protected:
 	UPROPERTY()
 	float InputMoveX = 0.f;
 	
-	UPROPERTY()
+	UPROPERTY()	
 	float InputMoveY = 0.f;
 
 	UPROPERTY()
-	float InputDodgeBuffer = 0.f;
+	bool InputDodgeBuffer = false;
+	
+	UPROPERTY()
+	bool InputSpecialAttackBuffer = false;
 
 	
 
@@ -120,6 +147,9 @@ private:
 	void BindInputDodge(UEnhancedInputComponent* EnhancedInputComponent);
 	void BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent);
 	void OnInputDodge(const FInputActionValue& InputActionValue);
+
+	void BindInputSpecialAttack(UEnhancedInputComponent* EnhancedInputComponent);
+	void OnInputSpecialAttack(const FInputActionValue& InputActionValue);
 
 #pragma endregion
 

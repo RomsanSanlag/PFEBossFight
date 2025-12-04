@@ -5,6 +5,7 @@
 
 
 #include "Character/PlayerCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 PlayerCharacterStateID UPlayerCharacterStateDodge::GetStateID()
@@ -22,6 +23,8 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 {
 	Super::StateEnter(PlayerStateID);
 
+	//Character->OnCameraTransition(1);
+	
 	GEngine->AddOnScreenDebugMessage(
 	-1,
 	3.f,
@@ -50,18 +53,40 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	PerfectDodgeWindow = PlayerMovementParameters->PerfectDodgeWindow;
 
 	StateMachine->DodgeCooldown = PlayerMovementParameters->DodgeCooldown;
-
+	
 	IsPerfectDodgeHitboxSpawned = false;
+
+	StateMachine->StartingDodgeCharges--;
+	StateMachine->DodgeCooldownTimer = StateMachine->DodgeCooldown;
+	if (StateMachine->StartingDodgeCharges < StateMachine->MaxDodgeCharges && StateMachine->DodgeChargeRechargeTimer <= 0.0f)
+	{
+		StateMachine->DodgeChargeRechargeTimer = 0.0f;
+	}
 }
 
+// Dans StateExit du Dodge
 void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
+
+	//Character->OnCameraTransition(0);
+	
+    
+	// Stocker la direction du dodge pour la transition vers Walk
+	if (PlayerStateID == PlayerCharacterStateID::Walk)
+	{
+		UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
+		if (Movement)
+		{
+			Movement->Velocity = DashDirection * PlayerMovementParameters->MaxWalkSpeed;
+		}
+	}
+    
 	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("Exit StateDodge"))
+		-1,
+		3.f,
+		FColor::Red,
+		FString::Printf(TEXT("Exit StateDodge"))
 	);
 }
 
@@ -88,6 +113,29 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 		FString::Printf(TEXT("TU AS OUBLIE D'AJOUTER UNE COURBE D'EASING DANS LES PARAMETRES DE MOUVEMENT"))
 		);
 	}
+	if (Character->DodgeShadow && Character->isPerfectDodging)
+	{
+            
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+			USkeletalMeshComponent* Mesh = Character->GetMesh();
+			FVector SpawnLocation = Mesh->GetComponentLocation();
+			FRotator SpawnRotation = Mesh->GetComponentRotation();
+            
+			AActor* TrailObject = GetWorld()->SpawnActor<AActor>(
+				Character->DodgeShadow, 
+				SpawnLocation, 
+				SpawnRotation, 
+				SpawnParams
+			);
+            
+			if (TrailObject)
+			{
+				TrailObject->SetLifeSpan(1);
+				SpawnedTrailObjects.Add(TrailObject);
+			}
+	}
 	if (Character->PersistingDodgeHitbox and !IsPerfectDodgeHitboxSpawned and DashTime>DodgeDelay)
 	{
 		IsPerfectDodgeHitboxSpawned = true;
@@ -106,11 +154,13 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	{
 		if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
 		{
+			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Walk);
 			return;
 		}
 		else
 		{
+			Character->isPerfectDodging = false;
 			StateMachine->ChangeState(PlayerCharacterStateID::Idle);
 			return;
 		}

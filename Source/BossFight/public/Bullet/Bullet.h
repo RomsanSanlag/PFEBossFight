@@ -19,6 +19,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	AActor* FindBestTarget();
 
 public:
 	// Called every frame
@@ -34,8 +35,8 @@ public:
 					  UPrimitiveComponent* OtherComp, 
 					  int32 OtherBodyIndex, 
 					  bool bFromSweep, 
-					  const FHitResult &SweepResult );
-
+					  const FHitResult &SweepResult
+	);
 	
 	UPROPERTY(EditAnywhere)
 	float TravelTime;
@@ -51,14 +52,20 @@ public:
 	UCurveFloat* CurveOverTime;
 	UPROPERTY(EditAnywhere)
 	UCurveFloat* SpeedOverTime;
-
+	UPROPERTY(EditAnywhere)
+	TArray<TSubclassOf<AActor>> TargetableClasses;
+	UPROPERTY(EditAnywhere)
+	float HomingStrength = 1.0f;
 	
+	TArray<AActor*> FoundTargets;
+	AActor* CurrentTarget;
 	FVector StartPos;
 	FVector EndPos;
 	FVector BossLocation;
 	FVector Origin;
 	FRotator ViewRot;
-	FVector Up;
+	FVector InitialDirection;
+	FVector ArcDirection;
 	float time;
 
 	ACharacter* BossCharacter;

@@ -12,6 +12,7 @@
 #include "Slate/SGameLayerManager.h"
 
 
+
 // Sets default values
 APlayerCharacter::APlayerCharacter()
 {
@@ -54,6 +55,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	BindInputMoveYAxisActions(EnhancedInputComponent);
 	BindInputLookActions(EnhancedInputComponent);
 	BindInputDodge(EnhancedInputComponent);
+	BindInputSpecialAttack(EnhancedInputComponent);
 }
 
 void APlayerCharacter::CreateStateMachine()
@@ -85,6 +87,7 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
+	OnCameraShake(false,1);
 	OnTakeDamageNative.Broadcast(DamageAmount);
 	ReduceLifePoint(DamageAmount);
 }
@@ -92,12 +95,14 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 {
 	LifePoint -= DamageAmount;
-	if (LifePoint < 0) LifePoint = 0; // game over a mettre plus tard
+	if (LifePoint < 0) LifePoint = 0; 
+	OnDomagePlayer(LifePoint);// game over a mettre plus tard
 }
 
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
 	OnPerfectDodge.Broadcast(DamageAmount);
+	OnCameraTransition(1);
 	TriggerTimeDilation();
 }
 
@@ -106,15 +111,12 @@ void APlayerCharacter::TriggerTimeDilation()
 {
 	UCameraComponent* Camera = GetComponentByClass<UCameraComponent>();
 	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), PlayerMovementParameters->TimeDilationDuringSlow);
-	Camera->PostProcessSettings.bOverride_ColorSaturation = true;
-	Camera->PostProcessSettings.ColorSaturation = FVector4(0.0f, 0.0f, 0.0f, 1.0f);
-	
+	isPerfectDodging = true;
 	FTimerHandle TimerHandle;
 	GetWorldTimerManager().SetTimer(
 		TimerHandle,
-		[this, Camera]() {
+		[this]() {
 			UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
-			Camera->PostProcessSettings.ColorSaturation = FVector4(1.0f, 1.0f, 1.0f, 1.0f);
 		},
 		PlayerMovementParameters->TimeSlowDuration,
 		false
@@ -156,6 +158,11 @@ float APlayerCharacter::GetInputMoveY() const
 float APlayerCharacter::GetInputDodgeBuffer() const
 {
 	return InputDodgeBuffer;
+}
+
+float APlayerCharacter::GetInputSpecialAttack() const
+{
+	return InputSpecialAttackBuffer;
 }
 
 void APlayerCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent)
@@ -249,6 +256,38 @@ void APlayerCharacter::OnInputDodge(const FInputActionValue& InputActionValue)
 	InputDodgeBuffer = InputActionValue.Get<bool>();
 }
 
+void APlayerCharacter::BindInputSpecialAttack(UEnhancedInputComponent* EnhancedInputComponent)
+{
+	if (InputData == nullptr) return;
+
+	if (InputData->InputActionSpecialAttackBuffer)
+	{
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Started,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Triggered,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+		EnhancedInputComponent->BindAction(
+			InputData->InputActionSpecialAttackBuffer,
+			ETriggerEvent::Completed,
+			this,
+			&APlayerCharacter::OnInputSpecialAttack
+		);
+	}
+}
+
+void APlayerCharacter::OnInputSpecialAttack(const FInputActionValue& InputActionValue)
+{
+	InputSpecialAttackBuffer = InputActionValue.Get<bool>();
+}
+
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 {
 	InputMoveX = InputActionValue.Get<float>();
@@ -273,8 +312,8 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
-	AddControllerYawInput(LookAxisVector.X);
-	AddControllerPitchInput(LookAxisVector.Y);
+	AddControllerYawInput(LookAxisVector.X*MouseSensitivity);
+	AddControllerPitchInput(LookAxisVector.Y*MouseSensitivity);
 	
 	FRotator ControlRotation = GetControlRotation();
 	FRotator TargetRotation(0.f, ControlRotation.Yaw, 0.f);

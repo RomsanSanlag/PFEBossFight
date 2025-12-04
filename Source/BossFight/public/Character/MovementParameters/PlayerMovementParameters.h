@@ -37,13 +37,22 @@ public:
         
         DashDuration = 1.0f;
         DashDistance = 600.0f;
-        DodgeCooldown = 5.0f;
+        DodgeCooldown = 1.0f;
         DodgeDelay = 0.1f;
         PerfectDodgeWindow = 0.15f;
+        MaxDodgeCharges = 3.f;
+        StartingDodgeCharges = 3;
+        DodgeChargeRechargeTime = 3.f;
         DashEasing;
 
         TimeSlowDuration = 0.25f;
         TimeDilationDuringSlow = 0.25f;
+
+        TimeToSlowDown = 0.25f;
+        TimeToChargeSpecialAttack = 1.5;
+        MaxTimeToHoldAttack = 2.0f;
+        StunAfterAttack = 1.0f;
+        CancelWindow = 0.5f;
     }
     
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basic Movement|Speed")
@@ -79,6 +88,12 @@ public:
     float DodgeCooldown;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
     float DodgeDelay;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    float MaxDodgeCharges;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    int StartingDodgeCharges;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Dodge metrics")
+    float DodgeChargeRechargeTime;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Perfect Dodge")
     UCurveFloat* DashEasing;
@@ -89,4 +104,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Dodge|Time Slow")
     float TimeDilationDuringSlow;
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeToSlowDown;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeToChargeSpecialAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float MaxTimeToHoldAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float StunAfterAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float CancelWindow;
 };

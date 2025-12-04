@@ -15,6 +15,8 @@ void UPlayerCharacterStateIdle::StateEnter(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateEnter(PlayerStateID);
 
+	Character->OnCameraTransition(0);
+	
 	GEngine->AddOnScreenDebugMessage(
 	-1,
 	3.f,
@@ -37,12 +39,20 @@ void UPlayerCharacterStateIdle::StateExit(PlayerCharacterStateID PlayerStateID)
 void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
-	
-	if (Character->GetInputDodgeBuffer() and StateMachine->DodgeCooldown <= 0.0f)
+
+	if (Character->GetInputSpecialAttack())
+	{
+		StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
+		return;
+	}
+	if (Character->GetInputDodgeBuffer()
+		&& StateMachine->StartingDodgeCharges > 0
+		&& StateMachine->DodgeCooldownTimer <= 0.0f)
 	{
 		StateMachine->ChangeState(PlayerCharacterStateID::Dodge);
 		return;
 	}
+
 	if (FMath::Abs(Character->GetInputMoveX()) + FMath::Abs(Character->GetInputMoveY()) > 0.1f)
 	{
 		StateMachine->ChangeState(PlayerCharacterStateID::Walk);
