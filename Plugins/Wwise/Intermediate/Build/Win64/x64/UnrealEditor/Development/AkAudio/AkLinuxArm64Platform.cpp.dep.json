@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\akaudio\\private\\platforms\\akplatform_linuxarm64\\aklinuxarm64platform.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\akaudio\\definitions.akaudio.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

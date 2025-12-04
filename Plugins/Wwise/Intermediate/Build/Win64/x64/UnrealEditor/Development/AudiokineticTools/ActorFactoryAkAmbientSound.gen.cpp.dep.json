@@ -1,0 +1,34 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\audiokinetictools\\uht\\actorfactoryakambientsound.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\audiokinetictools\\definitions.audiokinetictools.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\audiokinetictools\\classes\\factories\\actorfactoryakambientsound.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwiseunrealdefines.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\wwiseunrealversion.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\actorfactories\\actorfactory.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\editor\\editorframework\\public\\factories\\assetfactoryinterface.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instances\\instancedplacementclientinfo.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismcomponentdescriptor.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismcomponentdescriptor.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismpartitionclient.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismpartitionclient.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismpartitioninstancemanager.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismpartitioninstancemanager.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instances\\instancedplacementhash.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\misc\\hashbuilder.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\elements\\sminstance\\sminstanceelementid.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instancedstaticmeshdelegates.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\sminstanceelementid.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\instancedplacementclientinfo.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\editorframework\\uht\\assetfactoryinterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\actorfactory.generated.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\audiokinetictools\\uht\\actorfactoryakambientsound.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisepackaging\\uht\\wwisepackaging.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwisepackaging\\definitions.wwisepackaging.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

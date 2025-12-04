@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkruntime\\private\\wwise\\stats\\audiolink.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseaudiolinkruntime\\definitions.wwiseaudiolinkruntime.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkruntime\\public\\wwise\\stats\\audiolink.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

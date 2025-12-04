@@ -1,0 +1,31 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\private\\wwise\\loaded\\wwiseloadedexternalsource.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseresourceloader\\definitions.wwiseresourceloader.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\public\\wwise\\loaded\\wwiseloadedexternalsource.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwisefilehandler\\public\\wwise\\cookeddata\\wwiseexternalsourcecookeddata.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseengineutils\\public\\wwisecookeventcontext.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\wwiseunrealversion.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsavecontext.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\cookenums.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsaveoverride.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\cooker\\cookdependency.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\serialization\\compactbinary.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisefilehandler\\uht\\wwiseexternalsourcecookeddata.generated.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseconcurrency\\public\\wwise\\wwisefuture.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseconcurrency\\public\\wwise\\stats\\concurrency.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\stats\\namedevents.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\asyncstats.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\threadmanager.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\public\\wwise\\stats\\resourceloader.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\memory.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\inttypes.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
