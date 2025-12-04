@@ -37,9 +37,7 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\Wwise\WwiseModule.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\Wwise\Wwise.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\Wwise\PerModuleInline.gen.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\Wwise\Module.Wwise.cpp.obj"
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\Wwise\Default.rc2.res"
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\WwiseSoundEngine\ThirdParty\x64_vc170\Profile(StaticCRT)\lib\AkSoundEngine.lib"
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\WwiseSoundEngine\ThirdParty\x64_vc170\Profile(StaticCRT)\lib\AkMusicEngine.lib"

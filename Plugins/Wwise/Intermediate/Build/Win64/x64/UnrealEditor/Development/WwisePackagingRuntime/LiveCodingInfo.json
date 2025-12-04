@@ -1,5 +1,16 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.WwisePackagingRuntime.cpp.obj": [
+			"WwiseAssetLibraryFilter.gen.cpp.obj",
+			"WwiseAssetLibraryInfo.gen.cpp.obj",
+			"WwiseFilterableAssetLibrary.gen.cpp.obj",
+			"WwisePackagingRuntime.init.gen.cpp.obj",
+			"WwiseSharedAssetLibraryFilter.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"WwiseAssetLibraryInfo.cpp.obj",
+			"PackagingRuntime.cpp.obj",
+			"WwisePackagingRuntimeModuleImpl.cpp.obj"
+		]
 	}
 }
