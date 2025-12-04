@@ -1,0 +1,9 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.WwiseEngineUtils.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"WwiseUnrealEngineHelper.cpp.obj"
+		]
+	}
+}

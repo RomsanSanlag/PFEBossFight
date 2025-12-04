@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwisePackagingEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwisePackagingEditor\Module.WwisePackagingEditor.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwisePackagingEditor\Default.rc2.res"
+/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwisePackagingEditor\UnrealEditor-WwisePackagingEditor.lib"

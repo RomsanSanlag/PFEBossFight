@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseResourceLoader.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseResourceLoader\Module.WwiseResourceLoader.1.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseResourceLoader\Module.WwiseResourceLoader.2.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseResourceLoader\Default.rc2.res"
+/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseResourceLoader\UnrealEditor-WwiseResourceLoader.lib"

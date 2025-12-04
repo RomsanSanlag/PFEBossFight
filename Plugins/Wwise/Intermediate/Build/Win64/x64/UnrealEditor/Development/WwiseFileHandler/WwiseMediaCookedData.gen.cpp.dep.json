@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisefilehandler\\uht\\wwisemediacookeddata.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwisefilehandler\\definitions.wwisefilehandler.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwisefilehandler\\public\\wwise\\cookeddata\\wwisemediacookeddata.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseengineutils\\public\\wwisecookeventcontext.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\wwiseunrealversion.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsavecontext.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\cookenums.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsaveoverride.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\cooker\\cookdependency.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\serialization\\compactbinary.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwisefilehandler\\public\\wwise\\wwisepackagedfile.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisefilehandler\\uht\\wwisepackagedfile.generated.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisefilehandler\\uht\\wwisemediacookeddata.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

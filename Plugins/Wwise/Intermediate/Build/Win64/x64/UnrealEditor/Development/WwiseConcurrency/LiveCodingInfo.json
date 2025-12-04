@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.WwiseConcurrency.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"Concurrency.cpp.obj",
+			"WwiseConcurrencyModuleImpl.cpp.obj",
+			"WwiseDeferredQueue.cpp.obj",
+			"WwiseExecutionQueue.cpp.obj",
+			"WwiseRetriggerableAsyncTask.cpp.obj",
+			"ExecutionQueueTests.cpp.obj",
+			"FutureTests.cpp.obj"
+		]
+	}
+}

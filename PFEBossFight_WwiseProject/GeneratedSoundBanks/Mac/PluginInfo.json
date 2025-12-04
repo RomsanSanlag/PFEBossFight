@@ -1,0 +1,26 @@
+{
+ "PluginInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "PluginLibs": [
+   {
+    "LibName": "Wwise Delay",
+    "LibId": "6946819",
+    "Type": "Effect",
+    "DLL": "AkDelay",
+    "StaticLib": "AkDelayFX"
+   },
+   {
+    "LibName": "System",
+    "LibId": "11403271",
+    "Type": "AudioDevice"
+   },
+   {
+    "LibName": "No Output",
+    "LibId": "11862023",
+    "Type": "AudioDevice"
+   }
+  ],
+  "FileHash": "{46EC4059-D5E5-D964-1F0F-88035C94C653}"
+ }
+}

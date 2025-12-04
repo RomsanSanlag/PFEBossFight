@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseresourceloader\\uht\\wwiseobjectinfolibrary.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseresourceloader\\definitions.wwiseresourceloader.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\private\\wwise\\info\\wwiseobjectinfolibrary.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\public\\wwise\\info\\wwiseobjectinfo.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseresourceloader\\uht\\wwiseobjectinfo.generated.h",
+            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseresourceloader\\uht\\wwiseobjectinfolibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

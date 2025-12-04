@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.WwiseProcessing.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"Processing.cpp.obj",
+			"WwiseGlobalCallbacks.cpp.obj",
+			"WwiseProcessingModuleImpl.cpp.obj"
+		]
+	}
+}

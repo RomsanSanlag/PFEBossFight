@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.WwisePackaging.cpp.obj": [
+			"WwiseAssetLibrary.gen.cpp.obj",
+			"WwisePackaging.init.gen.cpp.obj",
+			"WwisePackagingSettings.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"WwiseAssetLibrary.cpp.obj",
+			"WwisePackagingSettings.cpp.obj",
+			"Packaging.cpp.obj",
+			"WwisePackagingModuleImpl.cpp.obj"
+		]
+	}
+}

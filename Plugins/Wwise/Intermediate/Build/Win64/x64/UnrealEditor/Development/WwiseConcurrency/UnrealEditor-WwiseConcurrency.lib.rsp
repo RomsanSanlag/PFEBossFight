@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseConcurrency.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\Core\SharedPCH.Core.Project.ValApi.Cpp20.h.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Module.WwiseConcurrency.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Default.rc2.res"
+/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\UnrealEditor-WwiseConcurrency.lib"

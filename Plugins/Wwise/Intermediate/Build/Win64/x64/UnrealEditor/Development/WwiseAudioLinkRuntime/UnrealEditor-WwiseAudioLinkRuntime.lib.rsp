@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseAudioLinkRuntime.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkRuntime\Module.WwiseAudioLinkRuntime.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkRuntime\Default.rc2.res"
+/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkRuntime\UnrealEditor-WwiseAudioLinkRuntime.lib"

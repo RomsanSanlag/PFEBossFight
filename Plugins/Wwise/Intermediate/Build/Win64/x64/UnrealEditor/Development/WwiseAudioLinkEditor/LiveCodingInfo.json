@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.WwiseAudioLinkEditor.cpp.obj": [
+			"WwiseAudioLinkEditor.init.gen.cpp.obj",
+			"WwiseAudioLinkSettingsFactory.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"WwiseAudioLinkSettingsFactory.cpp.obj",
+			"WwiseAudioLinkEditorModule.cpp.obj"
+		]
+	}
+}
