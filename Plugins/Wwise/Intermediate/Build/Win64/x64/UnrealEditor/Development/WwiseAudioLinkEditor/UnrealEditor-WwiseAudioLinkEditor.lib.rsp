@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-WwiseAudioLinkEditor.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\Module.WwiseAudioLinkEditor.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\Default.rc2.res"
-/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\UnrealEditor-WwiseAudioLinkEditor.lib"
+"D:\Repos\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\Module.WwiseAudioLinkEditor.cpp.obj"
+"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\Default.rc2.res"
+/OUT:"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\UnrealEditor-WwiseAudioLinkEditor.lib"
