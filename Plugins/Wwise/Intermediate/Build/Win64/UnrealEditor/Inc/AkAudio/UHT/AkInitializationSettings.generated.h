@@ -14,28 +14,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_AkInitializationSettings_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_123_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_123_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMainOutputSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMainOutputSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_150_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_150_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkSpatialAudioSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkSpatialAudioSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_211_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_211_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkCommunicationSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommunicationSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_236_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_236_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkCommunicationSettingsWithSystemInitialization_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkCommunicationSettings Super;
@@ -43,7 +43,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommunicationSettin
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommunicationSettingsWithSystemInitialization>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_247_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_247_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkCommunicationSettingsWithCommSelection_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkCommunicationSettings Super;
@@ -51,21 +51,21 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommunicationSettin
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommunicationSettingsWithCommSelection>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_258_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_258_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMemoryArenaInitializationSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMemoryArenaInitializationSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_293_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_293_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkCommonInitializationSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommonInitializationSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_329_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_329_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkCommonInitializationSettingsWithSampleRate_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkCommonInitializationSettings Super;
@@ -73,14 +73,14 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommonInitializatio
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkCommonInitializationSettingsWithSampleRate>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_339_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_339_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkAdvancedInitializationSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkAdvancedInitializationSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_380_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h_380_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkAdvancedInitializationSettingsWithMultiCoreRendering_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkAdvancedInitializationSettings Super;
@@ -89,7 +89,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkAdvancedInitializat
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkAdvancedInitializationSettingsWithMultiCoreRendering>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_InitializationSettings_AkInitializationSettings_h
 
 
 #define FOREACH_ENUM_EAKPANNINGRULE(op) \

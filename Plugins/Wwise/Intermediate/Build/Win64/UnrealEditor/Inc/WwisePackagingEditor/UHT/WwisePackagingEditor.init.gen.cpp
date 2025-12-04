@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeWwisePackagingEditor_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000040,
-				0x08F3FD04,
+				0x68AB2049,
 				0x7581BD91,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeWwisePackagingEditor_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_WwisePackagingEditor.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_WwisePackagingEditor(Z_Construct_UPackage__Script_WwisePackagingEditor, TEXT("/Script/WwisePackagingEditor"), Z_Registration_Info_UPackage__Script_WwisePackagingEditor, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x08F3FD04, 0x7581BD91));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_WwisePackagingEditor(Z_Construct_UPackage__Script_WwisePackagingEditor, TEXT("/Script/WwisePackagingEditor"), Z_Registration_Info_UPackage__Script_WwisePackagingEditor, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x68AB2049, 0x7581BD91));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

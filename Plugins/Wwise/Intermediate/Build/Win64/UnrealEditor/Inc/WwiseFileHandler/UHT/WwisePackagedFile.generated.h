@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define WWISEFILEHANDLER_WwisePackagedFile_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_WwiseFileHandler_Public_Wwise_WwisePackagedFile_h_85_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_WwiseFileHandler_Public_Wwise_WwisePackagedFile_h_85_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FWwisePackagedFile_Statics; \
 	static class UScriptStruct* StaticStruct();
 
@@ -22,7 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> WWISEFILEHANDLER_API UScriptStruct* StaticStruct<struct FWwisePackagedFile>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_WwiseFileHandler_Public_Wwise_WwisePackagedFile_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_WwiseFileHandler_Public_Wwise_WwisePackagedFile_h
 
 
 #define FOREACH_ENUM_EWWISEPACKAGINGSTRATEGY(op) \

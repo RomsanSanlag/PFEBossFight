@@ -38,14 +38,14 @@ struct FLatentActionInfo;
 #endif
 #define AKAUDIO_AkGameplayStatics_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_37_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_37_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkOutdoorsRoomParameters_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkOutdoorsRoomParameters>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSetDistanceProbe); \
 	DECLARE_FUNCTION(execSetActorMixerEffect); \
 	DECLARE_FUNCTION(execSetAuxBusEffect); \
@@ -115,7 +115,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkOutdoorsRoomParamet
 	DECLARE_FUNCTION(execGetAkComponent);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkGameplayStatics(); \
 	friend struct Z_Construct_UClass_UAkGameplayStatics_Statics; \
@@ -124,7 +124,7 @@ public: \
 	DECLARE_SERIALIZER(UAkGameplayStatics)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkGameplayStatics(UAkGameplayStatics&&); \
@@ -136,13 +136,13 @@ public: \
 	NO_API virtual ~UAkGameplayStatics();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_66_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_66_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h_69_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -150,7 +150,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AKAUDIO_API UClass* StaticClass<class UAkGameplayStatics>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayStatics_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

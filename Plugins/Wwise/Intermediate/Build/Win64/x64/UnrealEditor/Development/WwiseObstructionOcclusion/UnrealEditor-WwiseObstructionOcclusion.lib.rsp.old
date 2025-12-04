@@ -7,11 +7,6 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\AkComponentObstructionAndOcclusionService.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\AkObstructionAndOcclusionService.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\AkPortalObstructionAndOcclusionService.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\WwiseObstructionOcclusionModuleImpl.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\ObstructionOcclusion.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\PerModuleInline.gen.cpp.obj"
+"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\Module.WwiseObstructionOcclusion.cpp.obj"
 "C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\Default.rc2.res"
 /OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObstructionOcclusion\UnrealEditor-WwiseObstructionOcclusion.lib"

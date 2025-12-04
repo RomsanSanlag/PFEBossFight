@@ -21,7 +21,7 @@
 /ALTERNATENAME:__imp___std_init_once_complete=__imp_InitOnceComplete
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
-/LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x64"
+/LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\lib\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.26100.0\ucrt\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.26100.0\um\x64"
 /NODEFAULTLIB:"LIBCMT"
@@ -36,12 +36,12 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 /NOIMPLIB
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\Core\SharedPCH.Core.Project.ValApi.Cpp20.h.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Module.WwiseConcurrency.cpp.obj"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Default.rc2.res"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\UnrealEditor-WwiseUtils.lib"
+"D:\Repos\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\Core\SharedPCH.Core.Project.ValApi.Cpp20.h.obj"
+"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Module.WwiseConcurrency.cpp.obj"
+"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseConcurrency\Default.rc2.res"
+"D:\Repos\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\UnrealEditor-WwiseUtils.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
-"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\WwiseSoundEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseLowLevelUtils\UnrealEditor-WwiseLowLevelUtils.lib"
+"D:\Repos\PFEBossFight\Plugins\WwiseSoundEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseLowLevelUtils\UnrealEditor-WwiseLowLevelUtils.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
@@ -67,6 +67,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Binaries\Win64\UnrealEditor-WwiseConcurrency.dll"
-/PDB:"C:\Users\clemc\Documents\GitHub\PFEBossFight\Plugins\Wwise\Binaries\Win64\UnrealEditor-WwiseConcurrency.pdb"
+/OUT:"D:\Repos\PFEBossFight\Plugins\Wwise\Binaries\Win64\UnrealEditor-WwiseConcurrency.dll"
+/PDB:"D:\Repos\PFEBossFight\Plugins\Wwise\Binaries\Win64\UnrealEditor-WwiseConcurrency.pdb"
 /ignore:4078
