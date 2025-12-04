@@ -14,21 +14,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AKAUDIO_AkInitBank_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ARCHIVESERIALIZER \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ARCHIVESERIALIZER \
 	DECLARE_FSTRUCTUREDARCHIVE_SERIALIZER(UAkInitBank, NO_API)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkInitBank(); \
 	friend struct Z_Construct_UClass_UAkInitBank_Statics; \
 public: \
 	DECLARE_CLASS(UAkInitBank, UAkAudioType, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AkAudio"), NO_API) \
 	DECLARE_SERIALIZER(UAkInitBank) \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ARCHIVESERIALIZER
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ARCHIVESERIALIZER
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkInitBank(UAkInitBank&&); \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~UAkInitBank();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_31_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_31_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -53,7 +53,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AKAUDIO_API UClass* StaticClass<class UAkInitBank>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkInitBank_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

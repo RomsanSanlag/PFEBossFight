@@ -1,20 +1,20 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\module.wwiseutils.cpp",
+        "Source": "d:\\repos\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\module.wwiseutils.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\clemc\\documents\\github\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\core\\sharedpch.core.project.valapi.cpp20.h.pch",
+        "PCH": "d:\\repos\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\core\\sharedpch.core.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\definitions.wwiseutils.h",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\permoduleinline.gen.cpp",
-            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwiseunrealhelper.cpp",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwiseunrealhelper.h",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\global.h",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwise\\stats\\global.cpp",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwise\\stats\\memory.cpp",
-            "c:\\users\\clemc\\documents\\github\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\memory.h",
-            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\lowlevelmemstats.h"
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\definitions.wwiseutils.h",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\permoduleinline.gen.cpp",
+            "d:\\ue5.3\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwiseunrealhelper.cpp",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwiseunrealhelper.h",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\global.h",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwise\\stats\\global.cpp",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwise\\stats\\memory.cpp",
+            "d:\\repos\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\memory.h",
+            "d:\\ue5.3\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\lowlevelmemstats.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

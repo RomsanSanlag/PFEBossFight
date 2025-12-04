@@ -19,7 +19,7 @@ struct FLatentActionInfo;
 #endif
 #define AKAUDIO_AkComponent_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetAttenuationRadius); \
 	DECLARE_FUNCTION(execSetOutputBusVolume); \
 	DECLARE_FUNCTION(execSetEarlyReflectionsVolume); \
@@ -35,7 +35,7 @@ struct FLatentActionInfo;
 	DECLARE_FUNCTION(execGetOcclusionCollisionChannel);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkComponent(); \
 	friend struct Z_Construct_UClass_UAkComponent_Statics; \
@@ -44,7 +44,7 @@ public: \
 	DECLARE_SERIALIZER(UAkComponent)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkComponent(UAkComponent&&); \
@@ -56,13 +56,13 @@ public: \
 	NO_API virtual ~UAkComponent();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_73_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_73_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h_76_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -70,7 +70,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AKAUDIO_API UClass* StaticClass<class UAkComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkComponent_h
 
 
 #define FOREACH_ENUM_EREFLECTIONFILTERBITS(op) \

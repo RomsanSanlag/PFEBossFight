@@ -25,7 +25,7 @@ struct FAkMidiProgramChange;
 #endif
 #define AKAUDIO_AkGameplayTypes_generated_h
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkCallbackInfo_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(UAkCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkCallbackInfo(UAkCallbackInfo&&); \
@@ -46,33 +46,33 @@ public: \
 	NO_API virtual ~UAkCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_464_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_464_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_467_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_482_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_482_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkChannelMask_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkChannelMask>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_491_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_491_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkOutputSettings_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkOutputSettings>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkEventCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkEventCallbackInfo_Statics; \
@@ -81,7 +81,7 @@ public: \
 	DECLARE_SERIALIZER(UAkEventCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkEventCallbackInfo(UAkEventCallbackInfo&&); \
@@ -93,26 +93,26 @@ public: \
 	NO_API virtual ~UAkEventCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_510_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_510_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_513_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkEventCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_661_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_661_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiEventBase_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiEventBase>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_680_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_680_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiGeneric_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -120,7 +120,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiEventBase>();
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiGeneric>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_699_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_699_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiNoteOnOff_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -128,7 +128,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiGeneric>();
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiNoteOnOff>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_718_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_718_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiCc_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -136,7 +136,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiNoteOnOff>();
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiCc>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_737_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_737_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiPitchBend_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -144,7 +144,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiCc>();
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiPitchBend>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_760_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_760_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiNoteAftertouch_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -152,7 +152,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiPitchBend>();
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiNoteAftertouch>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_779_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_779_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiChannelAftertouch_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -160,7 +160,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiNoteAftertouch>
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiChannelAftertouch>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_794_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_794_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkMidiProgramChange_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct(); \
 	typedef FAkMidiEventBase Super;
@@ -168,7 +168,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiChannelAftertou
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiProgramChange>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetProgramChange); \
 	DECLARE_FUNCTION(execGetChannelAftertouch); \
 	DECLARE_FUNCTION(execGetNoteAftertouch); \
@@ -181,7 +181,7 @@ template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkMidiProgramChange>(
 	DECLARE_FUNCTION(execGetType);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkMIDIEventCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkMIDIEventCallbackInfo_Statics; \
@@ -190,7 +190,7 @@ public: \
 	DECLARE_SERIALIZER(UAkMIDIEventCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkMIDIEventCallbackInfo(UAkMIDIEventCallbackInfo&&); \
@@ -202,20 +202,20 @@ public: \
 	NO_API virtual ~UAkMIDIEventCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_810_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_810_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_813_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkMIDIEventCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkMarkerCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkMarkerCallbackInfo_Statics; \
@@ -224,7 +224,7 @@ public: \
 	DECLARE_SERIALIZER(UAkMarkerCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkMarkerCallbackInfo(UAkMarkerCallbackInfo&&); \
@@ -236,19 +236,19 @@ public: \
 	NO_API virtual ~UAkMarkerCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_858_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_858_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_861_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkMarkerCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkDurationCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkDurationCallbackInfo_Statics; \
@@ -257,7 +257,7 @@ public: \
 	DECLARE_SERIALIZER(UAkDurationCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkDurationCallbackInfo(UAkDurationCallbackInfo&&); \
@@ -269,26 +269,26 @@ public: \
 	NO_API virtual ~UAkDurationCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_880_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_880_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_883_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkDurationCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_908_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_908_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkSegmentInfo_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkSegmentInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_INCLASS_NO_PURE_DECLS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAkMusicSyncCallbackInfo(); \
 	friend struct Z_Construct_UClass_UAkMusicSyncCallbackInfo_Statics; \
@@ -297,7 +297,7 @@ public: \
 	DECLARE_SERIALIZER(UAkMusicSyncCallbackInfo)
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_ENHANCED_CONSTRUCTORS \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UAkMusicSyncCallbackInfo(UAkMusicSyncCallbackInfo&&); \
@@ -309,31 +309,31 @@ public: \
 	NO_API virtual ~UAkMusicSyncCallbackInfo();
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_951_PROLOG
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_951_PROLOG
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_INCLASS_NO_PURE_DECLS \
-	FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_ENHANCED_CONSTRUCTORS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_INCLASS_NO_PURE_DECLS \
+	FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_954_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> AKAUDIO_API UClass* StaticClass<class UAkMusicSyncCallbackInfo>();
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_973_DELEGATE \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_973_DELEGATE \
 AKAUDIO_API void FOnAkPostEventCallback_DelegateWrapper(const FScriptDelegate& OnAkPostEventCallback, EAkCallbackType CallbackType, UAkCallbackInfo* CallbackInfo);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_974_DELEGATE \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_974_DELEGATE \
 AKAUDIO_API void FOnAkBankCallback_DelegateWrapper(const FScriptDelegate& OnAkBankCallback, EAkResult Result);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_975_DELEGATE \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_975_DELEGATE \
 AKAUDIO_API void FOnSetCurrentAudioCultureCallback_DelegateWrapper(const FScriptDelegate& OnSetCurrentAudioCultureCallback, bool Succeeded);
 
 
-#define FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_1137_GENERATED_BODY \
+#define FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h_1137_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAkExternalSourceInfo_Statics; \
 	AKAUDIO_API static class UScriptStruct* StaticStruct();
 
@@ -341,7 +341,7 @@ AKAUDIO_API void FOnSetCurrentAudioCultureCallback_DelegateWrapper(const FScript
 template<> AKAUDIO_API UScriptStruct* StaticStruct<struct FAkExternalSourceInfo>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_clemc_Documents_GitHub_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h
+#define CURRENT_FILE_ID FID_Repos_PFEBossFight_Plugins_Wwise_Source_AkAudio_Classes_AkGameplayTypes_h
 
 
 #define FOREACH_ENUM_EAKAUDIOCONTEXT(op) \
