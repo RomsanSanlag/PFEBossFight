@@ -112,6 +112,7 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
+	if(isInvincible) return;
 	OnCameraShake(false,1);
 	OnTakeDamageNative.Broadcast(DamageAmount);
 	ReduceLifePoint(DamageAmount);
