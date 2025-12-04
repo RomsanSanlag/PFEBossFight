@@ -1,69 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}" SchemaVersion="123">
+<WwiseDocument Type="WorkUnit" ID="{BC7EA79E-C24C-4C9A-9AE1-8B436D15CEB7}" SchemaVersion="123">
 	<Busses>
-		<WorkUnit Name="Default Work Unit" ID="{F65E2D1F-0B29-4D2E-AAC5-C6F3DA8D7FBC}" PersistMode="Standalone">
+		<WorkUnit Name="Default Work Unit" ID="{BC7EA79E-C24C-4C9A-9AE1-8B436D15CEB7}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
 					<ReferenceList>
 						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
-							<ObjectRef Name="System" ID="{19BAAA1E-9FE0-4CAB-AAF3-B826748C3ED2}" WorkUnitID="{5AC96314-ACCC-49DB-8085-86F6C16274BC}"/>
+							<ObjectRef Name="System" ID="{3D1BC8B1-535C-4D52-9E59-3160222B1273}" WorkUnitID="{F11CCADB-81E4-439B-AD95-35F09E529FCC}"/>
 						</Reference>
 					</ReferenceList>
-					<ChildrenList>
-						<Bus Name="AMB" ID="{B52AC2AA-F68E-409B-A92E-50CB0B41B2D5}">
-							<PropertyList>
-								<Property Name="Color" Type="int16" Value="4"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
-							</PropertyList>
-						</Bus>
-						<Bus Name="MUS" ID="{1021CD29-A3C8-41D8-A6BD-1FF8725DC947}">
-							<PropertyList>
-								<Property Name="Color" Type="int16" Value="3"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
-							</PropertyList>
-						</Bus>
-						<Bus Name="BOSS" ID="{404797E3-A35A-49F9-89B9-D0E5C522938F}">
-							<PropertyList>
-								<Property Name="Color" Type="int16" Value="12"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
-							</PropertyList>
-							<ChildrenList>
-								<Bus Name="MOVES" ID="{9DEC20B9-9BA6-4416-A698-93368584BE61}"/>
-								<Bus Name="SFX" ID="{0DDADE53-C1D4-42B9-83C5-CEC2D39064E2}"/>
-							</ChildrenList>
-						</Bus>
-						<Bus Name="MC" ID="{3F0E9E99-F453-4181-A0F4-3D6EF86C46D0}">
-							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
-							</PropertyList>
-							<ChildrenList>
-								<Bus Name="MOVES_MC" ID="{17C50DC0-85C5-4513-BD6A-C473D12F089A}"/>
-								<Bus Name="SFX_MC" ID="{6CF15443-A9B3-4619-9739-C761E0DFB44D}"/>
-							</ChildrenList>
-						</Bus>
-						<AuxBus Name="RVB_Outdoor" ID="{4E203719-0552-4EDA-89FA-C8F54D177212}">
-							<PropertyList>
-								<Property Name="Color" Type="int16" Value="23"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
-							</PropertyList>
-							<ObjectLists>
-								<ObjectList Name="Effects">
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{E44059BB-7757-4F2A-96AD-99A0A6BAA55A}" ShortID="1069385269">
-												<ReferenceList>
-													<Reference Name="Effect" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
-														<ObjectRef Name="One_Tap_Quarter_Second" ID="{6BD2D67D-601A-45A6-AD4C-2C089078EBED}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
-						</AuxBus>
-					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

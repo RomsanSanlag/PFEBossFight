@@ -586,6 +586,7 @@
 								<Effect Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 									<PropertyList>
 										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="60"/>
 										<Property Name="OnOffBand2" Type="bool" Value="False"/>
 										<Property Name="OnOffBand3" Type="bool" Value="False"/>
 									</PropertyList>
@@ -635,8 +636,9 @@
 										<Property Name="FilterTypeBand2" Type="int32" Value="2"/>
 										<Property Name="FilterTypeBand3" Type="int32" Value="0"/>
 										<Property Name="FrequencyBand1" Type="Real32" Value="1000"/>
-										<Property Name="FrequencyBand3" Type="Real32" Value="6023"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="10000"/>
 										<Property Name="OnOffBand1" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
 										<Property Name="QFactorBand2" Type="Real32" Value="0.5"/>
 									</PropertyList>
 								</Effect>
@@ -1586,7 +1588,6 @@
 								<Effect Name="Chorus_Like" ID="{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
 									<PropertyList>
 										<Property Name="DelayTime" Type="Real32" Value="10"/>
-										<Property Name="DryLevel" Type="Real32" Value="0"/>
 										<Property Name="ModDepth" Type="Real32" Value="60"/>
 										<Property Name="ModFrequency" Type="Real32" Value="0.85"/>
 										<Property Name="ModPWM" Type="Real32" Value="0"/>
@@ -1867,7 +1868,6 @@
 						</Effect>
 						<Effect Name="Rhythmic_Talk" ID="{F0F27454-4BCC-4302-A61D-C324E7187DD0}" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
 							<PropertyList>
-								<Property Name="ModDepth" Type="Real32" Value="44.7"/>
 								<Property Name="ModFrequency" Type="Real32" Value="15"/>
 								<Property Name="ModPWM" Type="Real32" Value="15"/>
 								<Property Name="ModPhaseOffset" Type="Real32" Value="-180"/>
