@@ -25,12 +25,7 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 
 	//Character->OnCameraTransition(1);
 	
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Cyan,
-	FString::Printf(TEXT("Enter StateDodge"))
-	);
+
 	DashTime = 0.0f;
 	DashStartLocation = Character->GetActorLocation();
 	
@@ -91,12 +86,7 @@ void UPlayerCharacterStateDodge::StateExit(PlayerCharacterStateID PlayerStateID)
 	}
 	Character->isPerfectDodging = false;
     
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Red,
-		FString::Printf(TEXT("Exit StateDodge"))
-	);
+
 }
 
 void UPlayerCharacterStateDodge::StateTick(float DeltaTime)

@@ -17,23 +17,13 @@ void UPlayerCharacterStateIdle::StateEnter(PlayerCharacterStateID PlayerStateID)
 
 	Character->OnCameraTransition(0);
 	
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Cyan,
-	FString::Printf(TEXT("Enter StateIdle"))
-	);
+
 }
 
 void UPlayerCharacterStateIdle::StateExit(PlayerCharacterStateID PlayerStateID)
 {
 	Super::StateExit(PlayerStateID);
-	GEngine->AddOnScreenDebugMessage(
-	-1,
-	3.f,
-	FColor::Red,
-	FString::Printf(TEXT("Exit StateIdle"))
-	);
+
 }
 
 void UPlayerCharacterStateIdle::StateTick(float DeltaTime)

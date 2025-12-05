@@ -18,17 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_Leandro.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_Leandro.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerLeandroMerge.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerLeandroMerge.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyesFocus.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_LazerEyesFocus.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateSpecialAttack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateSpecialAttack.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +41,24 @@
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/Settings/PlayerCharacterSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateIdle.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AITestSuite/Classes/BehaviorTree/TestBTService_Log.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AITestSuite/Private/BehaviorTree/TestBTTask_TimerBasedLatent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidDeviceDetection/Private/AndroidDeviceDetectionModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidTargetPlatformControls/Private/AndroidTargetPlatformControls.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidTargetPlatformSettings/Private/AndroidTargetPlatformSettings.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AnimationDataController/Private/AnimDataController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Apple/MetalShaderFormat/Private/MetalShaderFormat.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AssetTools/Internal/AssetHeaderPatcher.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AssetTools/Private/AssetTools.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/CQTest/Private/TestGameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/CrashDebugHelper/Public/CrashDebugHelper.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/DrawPrimitiveDebugger/Private/SDrawPrimitiveDebugger.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/FunctionalTesting/Classes/FunctionalTest.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/FunctionalTesting/Private/FunctionalAITest.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/GraphColor/Private/appconst.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/GraphColor/Private/graph.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/LogVisualizer/Private/LogVisualizer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/LogVisualizer/Private/VisualLoggerTimeSliderController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/StandaloneRenderer/Private/Mac/OpenGL/SlateOpenGLViewport.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Windows/LiveCoding/Private/LiveCodingModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Editor/Blutility/Classes/EditorUtilityActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Editor/Blutility/Private/AsyncCaptureScene.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -102,24 +98,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.EpicGames.AspNet.executor&quot;: &quot;Run&quot;,
-    &quot;C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Léandro&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.EpicGames.AspNet.executor": "Run",
+    "C++ Project.BossFight.executor": "Run",
+    "C/C++ Project.BossFight.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "clement-safe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ Project.BossFight">
     <configuration name="BossFight" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -167,8 +163,13 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/AutomationTool/AutomationTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -185,8 +186,13 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -208,6 +214,7 @@
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -284,6 +291,8 @@
       <workItem from="1764663033269" duration="7000000" />
       <workItem from="1764750614390" duration="8313000" />
       <workItem from="1764922750152" duration="2597000" />
+      <workItem from="1764926197219" duration="1243000" />
+      <workItem from="1764928799202" duration="620000" />
     </task>
     <servers />
   </component>
