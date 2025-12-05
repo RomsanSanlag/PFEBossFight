@@ -30,11 +30,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnDomagePlayer(int PV);
 
+	bool CanInstantspecialAttack = false;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
+	UFUNCTION(BlueprintCallable)
+	void SetInvicibleAfterHit();
+	
+	void TickInvicibility(float DeltaTime);
+	void TickSpecialAttackWindow(float DeltaTime);
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -64,7 +71,19 @@ public:
 	UPROPERTY(EditAnywhere)
 	UClass* HoldVFX;
 	UPROPERTY(EditAnywhere)
-	UClass* ShootVFX;;
+	UClass* ShootVFX;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool IsDodging = false;
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void LockAllInputs();
+    
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void UnlockAllInputs();
+    
+	// Functions to lock/unlock individual inputs
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook);
 	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
@@ -84,12 +103,21 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	int GetLifePoint() const;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool isInvincible = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float InvicibilityTimer = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float SpecialAttackTimer = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool SpecialAttacking = false;
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraTransition(int indexToGo);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraShake(bool isSlowShake, float intensity);
-	
+
+	bool bSpecialAttackConsumed = false;
 	
 protected:
 	int LifePoint;
@@ -107,6 +135,22 @@ public:
 protected:
 	void SetupMappingContextIntoController() const;
 	void SetupInputs();
+	
+	// Input lock booleans
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputMoveXLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputMoveYLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputDodgeLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputSpecialAttackLocked = false;
+    
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputLookLocked = false;
 #pragma region InputMove
 public:
 
