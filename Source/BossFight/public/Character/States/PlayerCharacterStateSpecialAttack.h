@@ -34,7 +34,8 @@ protected:
 	float CurrentStunTime;
 
 	float PerfectDodgeTimeToCharge;
-	
+	float TimeDilationStrength;
+	float TimeDilationDuration;
 	
 	float InitialSpeed = 0.f;
 	float CurrentSlowDownTime = 0.f;
