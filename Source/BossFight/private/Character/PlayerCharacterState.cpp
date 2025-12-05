@@ -19,12 +19,7 @@ void UPlayerCharacterState::StateInit(UPlayerStateMachine* InitStateMachine)
 {
 	StateMachine = InitStateMachine;
 	Character = InitStateMachine->GetCharacter();
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		3.f,
-		FColor::Magenta,
-		FString::Printf(TEXT("InitState %d"), GetStateID())
-	);
+
 }
 
 void UPlayerCharacterState::StateEnter(PlayerCharacterStateID PlayerStateID)
