@@ -32,7 +32,10 @@ protected:
 	float StunAfterAttack;
 	float CancelWindow;
 	float CurrentStunTime;
-	
+
+	float PerfectDodgeTimeToCharge;
+	float TimeDilationStrength;
+	float TimeDilationDuration;
 	
 	float InitialSpeed = 0.f;
 	float CurrentSlowDownTime = 0.f;
@@ -51,6 +54,8 @@ protected:
 	bool bIsHolding = false;
 	bool bHasShot = false;
 	bool bIsCommitted = false;
+
+	UCurveFloat* MouseSensitivityCurve;
 
 private:
 	float w;

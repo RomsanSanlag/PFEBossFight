@@ -21,6 +21,8 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
 {
     Super::StateEnter(PreviousStateID);
 
+    Character->OnCameraTransition(0);
+
     UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
     if (!Movement) return;
 
@@ -48,8 +50,6 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
 
     if (PreviousStateID == PlayerCharacterStateID::Dodge)
     {
-        GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Purple, 
-            FString::Printf(TEXT("Just Dodged - Starting at max speed")));
         
         // Directement à la vitesse maximale
         CurrentSpeed = MaxWalkSpeed;
@@ -60,15 +60,13 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
         CurrentTurnReaccelerationTime = TurnReaccelerationTime;
     }
 
-    GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Cyan, 
-        FString::Printf(TEXT("Enter StateWalk")));
+
 }
 void UPlayerCharacterStateWalk::StateExit(PlayerCharacterStateID NextStateID)
 {
     Super::StateExit(NextStateID);
     
-    GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, 
-        FString::Printf(TEXT("Exit StateWalk")));
+
 }
 
 void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
@@ -97,8 +95,7 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
         {
             CurrentTurnDeccelerationTime = 0.f;
             CurrentTurnReaccelerationTime = 0.f;
-            GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Yellow, 
-                FString::Printf(TEXT("Changed direction")));
+
         }
     }
     
@@ -135,8 +132,9 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
 
     LastMoveDirection = RawInputDirection.GetSafeNormal();
     
-    if (Character->GetInputSpecialAttack())
+    if (Character->GetInputSpecialAttack() && !Character->bSpecialAttackConsumed)
     {
+        Character->bSpecialAttackConsumed = true; // on consomme l’input
         StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
         return;
     }
