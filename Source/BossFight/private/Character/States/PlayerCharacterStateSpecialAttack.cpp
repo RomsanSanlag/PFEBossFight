@@ -54,6 +54,11 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
 	CancelWindow = PlayerMovementParameters->CancelWindow;
 	MouseSensitivityCurve = PlayerMovementParameters->MouseSensitivityCurve;
+
+	TimeDilationStrength = PlayerMovementParameters->TimeDilationStrength;
+	TimeDilationDuration = PlayerMovementParameters->TimeDilationDuration;
+
+	
 	
 	// Sauvegarde la sensibilité initiale
 	InitialMouseSensitivity = Character->MouseSensitivity;
@@ -383,6 +388,8 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 }
 void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 {
+	// --- FIN FREEZE FRAME ---
+
 	bIsHolding = false;
 	bHasShot = true;
 	
@@ -493,6 +500,31 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 						NiagaraComp->Activate(true);
 					}
 
+					// --- DELAY AVANT LE FREEZE ---
+					FTimerHandle DelayBeforeFreezeHandle;
+					GetWorld()->GetTimerManager().SetTimer(
+						DelayBeforeFreezeHandle,
+						[this]()
+						{
+							// --- FREEZE FRAME ---
+							UGameplayStatics::SetGlobalTimeDilation(GetWorld(), TimeDilationStrength);
+
+							FTimerHandle FreezeTimerHandle;
+							GetWorld()->GetTimerManager().SetTimer(
+								FreezeTimerHandle,
+								[this]()
+								{
+									// Reset du TimeDilation
+									UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
+								},
+								TimeDilationDuration,
+								false
+							);
+							// --- FIN FREEZE ---
+						},
+						0.2f, // <= TON DELAY
+						false
+					);
 					// === APPEL DE OnLaserLaunched AVEC L'ACTEUR HITTÉ ===
 					Character->OnLaserLaunched(HitActor);
 				}
