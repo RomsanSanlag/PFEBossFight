@@ -40,8 +40,9 @@ void UPlayerCharacterStateIdle::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
-	if (Character->GetInputSpecialAttack())
+	if (Character->GetInputSpecialAttack() && !Character->bSpecialAttackConsumed)
 	{
+		Character->bSpecialAttackConsumed = true; // on consomme l’input
 		StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
 		return;
 	}

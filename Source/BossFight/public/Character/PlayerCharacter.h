@@ -109,12 +109,15 @@ public:
 	float InvicibilityTimer = 0.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SpecialAttackTimer = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool SpecialAttacking = false;
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraTransition(int indexToGo);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraShake(bool isSlowShake, float intensity);
-	
+
+	bool bSpecialAttackConsumed = false;
 	
 protected:
 	int LifePoint;

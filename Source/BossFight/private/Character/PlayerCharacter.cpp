@@ -112,6 +112,7 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
+	if (isInvincible) return;
 	OnCameraShake(false,1);
 	OnTakeDamageNative.Broadcast(DamageAmount);
 	ReduceLifePoint(DamageAmount);
@@ -359,8 +360,24 @@ void APlayerCharacter::OnInputSpecialAttack(const FInputActionValue& InputAction
 		InputSpecialAttackBuffer = false;
 		return;
 	}
-	InputSpecialAttackBuffer = InputActionValue.Get<bool>();
+
+	bool bIsPressed = InputActionValue.Get<bool>();
+
+	// Quand le bouton est PRESSÉ pour la première fois
+	if (bIsPressed && !InputSpecialAttackBuffer)
+	{
+		bSpecialAttackConsumed = false;
+	}
+
+	// Quand le bouton est RELÂCHÉ
+	if (!bIsPressed)
+	{
+		bSpecialAttackConsumed = false; // Autorise une nouvelle attaque
+	}
+
+	InputSpecialAttackBuffer = bIsPressed;
 }
+
 
 void APlayerCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 {
