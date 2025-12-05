@@ -18,18 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/VFX/VFX/Take_Dommage/Materials/M_Flash_impact_Player.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/VFX/VFX/Take_Dommage/VFX/NS_Player_impact.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/.cache/CacheVersion" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/.cache/LMDB/data.mdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/.cache/LMDB/lock.mdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.validationcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.wsettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacterState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacterState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateDodge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateDodge.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,13 +166,8 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="ENV_FILE_PATHS" value="" />
-      <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/AutomationTool/AutomationTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -197,13 +184,8 @@
       <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="ENV_FILE_PATHS" value="" />
-      <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -225,7 +207,6 @@
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -303,6 +284,7 @@
       <workItem from="1764750614390" duration="8313000" />
       <workItem from="1764922750152" duration="2597000" />
       <workItem from="1764926197219" duration="1243000" />
+      <workItem from="1764928799202" duration="620000" />
     </task>
     <servers />
   </component>
