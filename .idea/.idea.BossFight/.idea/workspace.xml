@@ -26,11 +26,10 @@
       <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.validationcache" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.wsettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Asset/Character/Mat_Character.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Asset/Character/Mat_Character.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Asset/Character/Mat_Character_Mask.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Asset/Character/Mat_Character_Mask.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacterState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/PlayerCharacterState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateDodge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateDodge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateIdle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,18 +52,24 @@
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/Settings/PlayerCharacterSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/BossFight/public/Character/States/PlayerCharacterStateIdle.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AITestSuite/Classes/BehaviorTree/TestBTService_Log.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AITestSuite/Private/BehaviorTree/TestBTTask_TimerBasedLatent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidDeviceDetection/Private/AndroidDeviceDetectionModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidTargetPlatformControls/Private/AndroidTargetPlatformControls.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Android/AndroidTargetPlatformSettings/Private/AndroidTargetPlatformSettings.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AnimationDataController/Private/AnimDataController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Apple/MetalShaderFormat/Private/MetalShaderFormat.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AssetTools/Internal/AssetHeaderPatcher.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/AssetTools/Private/AssetTools.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/CQTest/Private/TestGameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/CrashDebugHelper/Public/CrashDebugHelper.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/DrawPrimitiveDebugger/Private/SDrawPrimitiveDebugger.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/FunctionalTesting/Classes/FunctionalTest.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/FunctionalTesting/Private/FunctionalAITest.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/GraphColor/Private/appconst.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/GraphColor/Private/graph.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/LogVisualizer/Private/LogVisualizer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/LogVisualizer/Private/VisualLoggerTimeSliderController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/StandaloneRenderer/Private/Mac/OpenGL/SlateOpenGLViewport.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Developer/Windows/LiveCoding/Private/LiveCodingModule.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Editor/Blutility/Classes/EditorUtilityActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UE5.3/UE_5.5/Engine/Source/Editor/Blutility/Private/AsyncCaptureScene.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -297,6 +302,7 @@
       <workItem from="1764663033269" duration="7000000" />
       <workItem from="1764750614390" duration="8313000" />
       <workItem from="1764922750152" duration="2597000" />
+      <workItem from="1764926197219" duration="1243000" />
     </task>
     <servers />
   </component>

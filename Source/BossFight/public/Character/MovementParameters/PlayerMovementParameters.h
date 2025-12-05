@@ -55,6 +55,8 @@ public:
         CancelWindow = 0.5f;
         PerfectDodgeTimeToCharge = 0.2f;
         TimeToKeepPerfectDodgeAttack = 0.5f;
+        TimeDilationStrength = 0.1f;
+        TimeDilationDuration = 0.1f;
 
         InvincibilityTimeAfterHit = 0.5f;
     }
@@ -124,6 +126,10 @@ public:
     float PerfectDodgeTimeToCharge;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
     float TimeToKeepPerfectDodgeAttack;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeDilationStrength;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SpecialAttack")
+    float TimeDilationDuration;
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Invincibility")
     float InvincibilityTimeAfterHit;
 };
