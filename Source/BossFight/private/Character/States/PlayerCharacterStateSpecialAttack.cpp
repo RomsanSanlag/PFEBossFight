@@ -37,6 +37,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 {
 	Super::StateEnter(PlayerStateID);	
 
+	Character->SpecialAttacking = true;
 	Character->OnCameraTransition(2);
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
@@ -44,9 +45,20 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 
 	TimeToSlowDown = PlayerMovementParameters->TimeToSlowDown;
 	TimeToChargeSpecialAttack = PlayerMovementParameters->TimeToChargeSpecialAttack;
+	if (Character->CanInstantspecialAttack)
+	{
+		Character->SpecialAttackTimer = 0.f;
+		TimeToChargeSpecialAttack = PlayerMovementParameters->PerfectDodgeTimeToCharge;
+	}
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
 	CancelWindow = PlayerMovementParameters->CancelWindow;
+	MouseSensitivityCurve = PlayerMovementParameters->MouseSensitivityCurve;
+
+	TimeDilationStrength = PlayerMovementParameters->TimeDilationStrength;
+	TimeDilationDuration = PlayerMovementParameters->TimeDilationDuration;
+
+	
 	
 	// Sauvegarde la sensibilité initiale
 	InitialMouseSensitivity = Character->MouseSensitivity;
@@ -166,6 +178,8 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 
 	Character->OnCameraTransition(0);
 
+	Character->SpecialAttacking = false;
+	
 	// Restaure la sensibilité de la souris
 	Character->MouseSensitivity = InitialMouseSensitivity;
 
@@ -221,11 +235,22 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 		UpdateAttackOriginRotation();
 	}
 
-	// Phase de charge : lerp de la sensibilité vers 0
+	// Phase de charge : utilise la courbe pour la sensibilité
 	if (bIsCharging)
 	{
 		float ChargeProgress = FMath::Clamp(CurrentChargeTime / TimeToChargeSpecialAttack, 0.f, 1.f);
-		Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+    
+		if (MouseSensitivityCurve)
+		{
+			// Évalue la courbe (attendu : valeur entre 0 et 1)
+			float CurveValue = MouseSensitivityCurve->GetFloatValue(ChargeProgress);
+			Character->MouseSensitivity = InitialMouseSensitivity * CurveValue;
+		}
+		else
+		{
+			// Fallback sur le lerp linéaire si pas de courbe
+			Character->MouseSensitivity = FMath::Lerp(InitialMouseSensitivity, 0.f, ChargeProgress);
+		}
 	}
 
 	// Continue le ralentissement tant qu'on n'a pas atteint TimeToSlowDown
@@ -363,6 +388,8 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 }
 void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 {
+	// --- FIN FREEZE FRAME ---
+
 	bIsHolding = false;
 	bHasShot = true;
 	
@@ -473,6 +500,31 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 						NiagaraComp->Activate(true);
 					}
 
+					// --- DELAY AVANT LE FREEZE ---
+					FTimerHandle DelayBeforeFreezeHandle;
+					GetWorld()->GetTimerManager().SetTimer(
+						DelayBeforeFreezeHandle,
+						[this]()
+						{
+							// --- FREEZE FRAME ---
+							UGameplayStatics::SetGlobalTimeDilation(GetWorld(), TimeDilationStrength);
+
+							FTimerHandle FreezeTimerHandle;
+							GetWorld()->GetTimerManager().SetTimer(
+								FreezeTimerHandle,
+								[this]()
+								{
+									// Reset du TimeDilation
+									UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
+								},
+								TimeDilationDuration,
+								false
+							);
+							// --- FIN FREEZE ---
+						},
+						0.2f, // <= TON DELAY
+						false
+					);
 					// === APPEL DE OnLaserLaunched AVEC L'ACTEUR HITTÉ ===
 					Character->OnLaserLaunched(HitActor);
 				}
