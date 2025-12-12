@@ -29,6 +29,8 @@ public:
 	APlayerCharacter();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnDomagePlayer(int PV);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnHealPlayer();
 
 	bool CanInstantspecialAttack = false;
 
@@ -90,6 +92,8 @@ public:
 	void TriggerOnTakeDamage(float DamageAmount);
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnPerfectDodge(float DamageAmount);
+	UFUNCTION(BlueprintCallable, Category="Events")
+	void TriggerOnHeal(int HealsAmounts);
 	
 	void TriggerTimeDilation();
 
@@ -124,6 +128,7 @@ protected:
 	UPROPERTY()
 	int LifePointMax = 5;
 	void ReduceLifePoint(int DamageAmount);
+	
 #pragma region Input Data / Mapping Context
 public:
 	UPROPERTY()
