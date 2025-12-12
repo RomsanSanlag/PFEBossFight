@@ -121,6 +121,7 @@ void APlayerCharacter::TriggerOnHeal(int HealsAmounts)
 {
 	LifePoint += HealsAmounts;
 	if (LifePoint > LifePointMax) LifePoint = LifePointMax; 
+	OnHealPlayer();
 }
 
 void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)

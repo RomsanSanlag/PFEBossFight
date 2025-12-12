@@ -29,6 +29,8 @@ public:
 	APlayerCharacter();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnDomagePlayer(int PV);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnHealPlayer();
 
 	bool CanInstantspecialAttack = false;
 
