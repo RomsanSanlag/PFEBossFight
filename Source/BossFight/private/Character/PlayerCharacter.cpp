@@ -117,6 +117,11 @@ void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 	OnTakeDamageNative.Broadcast(DamageAmount);
 	ReduceLifePoint(DamageAmount);
 }
+void APlayerCharacter::TriggerOnHeal(int HealsAmounts)
+{
+	LifePoint += HealsAmounts;
+	if (LifePoint > LifePointMax) LifePoint = LifePointMax; 
+}
 
 void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 {
@@ -124,6 +129,7 @@ void APlayerCharacter::ReduceLifePoint(int DamageAmount = 1)
 	if (LifePoint < 0) LifePoint = 0; 
 	OnDomagePlayer(LifePoint);// game over a mettre plus tard
 }
+
 
 void APlayerCharacter::TriggerOnPerfectDodge(float DamageAmount)
 {
