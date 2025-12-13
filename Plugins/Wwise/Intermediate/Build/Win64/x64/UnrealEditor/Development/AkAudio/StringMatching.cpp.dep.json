@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\akaudio\\private\\stringmatchalgos\\stringmatching.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\akaudio\\definitions.akaudio.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\akaudio\\private\\stringmatchalgos\\stringmatching.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\akaudio\\private\\stringmatchalgos\\array2d.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

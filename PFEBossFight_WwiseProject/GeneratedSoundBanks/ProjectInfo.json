@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "PFEBossFight_WwiseProject",
+   "GUID": "{94EA6664-7A36-4FF8-BAD0-5074E0A7CEEF}",
+   "Generator": "2024.1.9.8920"
+  },
+  "CacheRoot": "../.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{7A0DB9CC-E274-4201-9550-2D449DEE6406}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{1552FAC0-C2C0-4B94-A922-641BABE3CC8D}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{988A3252-26A0-4BBC-AF71-D3F5F6F32933}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{A4E1C49C-2B24-3EDD-AB57-01AE3C4245BC}"
+ }
+}

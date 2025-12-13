@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseresourceloader\\uht\\wwiseacoustictexturecookeddata.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseresourceloader\\definitions.wwiseresourceloader.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseresourceloader\\public\\wwise\\cookeddata\\wwiseacoustictexturecookeddata.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseengineutils\\public\\wwisecookeventcontext.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\wwiseunrealversion.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsavecontext.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\cookenums.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\uobject\\objectsaveoverride.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\cooker\\cookdependency.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\serialization\\compactbinary.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseresourceloader\\uht\\wwiseacoustictexturecookeddata.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\audiokinetictools\\uht\\actorfactoryakambientsound.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\audiokinetictools\\definitions.audiokinetictools.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\audiokinetictools\\classes\\factories\\actorfactoryakambientsound.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwiseunrealdefines.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwisesoundengine\\source\\wwiselowlevelutils\\public\\wwise\\wwiseunrealversion.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\actorfactories\\actorfactory.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\editorframework\\public\\factories\\assetfactoryinterface.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instances\\instancedplacementclientinfo.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismcomponentdescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismcomponentdescriptor.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismpartitionclient.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismpartitionclient.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\ismpartition\\ismpartitioninstancemanager.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\ismpartitioninstancemanager.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instances\\instancedplacementhash.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\misc\\hashbuilder.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\elements\\sminstance\\sminstanceelementid.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\instancedstaticmeshdelegates.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\sminstanceelementid.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\instancedplacementclientinfo.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\editorframework\\uht\\assetfactoryinterface.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\actorfactory.generated.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\audiokinetictools\\uht\\actorfactoryakambientsound.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

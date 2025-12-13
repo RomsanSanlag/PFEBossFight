@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\private\\wwise\\stats\\memory.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\core\\sharedpch.core.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseutils\\definitions.wwiseutils.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseutils\\public\\wwise\\stats\\memory.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\lowlevelmemstats.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

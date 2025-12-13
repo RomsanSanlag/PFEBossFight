@@ -1,0 +1,38 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkeditor\\private\\wwise\\wwiseaudiolinkeditormodule.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseaudiolinkeditor\\definitions.wwiseaudiolinkeditor.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkeditor\\public\\wwise\\wwiseaudiolinkeditormodule.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkeditor\\private\\wwise\\audiolink\\wwiseaudiolinksettingsfactory.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\merge\\public\\merge.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseaudiolinkeditor\\uht\\wwiseaudiolinksettingsfactory.generated.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseaudiolinkruntime\\public\\wwise\\audiolink\\wwiseaudiolinksettings.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\streamablemanager.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\coreuobject\\public\\misc\\packageaccesstracking.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\misc\\sourcelocation.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.41.34120\\include\\source_location",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\misc\\sourcelocationutils.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwiseaudiolinkruntime\\uht\\wwiseaudiolinksettings.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\settings\\public\\isettingsmodule.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

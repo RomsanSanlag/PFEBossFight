@@ -19,9 +19,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a92195a2-d87c-41a2-af2d-5bae6bd555b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WB_MainMenuMIKA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WB_MainMenuMIKA.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PFEBossFight_WwiseProject/.cache/LMDB/lock.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/PFEBossFight_WwiseProject/.cache/LMDB/lock.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.validationcache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PFEBossFight_WwiseProject/PFEBossFight_WwiseProject.clemc.wsettings" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,24 +104,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.EpicGames.AspNet.executor&quot;: &quot;Run&quot;,
-    &quot;C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ Project.BossFight.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;clement-safe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.EpicGames.AspNet.executor": "Run",
+    "C++ Project.BossFight.executor": "Run",
+    "C/C++ Project.BossFight.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "LastTry",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.BossFight">
     <configuration name="BossFight" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -284,6 +287,7 @@
       <workItem from="1764926197219" duration="1243000" />
       <workItem from="1764928799202" duration="620000" />
       <workItem from="1765526899016" duration="1053000" />
+      <workItem from="1765534526089" duration="3103000" />
     </task>
     <servers />
   </component>
@@ -298,5 +302,13 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

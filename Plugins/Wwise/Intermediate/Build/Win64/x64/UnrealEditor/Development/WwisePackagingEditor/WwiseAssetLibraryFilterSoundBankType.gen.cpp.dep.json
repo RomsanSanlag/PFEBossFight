@@ -1,0 +1,34 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisepackagingeditor\\uht\\wwiseassetlibraryfiltersoundbanktype.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwisepackagingeditor\\definitions.wwisepackagingeditor.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisepackagingeditor\\public\\wwise\\packaging\\filters\\wwiseassetlibraryfiltersoundbanktype.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisepackagingruntime\\public\\wwise\\packaging\\wwiseassetlibraryfilter.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisepackagingruntime\\public\\wwise\\packaging\\wwiseassetlibraryinfo.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisepackagingruntime\\uht\\wwiseassetlibraryinfo.generated.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisepackagingruntime\\uht\\wwiseassetlibraryfilter.generated.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisepackagingeditor\\public\\wwise\\packaging\\wwisepackagingtypeactions.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\merge\\public\\merge.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisepackagingeditor\\uht\\wwiseassetlibraryfiltersoundbanktype.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

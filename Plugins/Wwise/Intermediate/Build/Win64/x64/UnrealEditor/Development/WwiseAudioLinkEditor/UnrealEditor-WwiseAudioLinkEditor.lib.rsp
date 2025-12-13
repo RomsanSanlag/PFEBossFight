@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseAudioLinkEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\WwiseAudioLinkEditorModule.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\WwiseAudioLinkSettingsFactory.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\PerModuleInline.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\WwiseAudioLinkEditor.init.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\WwiseAudioLinkSettingsFactory.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\Default.rc2.res"
+/OUT:"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseAudioLinkEditor\UnrealEditor-WwiseAudioLinkEditor.lib"

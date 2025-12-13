@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1329476194",
+    "Type": "User",
+    "GUID": "{480AA04F-24DB-46C2-88D0-FDBCE82D96BA}",
+    "Language": "SFX",
+    "Hash": "{0D227609-B49A-34E3-4782-E949A9FA281C}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\MUS_SB",
+    "ShortName": "MUS_SB",
+    "Path": "MUS_SB.bnk",
+    "Media": [
+     {
+      "Id": "121661552",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BossFight_PH.wav",
+      "CachePath": "B1/{B186AB4B-5C17-AE22-A839-5B23E12A2E6C}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "961842128",
+      "Name": "Play_MUS_Fight",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_MUS_Fight",
+      "GUID": "{A9B7A1F9-DE02-496C-95AA-98E7E293AFC7}",
+      "DurationType": "OneShot",
+      "DurationMin": "206.99998",
+      "DurationMax": "206.99998",
+      "MediaRefs": [
+       {
+        "Id": "121661552"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D84FD82D-2C02-49C2-72E9-91386EFF5A34}"
+ }
+}

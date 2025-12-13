@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseObjectUtils.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\CoreUObject\SharedPCH.CoreUObject.Project.ValApi.Cpp20.h.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObjectUtils\PerModuleInline.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObjectUtils\WwiseObjectUtils.init.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObjectUtils\WwiseUnrealObjectHelper.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObjectUtils\Default.rc2.res"
+/OUT:"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseObjectUtils\UnrealEditor-WwiseObjectUtils.lib"

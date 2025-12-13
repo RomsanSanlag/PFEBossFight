@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisesimpleexternalsource\\uht\\wwiseexternalsourcesettings.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwisesimpleexternalsource\\definitions.wwisesimpleexternalsource.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisesimpleexternalsource\\public\\wwise\\simpleextsrc\\wwiseexternalsourcesettings.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\akaudio\\public\\akunrealeditorhelper.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\net\\replayout.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\core\\public\\containers\\staticbitarray.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\misc\\guidreferences.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\pushmodel\\pushmodel.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\repchangedpropertytracker.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwisesimpleexternalsource\\public\\wwise\\stats\\simpleextsrc.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\unrealeditor\\inc\\wwisesimpleexternalsource\\uht\\wwiseexternalsourcesettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

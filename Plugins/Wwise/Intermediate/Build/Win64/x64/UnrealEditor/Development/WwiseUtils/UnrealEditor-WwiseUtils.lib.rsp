@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WwiseUtils.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Intermediate\Build\Win64\x64\BossFightEditor\Development\Core\SharedPCH.Core.Project.ValApi.Cpp20.h.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\WwiseUnrealHelper.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\Global.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\Memory.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\PerModuleInline.gen.cpp.obj"
+"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\Default.rc2.res"
+/OUT:"C:\Users\santi\Documents\UnrealProjects\BossFight\PFEBossFight\Plugins\Wwise\Intermediate\Build\Win64\x64\UnrealEditor\Development\WwiseUtils\UnrealEditor-WwiseUtils.lib"

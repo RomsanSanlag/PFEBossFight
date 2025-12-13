@@ -1,0 +1,25 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseeditorutils\\private\\wwise\\wwisepluginstyle.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\intermediate\\build\\win64\\x64\\bossfighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wwiseeditorutils\\definitions.wwiseeditorutils.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseeditorutils\\public\\wwise\\wwisepluginstyle.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\versescope.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "c:\\users\\santi\\documents\\unrealprojects\\bossfight\\pfebossfight\\plugins\\wwise\\source\\wwiseeditorutils\\public\\wwise\\wwiseeditorutilsmodule.h",
+            "c:\\unrealengine\\ue_5.5\\engine\\source\\developer\\assettools\\public\\assettypecategories.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
