@@ -31,6 +31,8 @@ public:
 	void OnDomagePlayer(int PV);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnHealPlayer();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnDashPlayer();
 
 	bool CanInstantspecialAttack = false;
 
@@ -94,6 +96,7 @@ public:
 	void TriggerOnPerfectDodge(float DamageAmount);
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnHeal(int HealsAmounts);
+	
 	
 	void TriggerTimeDilation();
 
