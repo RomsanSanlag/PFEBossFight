@@ -26,6 +26,7 @@ public:
 	virtual void StateInit(UPlayerStateMachine* InStateMachine) override;
 
 	virtual void StateTick(float DeltaTime) override;
+	;
 
 	UPROPERTY()
 	TArray<AActor*> SpawnedTrailObjects;
