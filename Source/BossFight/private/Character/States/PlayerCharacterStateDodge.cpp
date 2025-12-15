@@ -25,7 +25,7 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 
 	//Character->OnCameraTransition(1);
 	
-
+	Character->OnDashPlayer();
 	DashTime = 0.0f;
 	DashStartLocation = Character->GetActorLocation();
 	
@@ -35,12 +35,11 @@ void UPlayerCharacterStateDodge::StateEnter(PlayerCharacterStateID PlayerStateID
 	FRotator ControlRot = Character->GetControlRotation();
 	FRotator YawRotation(0.f, ControlRot.Yaw, 0.f);
 	DashDirection = YawRotation.RotateVector(RawInputDirection.GetSafeNormal());
-
+	
 	if (DashDirection == FVector(0.f, 0.f, 0.f))
 	{
 		DashDirection = Character->GetActorForwardVector();
 	}
-	
 	DashDuration = PlayerMovementParameters->DashDuration;
 	DashDistance = PlayerMovementParameters->DashDistance;
 	DashEasing = PlayerMovementParameters->DashEasing;
