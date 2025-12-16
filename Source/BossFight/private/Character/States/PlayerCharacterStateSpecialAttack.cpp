@@ -499,7 +499,8 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 						
 						NiagaraComp->Activate(true);
 					}
-
+					// === APPEL DE OnLaserLaunched AVEC L'ACTEUR HITTÉ ===
+					Character->OnLaserLaunched(HitActor);
 					// --- DELAY AVANT LE FREEZE ---
 					FTimerHandle DelayBeforeFreezeHandle;
 					GetWorld()->GetTimerManager().SetTimer(
@@ -525,8 +526,6 @@ void UPlayerCharacterStateSpecialAttack::SpawnShootVFX()
 						0.2f, // <= TON DELAY
 						false
 					);
-					// === APPEL DE OnLaserLaunched AVEC L'ACTEUR HITTÉ ===
-					Character->OnLaserLaunched(HitActor);
 				}
 			}
 		}
