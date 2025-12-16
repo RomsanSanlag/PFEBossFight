@@ -39,8 +39,11 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 
 	Character->SpecialAttacking = true;
 	
-	Character->OnCameraTransition(2);
-	Character->OnCameraShake(true, 1.0f);
+	if (!Character-> CanInstantspecialAttack)
+    {
+		Character->OnCameraTransition(2);
+		Character->OnCameraShake(true, 1.0f);
+    }
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
@@ -51,6 +54,7 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	{
 		Character->SpecialAttackTimer = 0.f;
 		TimeToChargeSpecialAttack = PlayerMovementParameters->PerfectDodgeTimeToCharge;
+		Character->TgLéandro = true;
 	}
 	MaxTimeToHoldAttack = PlayerMovementParameters->MaxTimeToHoldAttack;
 	StunAfterAttack = PlayerMovementParameters->StunAfterAttack;
@@ -180,6 +184,7 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 
 	Character->OnCameraTransition(0);
 	Character->OnCameraShakeStop();
+	Character->TgLéandro = false;
 
 	Character->SpecialAttacking = false;
 	
@@ -323,6 +328,12 @@ void UPlayerCharacterStateSpecialAttack::StateTick(float DeltaTime)
 		
 		if (CurrentChargeTime >= TimeToChargeSpecialAttack)
 		{
+			if(Character->TgLéandro)
+            {
+				Character->OnCameraTransitionbis(2, 1, false);
+				Character->OnCameraShake(false, 1.0f);
+            }
+			
 			// Fin de la charge, passage au Hold
 			bIsCharging = false;
 			bIsHolding = true;

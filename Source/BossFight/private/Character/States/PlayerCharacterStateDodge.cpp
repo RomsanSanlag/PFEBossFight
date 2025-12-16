@@ -113,7 +113,7 @@ void UPlayerCharacterStateDodge::StateTick(float DeltaTime)
 	}
 	if (Character->DodgeShadow && Character->isPerfectDodging)
 	{
-            
+			Character->OnCameraTransition(2);
 			FActorSpawnParameters SpawnParams;
 			SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 
