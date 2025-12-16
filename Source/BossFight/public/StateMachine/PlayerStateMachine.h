@@ -15,7 +15,7 @@ enum class PlayerCharacterStateID : uint8;
 class UPlayerCharacterState;
 class APlayerCharacter;
 
-UCLASS()
+UCLASS(BlueprintType)
 class BOSSFIGHT_API UPlayerStateMachine : public UObject
 {
 	GENERATED_BODY()
@@ -29,7 +29,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	int StartingDodgeCharges = 3;
 
-	// Temps de recharge d’une charge
+	// Temps de recharge d'une charge
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float DodgeChargeRechargeTime = 1.0f;
 
@@ -55,6 +55,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ChangeState(PlayerCharacterStateID NextStateID);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "State Machine")
+	PlayerCharacterStateID GetCurrentStateID() const { return CurrentStateID; }
 
 	UPlayerCharacterState* GetState(PlayerCharacterStateID StateID);
 	void TickDodgeCoolDown(float DeltaTime);

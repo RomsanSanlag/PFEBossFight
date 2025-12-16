@@ -50,7 +50,6 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
 
     if (PreviousStateID == PlayerCharacterStateID::Dodge)
     {
-        
         // Directement à la vitesse maximale
         CurrentSpeed = MaxWalkSpeed;
         Movement->MaxWalkSpeed = MaxWalkSpeed;
@@ -59,14 +58,11 @@ void UPlayerCharacterStateWalk::StateEnter(PlayerCharacterStateID PreviousStateI
         CurrentTurnDeccelerationTime = TurnDeccelerationTime;
         CurrentTurnReaccelerationTime = TurnReaccelerationTime;
     }
-
-
 }
+
 void UPlayerCharacterStateWalk::StateExit(PlayerCharacterStateID NextStateID)
 {
     Super::StateExit(NextStateID);
-    
-
 }
 
 void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
@@ -86,7 +82,6 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     FRotator YawRotation(0.f, ControlRot.Yaw, 0.f);
     InputDirection = YawRotation.RotateVector(InputDirection);
 
-
     if (!InputDirection.IsNearlyZero() && !LastMoveDirection.IsNearlyZero())
     {
         float Angle = FMath::RadiansToDegrees(acosf(FVector::DotProduct(RawInputDirection.GetSafeNormal(), LastMoveDirection)));
@@ -95,17 +90,15 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
         {
             CurrentTurnDeccelerationTime = 0.f;
             CurrentTurnReaccelerationTime = 0.f;
-
         }
     }
     
-
-    if (InputMagnitude > 0.1)
+    if (InputMagnitude > 0.1f)
     {
         if (CurrentTurnDeccelerationTime < TurnDeccelerationTime)
         {
             CurrentTurnDeccelerationTime += DeltaTime;
-            CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed*TurnAccelerationRetention, DeltaTime, TurnDeccelerationForce);
+            CurrentSpeed = FMath::FInterpTo(CurrentSpeed, MaxWalkSpeed * TurnAccelerationRetention, DeltaTime, TurnDeccelerationForce);
         }
         else if (CurrentTurnReaccelerationTime < TurnReaccelerationTime)
         {
@@ -134,18 +127,22 @@ void UPlayerCharacterStateWalk::StateTick(float DeltaTime)
     
     if (Character->GetInputSpecialAttack() && !Character->bSpecialAttackConsumed)
     {
-        Character->bSpecialAttackConsumed = true; // on consomme l’input
+        Character->bSpecialAttackConsumed = true;
         StateMachine->ChangeState(PlayerCharacterStateID::SpecialAttack);
         return;
     }
-	if (Character->GetInputDodgeBuffer()
-		&& StateMachine->StartingDodgeCharges > 0
-		&& StateMachine->DodgeCooldownTimer <= 0.0f)
-	{
-		StateMachine->ChangeState(PlayerCharacterStateID::Dodge);
-		return;
-	}
-    if (CurrentSpeed < MaxWalkSpeed * 0.1f && InputMagnitude < 0.1f)
+    
+    if (Character->GetInputDodgeBuffer()
+        && StateMachine->StartingDodgeCharges > 0
+        && StateMachine->DodgeCooldownTimer <= 0.0f)
+    {
+        StateMachine->ChangeState(PlayerCharacterStateID::Dodge);
+        return;
+    }
+    
+    // Utilise la vitesse réelle du personnage
+    float ActualSpeed = Movement->Velocity.Size();
+    if (ActualSpeed < MaxWalkSpeed * 0.1f && InputMagnitude < 0.1f)
     {
         StateMachine->ChangeState(PlayerCharacterStateID::Idle);
         return;

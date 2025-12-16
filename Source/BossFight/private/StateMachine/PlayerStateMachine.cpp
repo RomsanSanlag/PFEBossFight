@@ -99,16 +99,15 @@ void UPlayerStateMachine::ChangeState(PlayerCharacterStateID NextStateID)
 {
 	UPlayerCharacterState* NextState = GetState(NextStateID);
 
-
-
 	if (NextState == nullptr) return;
 
-	if  (CurrentState != nullptr)
+	PlayerCharacterStateID PreviousStateID = CurrentStateID;
+
+	if (CurrentState != nullptr)
 	{
 		CurrentState->StateExit(NextStateID);
 	}
 
-	PlayerCharacterStateID PreviousStateID = CurrentStateID;
 	CurrentStateID = NextStateID;
 	CurrentState = NextState;
 
@@ -116,5 +115,7 @@ void UPlayerStateMachine::ChangeState(PlayerCharacterStateID NextStateID)
 	{
 		CurrentState->StateEnter(PreviousStateID);
 	}
-}
 
+	// Appel de l'event Blueprint
+	Character->OnStateChangedBP(PreviousStateID, CurrentStateID);
+}

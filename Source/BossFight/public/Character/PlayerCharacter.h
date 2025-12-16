@@ -23,6 +23,11 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+
+	// Event appelable en Blueprint - à implémenter dans le Blueprint du PlayerCharacter
+	UFUNCTION(BlueprintImplementableEvent, Category = "State Machine")
+	void OnStateChangedBP(PlayerCharacterStateID PreviousStateID, PlayerCharacterStateID NewStateID);
+	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
@@ -31,6 +36,8 @@ public:
 	void OnDomagePlayer(int PV);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnHealPlayer();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnDashPlayer();
 
 	bool CanInstantspecialAttack = false;
 
@@ -94,6 +101,7 @@ public:
 	void TriggerOnPerfectDodge(float DamageAmount);
 	UFUNCTION(BlueprintCallable, Category="Events")
 	void TriggerOnHeal(int HealsAmounts);
+	
 	
 	void TriggerTimeDilation();
 
