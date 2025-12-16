@@ -23,6 +23,11 @@ class BOSSFIGHT_API APlayerCharacter : public ACharacter
 
 #pragma region Unreal Default
 public:
+
+	// Event appelable en Blueprint - à implémenter dans le Blueprint du PlayerCharacter
+	UFUNCTION(BlueprintImplementableEvent, Category = "State Machine")
+	void OnStateChangedBP(PlayerCharacterStateID PreviousStateID, PlayerCharacterStateID NewStateID);
+	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnLaserLaunched(AActor* OtherActor);
 	// Sets default values for this character's properties
@@ -123,6 +128,8 @@ public:
 	void OnCameraTransition(int indexToGo);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraShake(bool isSlowShake, float intensity);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShakeStop();
 
 	bool bSpecialAttackConsumed = false;
 	
