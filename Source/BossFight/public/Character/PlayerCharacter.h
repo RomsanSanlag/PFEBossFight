@@ -123,6 +123,8 @@ public:
 	void OnCameraTransition(int indexToGo);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraShake(bool isSlowShake, float intensity);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraShakeStop();
 
 	bool bSpecialAttackConsumed = false;
 	
