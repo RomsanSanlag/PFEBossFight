@@ -38,7 +38,9 @@ void UPlayerCharacterStateSpecialAttack::StateEnter(PlayerCharacterStateID Playe
 	Super::StateEnter(PlayerStateID);	
 
 	Character->SpecialAttacking = true;
+	
 	Character->OnCameraTransition(2);
+	Character->OnCameraShake(true, 1.0f);
 	
 	UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
 	if (!Movement) return;
@@ -177,6 +179,7 @@ void UPlayerCharacterStateSpecialAttack::StateExit(PlayerCharacterStateID Player
 	Super::StateExit(PlayerStateID);
 
 	Character->OnCameraTransition(0);
+	Character->OnCameraShakeStop();
 
 	Character->SpecialAttacking = false;
 	
