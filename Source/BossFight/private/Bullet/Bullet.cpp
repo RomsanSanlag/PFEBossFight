@@ -126,108 +126,123 @@ AActor* ABullet::FindBestTarget()
 
 void ABullet::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+    Super::Tick(DeltaTime);
 
-	if (!PlayerCharacter || !CurrentTarget) return;
+    if (!PlayerCharacter || !CurrentTarget) return;
 
-	BossLocation = CurrentTarget->GetActorLocation();
+    BossLocation = CurrentTarget->GetActorLocation();
+    
+    // --- Application de SpeedOverTime ---
+    float SpeedMultiplier = 1.f;
+    if (SpeedOverTime)
+    {
+        float CurveValue = SpeedOverTime->GetFloatValue(time);
+        SpeedMultiplier = FMath::Max(0.01f, CurveValue);
+    }
+
+    time += DeltaTime * SpeedMultiplier;
+
+    float T = time / TravelTime;
+    float TClamped = FMath::Clamp(T, 0.f, 1.f);
+
+    float DistanceToTarget = FVector::Dist(GetActorLocation(), BossLocation);
+
+    // NOUVEAU : Destruction basée uniquement sur la distance minimale
+    const float MinDestructionDistance = 300.f; // Distance en dessous de laquelle on considère avoir touché
+    
+    // Destruction si on est très proche OU si on est trop loin après un certain temps
+    if (T >= 1.f)
+    {
+        // Si on est très proche, on considère qu'on a touché
+        if (DistanceToTarget < MinDestructionDistance)
+        {
+            // Ne pas détruire ici, laisser le BeginOverlap gérer ça
+            // Ou détruire si pas de collision après être passé à côté
+        }
+        
+        // Destruction seulement si on est VRAIMENT trop loin ET qu'on s'éloigne
+        if (DistanceToTarget > ShootPower * 2.f) // Augmenté de 1.5 à 2.0
+        {
+            FVector DirectionToTarget = (BossLocation - GetActorLocation()).GetSafeNormal();
+            FVector CurrentDirection = GetActorForwardVector();
+            float DotToTarget = FVector::DotProduct(CurrentDirection, DirectionToTarget);
+            
+            // Seulement si on part vraiment dans la mauvaise direction
+            if (DotToTarget < 0.2f) // Réduit de 0.5 à 0.2
+            {
+                OnBulletDestroyed(this);
+                Destroy();
+                return;
+            }
+        }
+    }
+    
+    // Sécurité : destruction absolue après un temps vraiment long
+    if (time > TravelTime * 3.f) // Augmenté de 2.0 à 3.0
+    {
+        OnBulletDestroyed(this);
+        Destroy();
+        return;
+    }
+
+    // Distance de visée
+    float AimDist = GetDistanceFromAim(BossLocation);
+
+    float PlayerToBossDist = FVector::Dist(PlayerCharacter->GetActorLocation(), BossLocation);
+    float CurveAttenuation = FMath::Clamp(PlayerToBossDist / MaxAimDistanceToTriggerHoming, 0.f, 1.f);	
+    
+    float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistanceToTriggerHoming), 0.f, 1.f);
+    float HomingAttenuation = FMath::Clamp((PlayerToBossDist - MinHomingDistance) / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
 	
-	// --- Application de SpeedOverTime ---
-	float SpeedMultiplier = 1.f;
-	if (SpeedOverTime)
-	{
-		float CurveValue = SpeedOverTime->GetFloatValue(time);
-		SpeedMultiplier = FMath::Max(0.01f, CurveValue); // sécurité
-	}
+    float TimingFactor = T < 1.f ? FMath::Pow(TClamped, 0.5f) : 1.f; // Garde le homing à 100% après T=1
+    float TimedHomingFactor = HomingFactor * HomingStrength * HomingAttenuation * TimingFactor;
 
-	time += DeltaTime * SpeedMultiplier;
+    FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
 
-	// Time normalisé SANS clamp pour permettre le mouvement au-delà de 1.0
-	float T = time / TravelTime;
-	float TClamped = FMath::Clamp(T, 0.f, 1.f); // Pour les calculs qui en ont besoin
+    // --- Application de CurveOverTime sur l'apex ---
+    float DynamicArcHeight = ArcHeight;
 
-	float DistanceToTarget = FVector::Dist(GetActorLocation(), BossLocation);
+    if (CurveOverTime)
+    {
+        float CurveValue = CurveOverTime->GetFloatValue(TClamped);
+        DynamicArcHeight = ArcHeight * CurveValue * CurveAttenuation;
+    }
 
-	// Ne détruit que si on a dépassé le temps ET qu'on s'éloigne du boss
-	if (T >= 1.f)
-	{
-		FVector DirectionToTarget = (BossLocation - GetActorLocation()).GetSafeNormal();
-		FVector CurrentDirection = GetActorForwardVector();
-		float DotToTarget = FVector::DotProduct(CurrentDirection, DirectionToTarget);
-		
-		// Si on ne va plus vers la cible (dot < 0.5) et qu'on est loin, on détruit
-		if (DotToTarget < 0.5f || DistanceToTarget > ShootPower * 1.5f)
-		{
-			OnBulletDestroyed(this);
-			Destroy();
-			return;
-		}
-	}
-	
-	// Sécurité : destruction absolue après un temps vraiment long
-	if (time > TravelTime * 2.f)
-	{
-		OnBulletDestroyed(this);
-		Destroy();
-		return;
-	}
+    FVector NewPos;
+    if (T > 1.f)
+    {
+        // NOUVEAU : Continue le homing même après T = 1.0
+        FVector LastCurvePos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, 1.f);
+        
+        // Direction vers la cible avec homing
+        FVector ToTarget = (BossLocation - LastCurvePos).GetSafeNormal();
+        
+        // Direction de la courbe
+        FVector AlmostLastPos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, 0.99f);
+        FVector CurveDirection = (LastCurvePos - AlmostLastPos).GetSafeNormal();
+        
+        // Mélange entre direction de la courbe et direction vers la cible
+        float HomingBlend = FMath::Clamp(TimedHomingFactor, 0.f, 0.8f); // Max 80% de homing
+        FVector FinalDirection = FMath::Lerp(CurveDirection, ToTarget, HomingBlend).GetSafeNormal();
+        
+        float AverageSpeed = FVector::Dist(StartPos, LastCurvePos) / TravelTime;
+        float ExtraTime = time - TravelTime;
+        NewPos = LastCurvePos + FinalDirection * AverageSpeed * ExtraTime;
+    }
+    else
+    {
+        NewPos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, TClamped);
+    }
 
-	// Distance de visée
-	float AimDist = GetDistanceFromAim(BossLocation);
+    FVector CurrentPos = GetActorLocation();
+    FVector MoveDir = (NewPos - CurrentPos).GetSafeNormal();
 
-	float PlayerToBossDist = FVector::Dist(PlayerCharacter->GetActorLocation(), BossLocation);
-	float CurveAttenuation = FMath::Clamp(PlayerToBossDist / MaxAimDistanceToTriggerHoming, 0.f, 1.f);	
-	
-	float HomingFactor = FMath::Clamp(1.0f - (AimDist / MaxAimDistanceToTriggerHoming), 0.f, 1.f);
-	float HomingAttenuation = FMath::Clamp((PlayerToBossDist - MinHomingDistance) / MaxAimDistanceToTriggerHoming, 0.f, 1.f);
-	float TimedHomingFactor = HomingFactor * HomingStrength * HomingAttenuation * FMath::Pow(TClamped, 0.5f);
+    if (!MoveDir.IsNearlyZero())
+    {
+        SetActorRotation(MoveDir.Rotation());
+    }
 
-	FVector FinalTarget = FMath::Lerp(EndPos, BossLocation, TimedHomingFactor);
-
-	// --- Application de CurveOverTime sur l'apex ---
-	float DynamicArcHeight = ArcHeight;
-
-	if (CurveOverTime)
-	{
-		float CurveValue = CurveOverTime->GetFloatValue(TClamped);
-		DynamicArcHeight = ArcHeight * CurveValue * CurveAttenuation;
-	}
-
-	// Si T > 1.0, continuer en ligne droite depuis la dernière position de la courbe
-	FVector NewPos;
-	if (T > 1.f)
-	{
-		// Calculer la dernière position et direction de la courbe
-		FVector LastCurvePos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, 1.f);
-		
-		// Direction de déplacement à T = 1.0 (tangente à la courbe)
-		// On prend un epsilon pour calculer la direction
-		FVector AlmostLastPos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, 0.99f);
-		FVector LastDirection = (LastCurvePos - AlmostLastPos).GetSafeNormal();
-		
-		// Calculer la vitesse moyenne pendant TravelTime
-		float AverageSpeed = FVector::Dist(StartPos, LastCurvePos) / TravelTime;
-		
-		// Avancer depuis la dernière position dans la dernière direction connue
-		float ExtraTime = time - TravelTime;
-		NewPos = LastCurvePos + LastDirection * AverageSpeed * ExtraTime;
-	}
-	else
-	{
-		// Bézier avec arc dynamique (comportement normal)
-		NewPos = ComputeArcBezier(StartPos, FinalTarget, DynamicArcHeight, TClamped);
-	}
-
-	// Rotation dans la direction du mouvement
-	FVector CurrentPos = GetActorLocation();
-	FVector MoveDir = (NewPos - CurrentPos).GetSafeNormal();
-
-	if (!MoveDir.IsNearlyZero())
-	{
-		SetActorRotation(MoveDir.Rotation());
-	}
-
-	SetActorLocation(NewPos);
+    SetActorLocation(NewPos);
 }
 FVector ABullet::ComputeArcBezier(const FVector& Start, const FVector& End, float Height, float T)
 {
