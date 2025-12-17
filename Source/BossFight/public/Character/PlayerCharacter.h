@@ -97,7 +97,7 @@ public:
     
 	// Functions to lock/unlock individual inputs
 	UFUNCTION(BlueprintCallable, Category = "Input")
-	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook);
+	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook, bool blockShoot);
 	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
@@ -175,6 +175,8 @@ protected:
     
 	UPROPERTY(BlueprintReadOnly, Category = "Input")
 	bool bInputLookLocked = false;
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputShootLocked = false;
 #pragma region InputMove
 public:
 
