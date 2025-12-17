@@ -40,6 +40,7 @@ public:
 	void OnDashPlayer();
 
 	bool CanInstantspecialAttack = false;
+	bool TgLéandro = false;
 
 protected:
 	// Called when the game starts or when spawned
@@ -126,6 +127,8 @@ public:
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraTransition(int indexToGo);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
+	void OnCameraTransitionbis(int indexToGo, int indexFrom, bool isTransiNormale);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
 	void OnCameraShake(bool isSlowShake, float intensity);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Events")
