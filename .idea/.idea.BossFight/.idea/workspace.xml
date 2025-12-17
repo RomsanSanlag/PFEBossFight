@@ -9,7 +9,6 @@
     <projectFile profileName="EpicGames.AspNet">../../UE5.3/UE_5.5/Engine/Source/Programs/Shared/EpicGames.AspNet/EpicGames.AspNet.csproj</projectFile>
     <projectFile kind="Docker">../../UE5.3/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>../../UE5.3/UE_5.5/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj</projectFile>
-    <projectFile kind="Docker">C:/Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile kind="Docker">$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/BossFight.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
@@ -22,19 +21,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BossFight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/BossFightEditor.target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-BossFight.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Characters/BP_PlayerSantino.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP/Controllers/BP_ControllerSantino.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP/Controllers/BP_ControllerSantino.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/ANIM_CHR_Fin_v01_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/ANIM_CHR_Fin_v01_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/ANIM_CHR_Fin_v01_Skeleton_AnimBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/ANIM_CHR_Fin_v01_Skeleton_AnimBlueprint.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/ANIM_CHR_Fin_Run_to_stop.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/ANIM_CHR_Fin_Run_to_stop.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/BS_IdleWalkRun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/BS_IdleWalkRun.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/Montage/ANIM_CHR_Fin_Dash_Montage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/Montage/ANIM_CHR_Fin_Dash_Montage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/Montage/ANIM_CHR_Fin_Run_to_stop_Montage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GA/Character/MC/Animation/Montage/ANIM_CHR_Fin_Run_to_stop_Montage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateSpecialAttack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateSpecialAttack.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/Character/States/PlayerCharacterStateWalk.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/private/StateMachine/PlayerStateMachine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/private/StateMachine/PlayerStateMachine.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/Character/PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BossFight/public/StateMachine/PlayerStateMachine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BossFight/public/StateMachine/PlayerStateMachine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Pleure1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/BP_Boss/Prevwiew/BP_Pleure1.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +67,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Léandro",
+    "git-widget-placeholder": "clement-safe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -209,7 +196,7 @@
         <settings>
           <option name="containerName" value="epicgames.perforce.fixture" />
           <option name="contextFolderPath" value="E:\Repos\PFEBossFight" />
-          <option name="sourceFilePath" value="C:/Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/Dockerfile" />
+          <option name="sourceFilePath" value="$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/Dockerfile" />
         </settings>
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
@@ -282,6 +269,7 @@
       <workItem from="1765789234940" duration="683000" />
       <workItem from="1765789975866" duration="1959000" />
       <workItem from="1765878097023" duration="6047000" />
+      <workItem from="1765959894156" duration="763000" />
     </task>
     <servers />
   </component>
