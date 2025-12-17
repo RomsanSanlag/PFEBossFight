@@ -308,6 +308,7 @@ void APlayerCharacter::LockAllInputs()
 	bInputDodgeLocked = true;
 	bInputSpecialAttackLocked = true;
 	bInputLookLocked = true;
+	bInputShootLocked = true;
 }
 
 void APlayerCharacter::UnlockAllInputs()
@@ -317,15 +318,17 @@ void APlayerCharacter::UnlockAllInputs()
 	bInputDodgeLocked = false;
 	bInputSpecialAttackLocked = false;
 	bInputLookLocked = false;
+	bInputShootLocked = false;
 }
 
-void APlayerCharacter::SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook)
+void APlayerCharacter::SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook, bool bLockShoot)
 {
 	bInputMoveXLocked = bLockMove;
 	bInputMoveYLocked = bLockMove;
 	bInputDodgeLocked = bLockDodge;
 	bInputSpecialAttackLocked = bLockSpecialAttack;
 	bInputLookLocked = bLockLook;
+	bLockShoot = bLockShoot;
 }
 
 void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent)
