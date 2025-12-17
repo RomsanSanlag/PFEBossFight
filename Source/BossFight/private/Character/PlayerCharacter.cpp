@@ -45,7 +45,7 @@ void APlayerCharacter::SetInvicibleAfterHit()
 }
 void APlayerCharacter::TickInvicibility(float DeltaTime)
 {
-	isInvincible = InvicibilityTimer>0.f;
+	isInvincible = InvicibilityTimer>0.f or forced;
 	if (isInvincible)
 	{
 		InvicibilityTimer -= DeltaTime;
@@ -110,6 +110,16 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 	StateMachine->Tick(DeltaTime);
 }
 
+void APlayerCharacter::SetIsInvincible(bool set)
+{
+	forced = set;
+	isInvincible = set;
+}
+
+bool APlayerCharacter::GetIsInvincible()
+{
+	return isInvincible;
+}
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
 	if (isInvincible) return;

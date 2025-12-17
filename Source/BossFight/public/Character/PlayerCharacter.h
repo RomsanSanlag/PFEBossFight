@@ -69,6 +69,10 @@ public:
 
 	void TickStateMachine(float DeltaTime) const;
 
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void SetIsInvincible(bool set);
+	bool GetIsInvincible();
+
 	UPROPERTY(EditAnywhere)
 	UPlayerMovementParameters* PlayerMovementParameters;
 
@@ -118,6 +122,8 @@ public:
 	int GetLifePoint() const;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool isInvincible = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool forced = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float InvicibilityTimer = 0.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
