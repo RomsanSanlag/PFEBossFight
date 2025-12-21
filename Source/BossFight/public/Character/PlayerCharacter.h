@@ -69,6 +69,10 @@ public:
 
 	void TickStateMachine(float DeltaTime) const;
 
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void SetIsInvincible(bool set);
+	bool GetIsInvincible();
+
 	UPROPERTY(EditAnywhere)
 	UPlayerMovementParameters* PlayerMovementParameters;
 
@@ -93,7 +97,7 @@ public:
     
 	// Functions to lock/unlock individual inputs
 	UFUNCTION(BlueprintCallable, Category = "Input")
-	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook);
+	void SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook, bool blockShoot);
 	
 
 	UFUNCTION(BlueprintCallable, Category="Events")
@@ -118,6 +122,8 @@ public:
 	int GetLifePoint() const;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool isInvincible = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool forced = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float InvicibilityTimer = 0.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -169,6 +175,8 @@ protected:
     
 	UPROPERTY(BlueprintReadOnly, Category = "Input")
 	bool bInputLookLocked = false;
+	UPROPERTY(BlueprintReadOnly, Category = "Input")
+	bool bInputShootLocked = false;
 #pragma region InputMove
 public:
 

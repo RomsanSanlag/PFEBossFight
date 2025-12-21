@@ -45,7 +45,7 @@ void APlayerCharacter::SetInvicibleAfterHit()
 }
 void APlayerCharacter::TickInvicibility(float DeltaTime)
 {
-	isInvincible = InvicibilityTimer>0.f;
+	isInvincible = InvicibilityTimer>0.f or forced;
 	if (isInvincible)
 	{
 		InvicibilityTimer -= DeltaTime;
@@ -110,6 +110,16 @@ void APlayerCharacter::TickStateMachine(float DeltaTime) const
 	StateMachine->Tick(DeltaTime);
 }
 
+void APlayerCharacter::SetIsInvincible(bool set)
+{
+	forced = set;
+	isInvincible = set;
+}
+
+bool APlayerCharacter::GetIsInvincible()
+{
+	return isInvincible;
+}
 void APlayerCharacter::TriggerOnTakeDamage(float DamageAmount)
 {
 	if (isInvincible) return;
@@ -298,6 +308,7 @@ void APlayerCharacter::LockAllInputs()
 	bInputDodgeLocked = true;
 	bInputSpecialAttackLocked = true;
 	bInputLookLocked = true;
+	bInputShootLocked = true;
 }
 
 void APlayerCharacter::UnlockAllInputs()
@@ -307,15 +318,17 @@ void APlayerCharacter::UnlockAllInputs()
 	bInputDodgeLocked = false;
 	bInputSpecialAttackLocked = false;
 	bInputLookLocked = false;
+	bInputShootLocked = false;
 }
 
-void APlayerCharacter::SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook)
+void APlayerCharacter::SetInputLock(bool bLockMove, bool bLockDodge, bool bLockSpecialAttack, bool bLockLook, bool bLockShoot)
 {
 	bInputMoveXLocked = bLockMove;
 	bInputMoveYLocked = bLockMove;
 	bInputDodgeLocked = bLockDodge;
 	bInputSpecialAttackLocked = bLockSpecialAttack;
 	bInputLookLocked = bLockLook;
+	bLockShoot = bLockShoot;
 }
 
 void APlayerCharacter::BindInputLookActions(UEnhancedInputComponent* EnhancedInputComponent)
